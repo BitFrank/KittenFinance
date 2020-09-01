@@ -2,50 +2,55 @@
 <html>
 
 <head>
-    <title>Kitten.finance</title>
+    <title>Kitten.finance (KIF)</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
-    <style>
-        body {
-            background: #fff8ee;
-            font-family: sans-serif;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        #wrap {
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        #footer {
-            clear: both;
-            display: block;
-            text-align: center;
-            margin: 0px auto;
-            position: absolute;
-            bottom: 0px;
-            width: 100%;
-        }
-
-        a:link {
-            text-decoration: none;
-        }
-
-        a:visited {
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <div id="wrap">
-        <p style="font-size:50px;text-align: center;">🐱 Kitten.finance</p>
-        <p>Farm and HODL your Kitten.finance (KIF) token for early access to all our future products.</p>
+        <div id="header">
+            <p style="font-size:40px;">🐱 Kitten.finance</p>
+            <p style="font-weight: normal;">Farm and HODL your 🐱 KIF to govern all future projects (eg. <a href="http://KittenSwap.org" target="_blank">KittenSwap.org</a>)</p>
+        </div>
+        <pre id="log"></pre>
+        <div class="loader" id="main_loader"></div>
+
+        <div id="token_boxes">
+            <div class="token_box" id="token_box_1">
+                <pre class="token_log"></pre>
+                <div class="token_loader loader"></div>
+                <div class="token_panel" style="margin-top:2em">
+                    <button class="button btn_stake">Stake</button>
+                    <button class="button btn_claim">Claim</button>
+                    <button class="button btn_withdraw">Withdraw</button>
+                    <button class="button btn_exit">Exit</button>
+                    <div class="input_wrap break" style="width:100%; margin-top:2em">
+                        <input placeholder="0" class="input token_panel_amt" value="">
+                        <button class="button btn_stake_all" style="position:relative; right:-8px">Stake all</button>
+                    </div>
+                    <pre class="token_panel_log"></pre>
+                </div>
+            </div>
+        </div>
+
+    <pre style="font-family: sans-serif; border-top: 1px solid #ddd; padding-top: 2em; line-height: 2;">
+Total 🐱 KIF supply = 42000
+Pool 1 : stake WETH to farm KIF : 4000 in first week, halving every week (total 8000)
+Pool 2 : stake KIF to farm KIF : 4000 in first week, halving every week (total 8000)
+Pool 3 : stake KIF-ETH UNI-V2 LP to farm KIF : 12000 in first week, halving every week (total 24000)
+Dev fund : 5% (total 2000)
+    </pre>
     </div>
-    <div id="footer">
-        <p>Kitten.finance</p>
-    </div>
+    <!-- <div id="footer">
+        <p>Kitten.finance (KIF)</p>
+    </div> -->
+    <script type="text/javascript" src="./jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./ethers-5.0.umd.min.js"></script>
+    <script type="text/javascript" src="./contract.js"></script>
+    <script type="text/javascript" src="./helper.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
 </body>
 
 </html>
