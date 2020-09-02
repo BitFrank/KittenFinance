@@ -49,10 +49,10 @@ function setPoolData(App) {
     }
     App.Pool[3] = {
         TOKEN_NAME: 'KIF-ETH UNI-V2 LP',
-        POOL_ADDR: null,
-        POOL_ABI: null,
-        TOKEN_ADDR: null,
-        TOKEN_ABI: null
+        POOL_ADDR: UNI_POOL_ADDR,
+        POOL_ABI: UNI_POOL_ABI,
+        TOKEN_ADDR: UNI_TOKEN_ADDR,
+        TOKEN_ABI: UNI_TOKEN_ABI
     }
     for (var num = 1; num <= 3; num++) {
         if (App.Pool[num].POOL_ADDR == null)
