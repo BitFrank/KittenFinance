@@ -48,7 +48,7 @@ function setPoolData(App) {
         TOKEN_ABI: KIF_TOKEN_ABI
     }
     App.Pool[3] = {
-        TOKEN_NAME: 'KIF-ETH UNI-V2 LP',
+        TOKEN_NAME: '<a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF-ETH UNI-V2 LP</a>',
         POOL_ADDR: UNI_POOL_ADDR,
         POOL_ABI: UNI_POOL_ABI,
         TOKEN_ADDR: UNI_TOKEN_ADDR,
