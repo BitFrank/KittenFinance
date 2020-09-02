@@ -35,6 +35,7 @@ function setPoolData(App) {
     App.Pool = [{}, {}, {}, {}]
     App.Pool[1] = {
         TOKEN_NAME: 'WETH',
+        TOKEN_NAME_FULL: '<a href="https://relay.radar.tech" target="_blank">WETH</a>',
         POOL_ADDR: WETH_POOL_ADDR,
         POOL_ABI: WETH_POOL_ABI,
         TOKEN_ADDR: WETH_TOKEN_ADDR,
@@ -42,13 +43,15 @@ function setPoolData(App) {
     }
     App.Pool[2] = {
         TOKEN_NAME: 'KIF',
+        TOKEN_NAME_FULL: '<a href="https://etherscan.io/address/0x177ba0cac51bfc7ea24bad39d81dcefd59d74faa" target="_blank">KIF</a>',
         POOL_ADDR: KIF_POOL_ADDR,
         POOL_ABI: KIF_POOL_ABI,
         TOKEN_ADDR: KIF_TOKEN_ADDR,
         TOKEN_ABI: KIF_TOKEN_ABI
     }
     App.Pool[3] = {
-        TOKEN_NAME: '<a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF-ETH UNI-V2 LP</a>',
+        TOKEN_NAME: 'KIF-ETH UNI-V2 LP',
+        TOKEN_NAME_FULL: '<a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF-ETH UNI-V2 LP</a>',
         POOL_ADDR: UNI_POOL_ADDR,
         POOL_ABI: UNI_POOL_ABI,
         TOKEN_ADDR: UNI_TOKEN_ADDR,
@@ -143,7 +146,7 @@ async function checkPool(num, App) {
     var this_box = '#token_box_' + num + ' '
     const THIS_POOL = App.Pool[num].POOL
 
-    var this_pool_desc = `Pool ${num} : stake ${App.Pool[num].TOKEN_NAME} to farm KIF`
+    var this_pool_desc = `Pool ${num} : stake ${App.Pool[num].TOKEN_NAME_FULL} to farm KIF`
     var this_log = $(this_box + '.token_log')[0]
     var this_loader = $(this_box + '.token_loader')
     _print(this_pool_desc, this_log)
