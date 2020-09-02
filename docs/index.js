@@ -11,7 +11,7 @@ $(async function () {
         var clone = $('#token_box_1').clone().prop('id', 'token_box_' + i);
         $("#token_boxes").append(clone);
     }
-    $('.token_panel').hide();
+    // $('.token_panel').hide();
     consoleInit()
 
     const App = await init_ethers();
@@ -149,7 +149,7 @@ async function checkPool(num, App) {
     _print(this_pool_desc, this_log)
 
     if (App.Pool[num].POOL_ADDR === null) {
-        _print('Pool opening soon', this_log)
+        _print('Pool 🌾 opening soon', this_log)
         this_loader.hide()
         return
     }
@@ -159,7 +159,6 @@ async function checkPool(num, App) {
 
     if (timeTilStart > 0) {
         _print(`Farming starts    : in ${forHumans(timeTilStart)}`, this_log)
-        _print(`Stay tuned`, this_log)
     } else {
         $(this_box + ".btn_stake").on("click", async function (event) {
             await contractTask('btn_stake', num, App)
