@@ -146,7 +146,7 @@ async function checkPool(num, App) {
     var this_box = '#token_box_' + num + ' '
     const THIS_POOL = App.Pool[num].POOL
 
-    var this_pool_desc = `Pool ${num} : stake ${App.Pool[num].TOKEN_NAME_FULL} to farm KIF`
+    var this_pool_desc = `Pool ${num} : stake ${App.Pool[num].TOKEN_NAME_FULL} to breed KIF`
     var this_log = $(this_box + '.token_log')[0]
     var this_loader = $(this_box + '.token_loader')
     _print(this_pool_desc, this_log)
@@ -161,7 +161,7 @@ async function checkPool(num, App) {
     const timeTilStart = timeStart - (Date.now() / 1000);
 
     if (timeTilStart > 0) {
-        _print(`Farming starts    : in ${forHumans(timeTilStart)}`, this_log)
+        _print(`Breeding starts    : in ${forHumans(timeTilStart)}`, this_log)
     } else {
         $(this_box + ".btn_stake").on("click", async function (event) {
             await contractTask('btn_stake', num, App)
@@ -185,7 +185,7 @@ async function checkPool(num, App) {
 
         $(this_box + '.token_panel').show()
 
-        _print(`Farming started   : ${forHumans(-timeTilStart)} ago`, this_log)
+        _print(`Breeding started   : ${forHumans(-timeTilStart)} ago`, this_log)
 
         const totalAmount = await THIS_POOL.totalSupply() / 1e18;
         _print(`There are total ${totalAmount} ${App.Pool[num].TOKEN_NAME} staked`, this_log)
