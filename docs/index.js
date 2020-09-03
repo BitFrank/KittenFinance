@@ -198,7 +198,7 @@ async function checkPool(num, App) {
         _print(`Claimable rewards : ${toFixed(earned, 4)} 🐱 KIF`, this_log)
 
         const rewardPerToken = weekly_reward / totalAmount;
-        // var apy = ''
+        var apy = ''
         // if (num == 2) {
         //     apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100, 0)} % this week)`
         // } else if (num == 3) {
