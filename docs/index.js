@@ -50,7 +50,7 @@ function setPoolData(App) {
         TOKEN_ABI: KIF_TOKEN_ABI
     }
     App.Pool[3] = {
-        TOKEN_NAME: 'KIF-ETH UNI-V2 LP',
+        TOKEN_NAME: 'UNI-V2 LP',
         TOKEN_NAME_FULL: '<a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF-ETH UNI-V2 LP</a>',
         POOL_ADDR: UNI_POOL_ADDR,
         POOL_ABI: UNI_POOL_ABI,
@@ -188,7 +188,8 @@ async function checkPool(num, App) {
         _print(`Breeding started   : ${forHumans(-timeTilStart)} ago`, this_log)
 
         const totalAmount = await THIS_POOL.totalSupply() / 1e18;
-        _print(`There are total ${totalAmount} ${App.Pool[num].TOKEN_NAME} staked`, this_log)
+        const weekly_reward = await get_synth_weekly_rewards(THIS_POOL);
+        _print(`There are ${toFixed(totalAmount, 2)} ${App.Pool[num].TOKEN_NAME} staked, breeding ${weekly_reward} KIF this week`, this_log)
 
         const stakedAmount = await THIS_POOL.balanceOf(App.YOUR_ADDRESS) / 1e18;
         _print(`\nYou are staking ${stakedAmount} ${App.Pool[num].TOKEN_NAME} (${toFixed(stakedAmount * 100 / totalAmount, 3)}% of the pool)`, this_log)
@@ -196,9 +197,14 @@ async function checkPool(num, App) {
         const earned = await THIS_POOL.earned(App.YOUR_ADDRESS) / 1e18;
         _print(`Claimable rewards : ${toFixed(earned, 4)} 🐱 KIF`, this_log)
 
-        const weekly_reward = await get_synth_weekly_rewards(THIS_POOL);
         const rewardPerToken = weekly_reward / totalAmount;
-        _print(`Weekly estimate   : ${toFixed(rewardPerToken * stakedAmount, 2)} 🐱 KIF`, this_log)
+        var apy = ''
+        if (num == 2) {
+            apy = ` (APY ${toFixed(weekly_reward / totalAmount * 365.25/7*100, 1)} %)`
+        } else if (num == 3) {
+            apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100/2, 1)} %)`
+        }
+        _print(`Weekly estimate   : ${toFixed(rewardPerToken * stakedAmount, 2)} 🐱 KIF` + apy, this_log)
 
         const nextHalving = await getPeriodFinishForReward(THIS_POOL);
         const timeTilHalving = nextHalving - (Date.now() / 1000);
