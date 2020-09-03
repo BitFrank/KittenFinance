@@ -198,12 +198,12 @@ async function checkPool(num, App) {
         _print(`Claimable rewards : ${toFixed(earned, 4)} 🐱 KIF`, this_log)
 
         const rewardPerToken = weekly_reward / totalAmount;
-        var apy = ''
-        if (num == 2) {
-            apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100, 0)} % this week)`
-        } else if (num == 3) {
-            apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100/2, 0)} % this week)`
-        }
+        // var apy = ''
+        // if (num == 2) {
+        //     apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100, 0)} % this week)`
+        // } else if (num == 3) {
+        //     apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100/2, 0)} % this week)`
+        // }
         _print(`Weekly estimate   : ${toFixed(rewardPerToken * stakedAmount, 2)} 🐱 KIF` + apy, this_log)
 
         const nextHalving = await getPeriodFinishForReward(THIS_POOL);
