@@ -200,9 +200,9 @@ async function checkPool(num, App) {
         const rewardPerToken = weekly_reward / totalAmount;
         var apy = ''
         if (num == 2) {
-            apy = ` (APY ${toFixed(weekly_reward / totalAmount * 365.25/7*100, 1)} %)`
+            apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100, 0)} % this week)`
         } else if (num == 3) {
-            apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100/2, 1)} %)`
+            apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100/2, 0)} % this week)`
         }
         _print(`Weekly estimate   : ${toFixed(rewardPerToken * stakedAmount, 2)} 🐱 KIF` + apy, this_log)
 
