@@ -1,6 +1,6 @@
 /*!
  * KittenFinance (KIF)
- * http://kitten.finance/
+ * https://kitten.finance/
  * Copyright 2020. MIT Licensed.
  */
 
