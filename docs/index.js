@@ -16,7 +16,7 @@ $(async function () {
 
     const App = await init_ethers();
     if (App != null) {
-        _print(`Initialized ${App.YOUR_ADDRESS}`);
+        _print(`Initialized wallet ${App.YOUR_ADDRESS}`);
 
         var netInfo = await App.provider.getNetwork()
         if (netInfo.chainId != 1) {
