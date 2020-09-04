@@ -83,7 +83,7 @@ async function contractTask(task, num, App) {
     if ((task == 'btn_stake') || (task == 'btn_stake_all')) {
         if (task == 'btn_stake_all') {
             $(this_box + '.token_panel_amt').val(App.Pool[num].haveAmtFloor)
-            amt = App.Pool[num].haveAmt
+            amt = Math.max(0, App.Pool[num].haveAmt - 1) // leave a bit
         } else if (amtParse <= 0) {
             this_panel_log.html('Please enter amount.')
         } else {
