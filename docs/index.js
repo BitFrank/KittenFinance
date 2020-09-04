@@ -95,7 +95,7 @@ async function contractTask(task, num, App) {
             this_panel_log.html('approving...')
             App.Pool[num].TOKEN.approve(App.Pool[num].POOL_ADDR, ethers.BigNumber.from(maxHex))
                 .then(function (e) {
-                    this_panel_log.html('transaction sent (please refresh page afterwards)')
+                    this_panel_log.html('transaction sent (please refresh page later)')
                 })
                 .catch(function (e) {
                     this_panel_log.html('user denied.')
@@ -103,7 +103,7 @@ async function contractTask(task, num, App) {
         } else {
             contractWithSigner.stake(amt)
                 .then(function (e) {
-                    this_panel_log.html('transaction sent (please refresh page afterwards)')
+                    this_panel_log.html('transaction sent (please refresh page later)')
                 })
                 .catch(function (e) {
                     this_panel_log.html('amount error or user denied.')
@@ -112,7 +112,7 @@ async function contractTask(task, num, App) {
     } else if (task == 'btn_claim') {
         contractWithSigner.getReward()
             .then(function (e) {
-                this_panel_log.html('transaction sent (please refresh page afterwards)')
+                this_panel_log.html('transaction sent (please refresh page later)')
             })
             .catch(function (e) {
                 this_panel_log.html('error or user denied.')
@@ -124,7 +124,7 @@ async function contractTask(task, num, App) {
             amt = ethers.utils.parseUnits(amt, 18)
             contractWithSigner.withdraw(amt)
                 .then(function (e) {
-                    this_panel_log.html('transaction sent (please refresh page afterwards)')
+                    this_panel_log.html('transaction sent (please refresh page later)')
                 })
                 .catch(function (e) {
                     this_panel_log.html('amount error or user denied.')
@@ -133,7 +133,7 @@ async function contractTask(task, num, App) {
     } else if (task == 'btn_exit') {
         contractWithSigner.exit()
             .then(function (e) {
-                this_panel_log.html('transaction sent (please refresh page afterwards)')
+                this_panel_log.html('transaction sent (please refresh page later)')
             })
             .catch(function (e) {
                 this_panel_log.html('error or user denied.')
@@ -207,7 +207,7 @@ async function checkPool(num, App) {
         } else if (num == 2) {
             apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100, 0)} % this week)`
         } else if (num == 3) {
-            apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100/2, 0)} % this week)`
+            // apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100/2, 0)} % this week)`
         }
         _print(`Weekly estimate   : ${toFixed(rewardPerToken * stakedAmount, 2)} 🐱 KIF` + apy, this_log)
 
