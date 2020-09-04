@@ -94,50 +94,50 @@ async function contractTask(task, num, App) {
         if (amt.gt(approveAmt)) {
             this_panel_log.html('approving...')
             App.Pool[num].TOKEN.approve(App.Pool[num].POOL_ADDR, ethers.BigNumber.from(maxHex))
-            .then(function (e) {
-                this_panel_log.html('transaction sent (please refresh page afterwards)')
-            })
-            .catch(function (e) {
-                this_panel_log.html('user denied.')
-            })
+                .then(function (e) {
+                    this_panel_log.html('transaction sent (please refresh page afterwards)')
+                })
+                .catch(function (e) {
+                    this_panel_log.html('user denied.')
+                })
         } else {
             contractWithSigner.stake(amt)
-            .then(function (e) {
-                this_panel_log.html('transaction sent (please refresh page afterwards)')
-            })
-            .catch(function (e) {
-                this_panel_log.html('amount error or user denied.')
-            })
+                .then(function (e) {
+                    this_panel_log.html('transaction sent (please refresh page afterwards)')
+                })
+                .catch(function (e) {
+                    this_panel_log.html('amount error or user denied.')
+                })
         }
     } else if (task == 'btn_claim') {
         contractWithSigner.getReward()
-        .then(function (e) {
-            this_panel_log.html('transaction sent (please refresh page afterwards)')
-        })
-        .catch(function (e) {
-            this_panel_log.html('error or user denied.')
-        })
+            .then(function (e) {
+                this_panel_log.html('transaction sent (please refresh page afterwards)')
+            })
+            .catch(function (e) {
+                this_panel_log.html('error or user denied.')
+            })
     } else if (task == 'btn_withdraw') {
         if (amtParse <= 0) {
             this_panel_log.html('Please enter amount.')
         } else {
             amt = ethers.utils.parseUnits(amt, 18)
             contractWithSigner.withdraw(amt)
+                .then(function (e) {
+                    this_panel_log.html('transaction sent (please refresh page afterwards)')
+                })
+                .catch(function (e) {
+                    this_panel_log.html('amount error or user denied.')
+                })
+        }
+    } else if (task == 'btn_exit') {
+        contractWithSigner.exit()
             .then(function (e) {
                 this_panel_log.html('transaction sent (please refresh page afterwards)')
             })
             .catch(function (e) {
-                this_panel_log.html('amount error or user denied.')
+                this_panel_log.html('error or user denied.')
             })
-        }
-    } else if (task == 'btn_exit') {
-        contractWithSigner.exit()
-        .then(function (e) {
-            this_panel_log.html('transaction sent (please refresh page afterwards)')
-        })
-        .catch(function (e) {
-            this_panel_log.html('error or user denied.')
-        })
     }
 }
 
@@ -159,6 +159,8 @@ async function checkPool(num, App) {
 
     const timeStart = await THIS_POOL.starttime()
     const timeTilStart = timeStart - (Date.now() / 1000);
+
+    var pool_1_apy_raw = 0
 
     if (timeTilStart > 0) {
         _print(`Breeding starts    : in ${forHumans(timeTilStart)}`, this_log)
@@ -199,11 +201,14 @@ async function checkPool(num, App) {
 
         const rewardPerToken = weekly_reward / totalAmount;
         var apy = ''
-        // if (num == 2) {
-        //     apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100, 0)} % this week)`
-        // } else if (num == 3) {
-        //     apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100/2, 0)} % this week)`
-        // }
+        if (num == 1) {
+            apy = ` <span id="pool_1_apy">(checking prices...)</span>`
+            pool_1_apy_raw = weekly_reward / totalAmount * 365.25 / 7 * 100
+        } else if (num == 2) {
+            apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100, 0)} % this week)`
+        } else if (num == 3) {
+            apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100/2, 0)} % this week)`
+        }
         _print(`Weekly estimate   : ${toFixed(rewardPerToken * stakedAmount, 2)} 🐱 KIF` + apy, this_log)
 
         const nextHalving = await getPeriodFinishForReward(THIS_POOL);
@@ -212,4 +217,11 @@ async function checkPool(num, App) {
     }
     this_loader.hide()
 
+    if (num == 1) {
+        const prices = await lookUpPrices(["ethereum", "kittenfinance"]);
+        const priceETH = prices["ethereum"].usd;
+        const priceKIF = prices["kittenfinance"].usd;
+        console.log(priceETH, priceKIF, pool_1_apy_raw)
+        $('#pool_1_apy').html(` (APY ~${toFixed(pool_1_apy_raw * priceKIF / priceETH, 0)} % this week)`)
+    }
 }
