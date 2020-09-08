@@ -66,7 +66,7 @@ const toFixed = function (num, fixed) {
     }
 }
 
-const start = function (f) {
+const tryStart = function (f) {
     f().catch(e => {
         _print(e)
         console.error(e)
