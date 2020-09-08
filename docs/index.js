@@ -198,10 +198,10 @@ async function checkPool(num, App) {
         _print(`There are ${toFixed(totalAmount, 2)} ${App.Pool[num].TOKEN_NAME} staked, breeding ${weekly_reward} KIF this week`, this_log)
 
         const stakedAmount = await THIS_POOL.balanceOf(App.YOUR_ADDRESS) / 1e18;
-        _print(`\nYou are staking ${stakedAmount} ${App.Pool[num].TOKEN_NAME} (${toFixed(stakedAmount * 100 / totalAmount, 3)}% of the pool)`, this_log)
+        _print(`\nYou are staking <span class="emphasize">${toFixed(stakedAmount, 4)}</span> ${App.Pool[num].TOKEN_NAME} (${toFixed(stakedAmount * 100 / totalAmount, 3)}% of the pool)`, this_log)
 
         const earned = await THIS_POOL.earned(App.YOUR_ADDRESS) / 1e18;
-        _print(`Claimable rewards : ${toFixed(earned, 4)} 🐱 KIF`, this_log)
+        _print(`Claimable rewards : <span class="emphasize">${toFixed(earned, 4)}</span> 🐱 KIF`, this_log)
 
         const rewardPerToken = weekly_reward / totalAmount;
         var apy = ''
