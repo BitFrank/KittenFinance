@@ -83,7 +83,7 @@ async function contractTask(task, num, App) {
     if ((task == 'btn_stake') || (task == 'btn_stake_all')) {
         if (task == 'btn_stake_all') {
             $(this_box + '.token_panel_amt').val(App.Pool[num].haveAmtFloor)
-            if (App.Pool[num].haveAmt.gte(1))
+            if ((App.Pool[num].haveAmt.gte(1)) && (num > 1))
                 amt = App.Pool[num].haveAmt.sub(1) // leave a bit
             else
                 amt = App.Pool[num].haveAmt
@@ -164,6 +164,7 @@ async function checkPool(num, App) {
     const timeTilStart = timeStart - (Date.now() / 1000);
 
     var pool_1_apy_raw = 0
+    var pool_3_apy_raw = 0
 
     if (timeTilStart > 0) {
         _print(`Breeding starts    : in ${forHumans(timeTilStart)}`, this_log)
@@ -210,7 +211,8 @@ async function checkPool(num, App) {
         } else if (num == 2) {
             apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100, 0)} % this week)`
         } else if (num == 3) {
-            // apy = ` (APY ~${toFixed(weekly_reward / totalAmount * 365.25/7*100/2, 0)} % this week)`
+            apy = ` <span id="pool_3_apy">(checking pool...)</span>`
+            pool_3_apy_raw = weekly_reward * 365.25 / 7 * 100
         }
         _print(`Weekly estimate   : ${toFixed(rewardPerToken * stakedAmount, 2)} 🐱 KIF` + apy, this_log)
 
@@ -224,7 +226,11 @@ async function checkPool(num, App) {
         const prices = await lookUpPrices(["ethereum", "kittenfinance"]);
         const priceETH = prices["ethereum"].usd;
         const priceKIF = prices["kittenfinance"].usd;
-        console.log(priceETH, priceKIF, pool_1_apy_raw)
+        // console.log(priceETH, priceKIF, pool_1_apy_raw)
         $('#pool_1_apy').html(` (APY ~${toFixed(pool_1_apy_raw * priceKIF / priceETH, 0)} % this week)`)
+    } else if (num == 3) {
+        const uniAmt = await App.Pool[2].TOKEN.balanceOf(UNI_TOKEN_ADDR) / 1e18
+        const pool_3_apy = pool_3_apy_raw / parseFloat(uniAmt)
+        $('#pool_3_apy').html(` (APY ~${toFixed(pool_3_apy, 0)} % this week)`)
     }
 }
