@@ -24,6 +24,10 @@ p {
     text-align: center;
 }
 
+.emphasize {
+    font-weight: bold;
+}
+
 .button {
     -webkit-box-align: center;
     align-items: center;
