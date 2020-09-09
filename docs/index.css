@@ -1,10 +1,16 @@
 html {
     margin: 0;
     height: 100%;
+    width: 100%;
 }
 
 body {
-    background-image: linear-gradient(180deg, rgba(255, 250, 220, 1) 13%, rgba(255, 250, 220, 1) 90%);
+    background-color: rgba(255, 250, 220, 1);
+    /* background: url("bg2.jpg") no-repeat center center fixed;  */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     font-family: "Noto Sans", sans-serif;
     font-size: 15px;
     margin: 0;
@@ -26,6 +32,10 @@ p {
 
 .emphasize {
     font-weight: bold;
+}
+
+.no_underline a {
+    text-decoration: none;
 }
 
 .break {
@@ -81,14 +91,27 @@ p {
     outline: none;
 }
 
-#header {
+.navbar_wrap {
+    background: #380;
+    color: white;
+    padding: 0.5em 0;
+    width: 100%;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    padding: 1em 0;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 1em;
+    width: 1200px;
+    max-width: 95%;
+    margin: 0 auto;
+}
+.navbar a{
+    color: white !important;
+}
+.bottom_bar a {
+    padding:1em 0;
 }
 
 #token_boxes {
@@ -116,8 +139,9 @@ p {
 }
 
 #wrap {
-    margin: 0 auto;
+    margin: 1em auto;
     width: 1200px;
+    max-width: 95%;
 }
 
 #log {
@@ -135,13 +159,17 @@ p {
     width: 100%;
 }
 
-/* a:link {
-    text-decoration: none;
+a:link {
+    color: black;
 }
 
 a:visited {
-    text-decoration: none;
-} */
+    color: black;
+}
+
+a:hover{
+    color: #f00 !important;
+}
 
 .loader {
     display: inline-block;
