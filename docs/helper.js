@@ -8,7 +8,7 @@
 
 async function init_ethers() {
     const App = {}
-    _print("Connecting MetaMask...")
+    document.getElementById('log').innerHTML = "Connecting MetaMask... "
 
     let isMetaMaskInstalled = true
 
