@@ -22,27 +22,43 @@
     </div>
     </div>
     <div id="wrap">
-        <pre id="log"></pre>
+        <div class="flexbox">
+            <pre id="log" style="width:45%"></pre>
+            <pre id="block_stat" style="width:45%">Block #<span id="blockNumber"> (connecting...)</span></pre>
+        </div>
         <div class="loader" id="main_loader"></div>
 
-        <div id="token_boxes">
+        <div id="token_boxes" class="flexbox">
             <div class="token_box" id="token_box_1">
                 <pre class="token_log"></pre>
+                <pre class="token_log_2"></pre>
                 <div class="token_loader loader"></div>
-                <div class="token_panel" style="margin-top:2em">
+                <div class="token_panel flexbox" style="margin-top:2em;">
                     <button class="button btn_stake">Stake</button>
                     <button class="button btn_claim" title="claim rewards">Claim Rewards</button>
                     <button class="button btn_withdraw">Unstake</button>
                     <button class="button btn_exit">Unstake & Claim All</button>
                     <div class="input_wrap break" style="width:100%; margin-top:1em">
                         <input placeholder="0" class="input token_panel_amt" value="">
-                        <button class="button btn_stake_all" style="position:relative; right:-8px">Stake All</button>
+                        <button class="button btn_stake_all" style="position:relative; right:-8px; display:none">Stake All</button>
                     </div>
                     <pre class="token_panel_log"></pre>
                 </div>
             </div>
         </div>
-        <!-- <pre id="event_log" class="no_underline" style="margin-bottom: 2em;"></pre> -->
+        <div id="trade_boxes" class="flexbox">
+            <div class="trade_box"><pre id="event_log" class="no_underline" style="margin-bottom: 2em;"></pre></div>
+            <div class="trade_box flexbox trade_panel">
+                <!-- <button class="button btn_buy">Buy</button>
+                <div class="input_wrap">
+                    <input placeholder="0" class="input trade_panel_amt" value="">
+                </div>
+                <button class="button btn_sell">Sell</button> -->
+                <div class="break">
+                    <pre class="trade_panel_log">UniSwap reference price = <span id="price_ref">(reading...)</span></pre>
+                </div>
+            </div>
+        </div>
         <div style="border-top: 1px solid #ddd; padding-top: 2em; line-height: 2;">
 FAQ:
 <br>1. To swap between WETH and ETH, <a href="https://relay.radar.tech" target="_blank">click here</a>. It's always 1:1 and there's zero loss.
