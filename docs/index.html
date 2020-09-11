@@ -47,13 +47,18 @@
             </div>
         </div>
         <div id="trade_boxes" class="flexbox">
-            <div class="trade_box"><pre id="event_log" class="no_underline" style="margin-bottom: 2em;"></pre></div>
+            <div class="trade_box">
+                <table id="event_table">
+                    <tr id="event_table_head"><th>time</th><th>event</th><th>amt</th><th>user</th><th>detail</th></tr>
+                </table>
+                <pre id="event_log" class="no_underline" style="margin-bottom: 2em;"></pre>
+            </div>
             <div class="trade_box flexbox trade_panel">
-                <!-- <button class="button btn_buy">Buy</button>
+                <!-- <button class="button btn_buy" disabled="true">Buy</button>
                 <div class="input_wrap">
                     <input placeholder="0" class="input trade_panel_amt" value="">
                 </div>
-                <button class="button btn_sell">Sell</button> -->
+                <button class="button btn_sell" disabled="true">Sell</button> -->
                 <div class="break">
                     <pre class="trade_panel_log">UniSwap reference price = <span id="price_ref">(reading...)</span></pre>
                 </div>
