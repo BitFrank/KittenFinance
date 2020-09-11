@@ -40,7 +40,6 @@ p {
 
 .break {
     flex-basis: 100%;
-    height: 0;
 }
 
 .button {
@@ -113,7 +112,7 @@ p {
     padding:1em 0;
 }
 
-#token_boxes {
+.flexbox {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,16 +120,18 @@ p {
     flex-wrap: wrap
 }
 
+#trade_boxes {
+    align-items: top;
+}
+.trade_box {
+    width: 45%;
+}
 .token_box {
     width: 45%;
 }
 
-.token_panel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap
+.trade_panel button {
+    width: 24%;
 }
 
 .token_panel button {
@@ -144,8 +145,8 @@ p {
 }
 
 #log {
-    margin: 0 auto;
     color: #000;
+    margin: 0;
 }
 
 #footer {
