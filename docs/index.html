@@ -24,7 +24,7 @@
     <div id="wrap">
         <div class="flexbox">
             <pre id="log" style="width:45%"></pre>
-            <pre id="block_stat" style="width:45%">Block #<span id="blockNumber"> (connecting...)</span></pre>
+            <pre id="block_stat" style="width:45%">Block #<span id="blockNumber"> (checking MetaMask...)</span></pre>
         </div>
         <div class="loader" id="main_loader"></div>
 
@@ -38,11 +38,22 @@
                     <button class="button btn_claim" title="claim rewards">Claim Rewards</button>
                     <button class="button btn_withdraw">Unstake</button>
                     <button class="button btn_exit">Unstake & Claim All</button>
-                    <div class="input_wrap break" style="width:100%; margin-top:1em">
-                        <input placeholder="0" class="input token_panel_amt" value="">
-                        <button class="button btn_stake_all" style="position:relative; right:-8px; display:none">Stake All</button>
+                    <div class="input_wrap break" style="margin-top:1em">
+                        <input placeholder="0" style="width:68.76%" class="input token_panel_amt" value="">
+                        <button class="button btn_stake_all" disabled="true">Stake All</button>
                     </div>
                     <pre class="token_panel_log"></pre>
+                </div>
+            </div>
+            <div class="token_box" id="token_box_trade">
+                <div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000000" lcw-color-pr="#55cc00" lcw-color-bg="#fffadc" lcw-border-w="1" ></div>
+                <div class="flexbox trade_panel" style="margin-top: 1em">
+                    <!-- <button class="button btn_buy" disabled="true">Buy</button>
+                    <div class="input_wrap">
+                        <input placeholder="0" class="input trade_panel_amt" value="">
+                    </div>
+                    <button class="button btn_sell" disabled="true">Sell</button> -->
+                    <pre id="trade_panel_log">checking UniSwap...</pre>
                 </div>
             </div>
         </div>
@@ -53,17 +64,11 @@
                 </table>
                 <pre id="event_log" class="no_underline" style="margin-bottom: 2em;"></pre>
             </div>
-            <div class="trade_box flexbox trade_panel">
-                <!-- <button class="button btn_buy" disabled="true">Buy</button>
-                <div class="input_wrap">
-                    <input placeholder="0" class="input trade_panel_amt" value="">
-                </div>
-                <button class="button btn_sell" disabled="true">Sell</button> -->
-                <a style="position:relative; top: -1em; width:100%; text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">
+            <div class="trade_box">
+                <a style="width:100%; text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">
                     <button class="button" style="width:100%">Click here to get 🐱 KIF on UniSwap (limited 42000 supply)</button>
                 </a>
-                <div class="break" style="margin-bottom: 1em;">
-                    <pre id="trade_panel_log">checking UniSwap...</pre>
+                <div style="margin: 1em 0;">
                     <a href="https://discord.gg/pMaZswC" target="_blank">Click here to join our Discord (we have a great community)</a>
                 </div>
             </div>
@@ -105,6 +110,7 @@ FAQ:
     <script type="text/javascript" src="./ethers-5.0.umd.min.js"></script>
     <script type="text/javascript" src="./helper.js"></script>
     <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
 </body>
 
 </html>
