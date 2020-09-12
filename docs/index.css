@@ -108,6 +108,10 @@ table, th, td {
 .input_wrap .button {
 }
 
+.trade_panel select {
+    overflow-y: auto;
+}
+
 .navbar_wrap {
     background: #380;
     color: white;
