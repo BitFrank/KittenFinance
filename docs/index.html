@@ -48,7 +48,7 @@
             <div class="token_box" id="token_box_trade" style="margin-top: 2em">
                 <div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000000" lcw-color-pr="#55cc00" lcw-color-bg="#fffadc" lcw-border-w="1" ></div>
                 <div class="flexbox trade_panel" style="margin-top: 1em">
-                    <!-- <div class="input_wrap" style="width: 30%;"><input placeholder="0" class="input trade_panel_amt" value="" style="width: 100%;"></div>
+                    <div class="input_wrap" style="width: 30%;"><input placeholder="0" class="input trade_panel_amt" value="" style="width: 100%;"></div>
                     <select size="3">  
                         <option selected>ETH</option>  
                         <option>WETH</option>  
@@ -58,10 +58,14 @@
                     <select size="3">  
                         <option>ETH</option>  
                         <option>WETH</option>  
-                        <option selected>KIF</option>  
+                        <option selected>KIF</option>
                     </select>
-                    <button class="button btn_swap" disabled="true">Trade</button> -->
-                    <pre id="trade_panel_log">checking UniSwap...</pre>
+                    <button class="button btn_swap" disabled="true">Trade (coming soon)</button>
+                    <pre style="width: 100%;">
+<span id="trade_panel_wallet">You have <span class="user_wallet_eth">(checking)</span> ETH, <span class="user_wallet_weth">(checking)</span> WETH, <span class="user_wallet_kif">(checking)</span> KIF in MetaMask</span>
+<span id="trade_panel_log" style="width: 100%;"></span>
+<span id="trade_panel_price" style="width: 100%;">UniSwap KIF/ETH : <b><span id="price_ref">(checking...)</span></b>, liquidity : <span id="liq_ref">(checking...)</span></span>
+</pre>
                 </div>
             </div>
         </div>
