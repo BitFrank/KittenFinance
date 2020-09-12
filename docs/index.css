@@ -69,17 +69,6 @@ table, th, td {
     width: 100%;
 }
 
-.input_wrap {
-    -webkit-box-align: center;
-    align-items: center;
-    background-color: rgb(240, 240, 231);
-    border-radius: 12px;
-    box-shadow: rgb(220, 214, 207) 2px 2px 4px inset, rgb(244, 244, 242) -3px -3px 6px inset;
-    display: flex;
-    height: 72px;
-    padding: 0px 16px;
-}
-
 .button:hover {
     background: #8E0;
 }
@@ -94,16 +83,29 @@ table, th, td {
     cursor: default;
 }
 
+.input_wrap {
+    -webkit-box-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    height: 56px;
+}
+
 .input {
     background: none;
     border: 0px;
-    color: rgb(91, 57, 38);
+    color: rgb(0, 0, 0);
+    background-color: rgb(240, 240, 231);
+    border-radius: 12px;
+    box-shadow: rgb(220, 214, 207) 2px 2px 4px inset, rgb(244, 244, 242) -3px -3px 6px inset;
     font-size: 18px;
-    flex: 1 1 0%;
     height: 56px;
     margin: 0px;
-    padding: 0px;
+    padding: 0px 16px;
     outline: none;
+}
+.input_wrap .button {
 }
 
 .navbar_wrap {
@@ -145,6 +147,7 @@ table, th, td {
 }
 .token_box {
     width: 45%;
+    margin-bottom: 2em;
 }
 
 .trade_panel button {
