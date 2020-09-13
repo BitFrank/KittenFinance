@@ -49,14 +49,14 @@
                 <div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000000" lcw-color-pr="#55cc00" lcw-color-bg="#fffadc" lcw-border-w="1" ></div>
                 <div class="flexbox trade_panel" style="margin-top: 1em">
                     <div class="input_wrap" style="width: 30%;"><input placeholder="amount" class="input trade_panel_amt" value="" style="width: 100%;"></div>
-                    <select id="trade_token_in" size="2">  
-                        <!-- <option>ETH</option>   -->
-                        <option selected>WETH</option>  
+                    <select id="trade_token_in" size="3">  
+                        <option selected>ETH</option>  
+                        <option>WETH</option>  
                         <option>KIF</option>  
                     </select>
                     <span>to</span>
-                    <select id="trade_token_out" size="2">  
-                        <!-- <option>ETH</option>   -->
+                    <select id="trade_token_out" size="3">  
+                        <option>ETH</option>  
                         <option>WETH</option>  
                         <option selected>KIF</option>
                     </select>
@@ -89,7 +89,8 @@
         </div>
         <div style="border-top: 1px solid #ddd; padding-top: 2em; line-height: 2;">
 FAQ:
-<br>1. <b>The first deposit to a pool needs an "approval" tx. Wait for it to confirm</b>, then refresh the page to stake for real. 
+<br>1. You can <b><a href="https://metamask.io/download.html" target="_blank">download MetaMask app</a></b> to use Kitten.Finance on iOS / Android devices. 
+<br>1. The first deposit to a pool needs an "approval" tx. <b>Wait for it to confirm</b>, then refresh the page to stake for real. 
 <br>2. You can directly trade KIF/WETH or provide KIF+WETH liquidity on UniSwap. This actually saves gas, <b>so there's no need to unwrap WETH</b>. To manually swap between WETH and ETH, <a href="https://relay.radar.tech" target="_blank">click here</a>. The rate is always always 1 ETH = 1 WETH. Remember to leave some ETH for paying gas.
 <br>3. NEVER NEVER set a high "slippage tolerance %" when trading on Uniswap, or bots will frontrun you. <b>Better use 0.5% slippage and high gas. Click the top-right button in Uniswap to set it.</b> That 0.5% is the extra slippage that can occur if someone frontrun you. So if you set the slippage tolerance too high, bots will be happy to do that.
 <br>4. About the pools. Pool 1 has zero risk and lowest return. If KIF remains stable or grows a bit / drops a bit, then pool 3 is better than pool 2. If KIF rises a lot / drops a lot then pool 2 is better. Moreover pool 3 can be used to accumulate KIF when it drops. So, the selection of pools depends on your view of future KIF prices. It might be a good idea to diversify.
@@ -108,6 +109,7 @@ FAQ:
 <br>4. governing and receiving dividends from future projs such as vault, lending, etc.
 <br>5. the total supply of KIF is fixed at 42000 (21000 in first week, halving every week)
 <br>6. there will be a secondary utility token farmable by making markets in KittenSwap
+<br>7. you'll be able to stake KIF for other projects, just as you can stake YFI for lots of projects
 <br>
 <br>KittenFinance is a serious project. I am focusing on KittenSwap at the moment, which is built from scratch with some innovations, instead of being another fork.
 <br>
