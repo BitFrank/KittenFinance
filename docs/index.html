@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="index.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta id="viewport" name="viewport" content="width=1500">
     <script>
         var clicky_site_ids = clicky_site_ids || [];
         clicky_site_ids.push(101276598);
@@ -32,19 +32,11 @@
 
         <div id="main-wrap">
             <div id="main">
-                <div class="flexbox">
-                    <pre id="log" style="width:45%"></pre>
-                    <pre id="block_stat"
-                        style="width:45%">Block #<span id="blockNumber"> (checking MetaMask...)</span></pre>
-                </div>
-                <div class="loader" id="main_loader"></div>
-
                 <div id="token_boxes" class="flexbox" style="align-items: flex-start">
-                    <div class="token_box" id="token_box_1">
+                    <div class="token_box box" id="token_box_1">
                         <pre class="token_log"></pre>
-                        <pre class="token_log_2"></pre>
                         <div class="token_loader loader"></div>
-                        <div class="token_panel flexbox" style="margin-top:2em;">
+                        <div class="token_panel flexbox" style="margin-top:1em;">
                             <button class="button btn_stake">Stake</button>
                             <button class="button btn_claim" title="claim rewards">Claim Rewards</button>
                             <button class="button btn_withdraw">Unstake</button>
@@ -78,25 +70,9 @@
                             </select>
                             <button class="button btn_swap" disabled="true">Swap</button>
                             <pre style="width: 100%;">
-<span id="trade_panel_wallet">You have <span class="user_wallet_eth">(checking)</span> ETH, <span class="user_wallet_weth">(checking)</span> WETH, <span class="user_wallet_kif">(checking)</span> KIF in MetaMask</span>
-<br><span id="trade_panel_price" style="width: 100%;">UniSwap KIF/ETH <b><span id="price_ref">(checking...)</span></b>, liq. <span id="liq_ref">(checking...)</span></span>
-<br><span style="width: 100%;"><span id="trade_panel_log"></span> <span id="swap_log" style="color:darkred"></span></span>
+<br><span id="trade_panel_wallet">You have <span class="user_wallet_eth">?</span> ETH, <span class="user_wallet_weth">?</span> WETH, <span class="user_wallet_kif">?</span> KIF in MetaMask</span>
+<br><span style="width: 100%;"><span id="trade_panel_log"></span> <span id="swap_log" style="color:darkred"></span></span><br>
 </pre>
-                        </div>
-                    </div>
-                </div>
-                <div id="trade_boxes" class="flexbox line_above">
-                    <div class="trade_box" style="margin-top: 1em">
-                        <a style="width:100%; text-decoration: none;"
-                            href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa"
-                            target="_blank">
-                            <button class="button" style="width:100%;">Click here to get 🐱 KIF on UniSwap (fixed 42000
-                                supply)</button>
-                        </a>
-                        <div style="margin: 1em 0;" class="flexbox">
-                            <a href="https://discord.gg/pMaZswC" target="_blank">Join our Discord</a>
-                            <a href="https://www.kittenswap.org/" target="_blank">KittenSwap</a>
-                            <a href="https://t.me/kitten_finance_group" target="_blank">Join our Telegram</a>
                         </div>
                     </div>
                 </div>
@@ -134,6 +110,13 @@
                 </div>
             </div>
             <div id="sidebar">
+                <div style="margin-bottom: 1em;">
+                    <div class="loader" id="main_loader"></div>
+                    <div id="log"></div><br>
+                    <span id="trade_panel_price" style="width: 100%;">UniSwap KIF/ETH <b><span
+                                id="price_ref">(checking...)</span></b>, liq. <span
+                            id="liq_ref">(checking...)</span></span>
+                </div>
                 <table id="event_table" style="width:100%;">
                     <tr id="event_table_head">
                         <th>time</th>
@@ -143,7 +126,21 @@
                         <th>detail</th>
                     </tr>
                 </table>
-                <pre id="event_log" class="no_underline" style="margin-bottom: 2em;"></pre>
+                <br>
+                <div id="event_log" class="no_underline" style="margin-bottom: 2em;"></div>
+                <div style="margin-top: 1em">
+                    <a style="width:100%; text-decoration: none;"
+                        href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa"
+                        target="_blank">
+                        <button class="button" style="width:100%;">Click here to get 🐱 KIF on UniSwap (fixed 42000
+                            supply)</button>
+                    </a>
+                    <div style="margin: 1em 0;" class="flexbox">
+                        <a href="https://discord.gg/pMaZswC" target="_blank">Join our Discord</a>
+                        <a href="https://www.kittenswap.org/" target="_blank">KittenSwap</a>
+                        <a href="https://t.me/kitten_finance_group" target="_blank">Join our Telegram</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="footer">
@@ -242,8 +239,7 @@
                 <br>3. buybacks from KittenSwap fees
                 <br>4. governing and receiving dividends from future projs such as vault, lending, etc.
                 <br>5. the total supply of KIF is fixed at 42000 (21000 in first week, halving every week)
-                <br>6. there will be a secondary utility token farmable by making markets in KittenSwap
-                <br>7. you'll be able to stake KIF for other projects, just as you can stake YFI for various
+                <br>6. you'll be able to stake KIF for other projects, just as you can stake YFI for various
                 projects
                 <br><br>
             </div>
@@ -257,7 +253,6 @@
             </div>
         </div>
     </div>
-
     <script type="text/javascript" src="./jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="./ethers-5.0.umd.min.js"></script>
     <script type="text/javascript" src="./helper.js"></script>
