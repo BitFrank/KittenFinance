@@ -361,9 +361,9 @@ const forHumans = function (seconds) {
     const levels = [
         [Math.floor(seconds / 31536000), 'years'],
         [Math.floor((seconds % 31536000) / 86400), 'days'],
-        [Math.floor(((seconds % 31536000) % 86400) / 3600), 'hours'],
-        [Math.floor((((seconds % 31536000) % 86400) % 3600) / 60), 'minutes'],
-        [Math.floor((((seconds % 31536000) % 86400) % 3600) % 60), 'seconds'],
+        [Math.floor(((seconds % 31536000) % 86400) / 3600), ':'],
+        [Math.floor((((seconds % 31536000) % 86400) % 3600) / 60), ':'],
+        [Math.floor((((seconds % 31536000) % 86400) % 3600) % 60), ''],
     ]
     let returntext = ''
 
