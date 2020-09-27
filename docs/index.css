@@ -44,98 +44,149 @@ html {
     line-height: 2;
 }
 
-#header {
-    font-size: 56%;
-}
 
-#navbar_title {
-    font-size: 13px;
-}
 
-#navbar_title img {
-    height: 13px;
-    position: relative;
-    top: 1px;
-}
-
-pre {
-    font-size: 9.5px;
-    font-family: Lucida Console, Courier, monospace;
+body {
+    font-size: 15px;
 }
 
 .button {
-    font-size: 12px;
+    font-size: 16px;
 }
 
-body {
-    font-size: 11px;
+pre {
+    margin: 0;
+    font-size: 15px;
+    font-family: Lucida Console, Courier, monospace;
+}
+
+#main {
+    border-right: 1px solid #eed;
 }
 
 .livecoinwatch-widget-1 {
-    transform: scale(0.8);
+    transform: scale(1.0);
 }
 
-@media screen and (min-width: 1000px) {
+#header {
+    font-size: 100%;
+}
 
-    body {
-        font-size: 15px;
+#navbar_title {
+    font-size: 40px;
+}
+
+#navbar_title img {
+    height: 40px;
+    position: relative;
+    top: 5px;
+}
+
+#main-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.trade_box {
+    width: 48%;
+    margin: 0 auto;
+}
+
+.token_box {
+    width: 48%;
+}
+
+#token_box_3,
+#token_box_103 {
+    margin-top: 1.5em;
+}
+
+@media screen and (max-width: 1599px) {
+    #navbar_title {
+        font-size: 32px;
     }
-
-    .button {
-        font-size: 16px;
+    
+    #navbar_title img {
+        height: 32px;
+        top: 4px;
     }
 
     pre {
-        font-size: 15px;
-        font-family: Lucida Console, Courier, monospace;
+        font-size: 13px;
     }
-
-    #main {
-        border-right: 1px solid #eed;
+    
+    .button {
+        font-size: 14px;
     }
-
+    
+    body {
+        font-size: 13px;
+    }
+    
     .livecoinwatch-widget-1 {
-        transform: scale(1.0);
+        transform: scale(0.8);
     }
+}
 
-    #header {
-        font-size: 100%;
-    }
 
+@media screen and (max-width: 1450px) {
     #navbar_title {
-        font-size: 40px;
+        font-size: 26px;
     }
-
+    
     #navbar_title img {
-        height: 40px;
-        top: 5px;
+        height: 26px;
+        top: 3px;
     }
-
-    #main-wrap {
-        display: flex;
-        flex-wrap: wrap;
+    
+    pre {
+        font-size: 11px;
     }
-
-    .trade_box {
-        width: 45%;
-        margin: 0 auto;
+    
+    .button {
+        font-size: 14px;
     }
-
-    .token_box {
-        width: 45%;
+    
+    body {
+        font-size: 12px;
     }
+    
+    .livecoinwatch-widget-1 {
+        transform: scale(0.8);
+    }
+}
 
-    #token_box_3,
-    #token_box_103 {
-        margin-top: 1.5em;
+@media screen and (max-width: 1300px) {
+    #navbar_title {
+        font-size: 20px;
+    }
+    
+    #navbar_title img {
+        height: 20px;
+        top: 2px;
+    }
+    
+    pre {
+        font-size: 10px;
+    }
+    
+    .button {
+        font-size: 11.5px;
+    }
+    
+    body {
+        font-size: 10.5px;
+    }
+    
+    .livecoinwatch-widget-1 {
+        transform: scale(0.8);
     }
 }
 
 .navbar_wrap {
     background: #380;
     color: white;
-    padding: 0.5em 0;
-    width: 100%;
+    padding: 0.5em 1em;
 }
 
 .navbar {
@@ -143,7 +194,7 @@ body {
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    max-width: 105rem;
+    max-width: 108rem;
     margin: 0 auto;
 }
 
@@ -166,6 +217,11 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* .box {
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+} */
 
 p {
     margin: 0;
