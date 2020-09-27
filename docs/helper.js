@@ -8,7 +8,7 @@
 
 async function init_ethers() {
     const App = {}
-    _print("Connecting MetaMask...")
+    _print("Connecting MetaMask (please unlock it)...")
     // document.getElementById('log').innerHTML = "Connecting MetaMask... "
 
     let isMetaMaskInstalled = true
@@ -94,6 +94,23 @@ const _print = function (message, logger) {
                 (JSON && JSON.stringify ? JSON.stringify(arguments[i], undefined, 2) : arguments[i]) + '<br />'
         } else {
             logger.innerHTML += arguments[i] + '<br />'
+        }
+    }
+}
+
+const _print_force = function (message, logger) {
+    if (!logger) {
+        logger = document.getElementById('log')
+    }
+
+    for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] instanceof Element) 
+            continue
+        if (typeof arguments[i] == 'object') {
+            logger.innerHTML =
+                (JSON && JSON.stringify ? JSON.stringify(arguments[i], undefined, 2) : arguments[i]) + '<br />'
+        } else {
+            logger.innerHTML = arguments[i] + '<br />'
         }
     }
 }
