@@ -40,7 +40,7 @@
                             <button class="button btn_stake">Stake</button>
                             <button class="button btn_claim" title="claim rewards">Claim Rewards</button>
                             <button class="button btn_withdraw">Unstake</button>
-                            <button class="button btn_exit">Unstake all & Claim</button>
+                            <button class="button btn_exit">Unstake All & Claim</button>
                             <div class="input_wrap break" style="margin-top:1em">
                                 <input placeholder="amount" style="width:68.76%" class="input token_panel_amt" value="">
                                 <button class="button btn_stake_all" disabled="true">Stake All</button>
@@ -103,8 +103,6 @@
                         <br><br><a
                             href="https://etherscan.io/address/0xffc5821c945b1e617d3e743e2575b68f4ffc1422#writeContract"
                             target="_blank">[REBASE (call between XX:00:00 and XX:02:59 every hour)]</a>
-                        <br><br>total supply <b><span id="kbase_total_supply">?</span></b> M kBASEv0, uniswap price
-                        <b><span id="kbase_price_usdc">?</span></b> USDC
                     </div>
                 </div>
                 <div id="footer_help" class="line_above">
@@ -209,20 +207,23 @@
                 </div>
             </div>
             <div id="sidebar">
-                <div style="margin-bottom: 1em;">
+                <div style="margin-bottom: 1.5em;">
                     <div class="loader" id="main_loader"></div>
                     <div id="log"></div><br>
-                    <span id="trade_panel_price" style="width: 100%;">UniSwap KIF/ETH <b><span
-                                id="price_ref">(checking...)</span></b>, liq. <span
+                    <span id="trade_panel_price" style="width: 100%;">KIF : price <b><span
+                                id="price_ref">(checking...)</span></b> ETH, liq. <span
                             id="liq_ref">(checking...)</span></span>
+                    <br><br>kBASEv0 : supply <span id="kbase_total_supply">?</span> M, price
+                    <b><span id="kbase_price_usdc">?</span></b> USDC
                 </div>
-                <table id="event_table" style="width:100%;">
+                <table id="event_table" style="width:100%">
                     <tr id="event_table_head">
                         <th>time</th>
                         <th>event</th>
                         <th>amt</th>
                         <th>user</th>
                         <th>detail</th>
+                        <th>gas</th>
                     </tr>
                 </table>
                 <br>
