@@ -57,7 +57,7 @@ body {
 pre {
     margin: 0;
     font-size: 15px;
-    font-family: Lucida Console, Courier, monospace;
+    font-family: Consolas, Menlo, Courier, monospace;
 }
 
 #main {
@@ -101,7 +101,7 @@ pre {
     #navbar_title {
         font-size: 32px;
     }
-    
+
     #navbar_title img {
         height: 32px;
         top: 4px;
@@ -110,15 +110,15 @@ pre {
     pre {
         font-size: 14px;
     }
-    
+
     .button {
         font-size: 14px;
     }
-    
+
     body {
         font-size: 14px;
     }
-    
+
     .livecoinwatch-widget-1 {
         transform: scale(0.8);
     }
@@ -129,24 +129,24 @@ pre {
     #navbar_title {
         font-size: 26px;
     }
-    
+
     #navbar_title img {
         height: 26px;
         top: 3px;
     }
-    
+
     pre {
         font-size: 13px;
     }
-    
+
     .button {
         font-size: 14px;
     }
-    
+
     body {
         font-size: 13px;
     }
-    
+
     .livecoinwatch-widget-1 {
         transform: scale(0.8);
     }
@@ -156,24 +156,24 @@ pre {
     #navbar_title {
         font-size: 20px;
     }
-    
+
     #navbar_title img {
         height: 20px;
         top: 2px;
     }
-    
+
     pre {
         font-size: 11.5px;
     }
-    
+
     .button {
         font-size: 11.5px;
     }
-    
+
     body {
         font-size: 11.5px;
     }
-    
+
     .livecoinwatch-widget-1 {
         transform: scale(0.8);
     }
@@ -379,10 +379,12 @@ a:hover {
 
 .videoWrapper {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
+    /* 16:9 */
     padding-top: 25px;
     height: 0;
 }
+
 .videoWrapper iframe {
     position: absolute;
     top: 0;
