@@ -5,6 +5,20 @@
  * @author Jongseung Lim -- https://yieldfarming.info
  * Copyright 2020. MIT Licensed.
  */
+ 
+Date.prototype.HHMMSS = function () {
+    var MM = this.getMonth() + 1;
+    var dd = this.getDate();
+    var hh = this.getHours();
+    var mm = this.getMinutes();
+    var ss = this.getSeconds();
+
+    return (dd > 9 ? '' : '0') + dd + '-' + ([
+            (hh > 9 ? '' : '0') + hh,
+            (mm > 9 ? '' : '0') + mm,
+            (ss > 9 ? '' : '0') + ss
+        ].join(':'));
+};
 
 async function init_ethers() {
     const App = {}
@@ -95,6 +109,18 @@ const _print = function (message, logger) {
         } else {
             logger.innerHTML += arguments[i] + '<br />'
         }
+    }
+}
+
+const _my_print = function (message, logger) {
+    if (!logger) {
+        logger = document.getElementById('log')
+    }
+
+    for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] instanceof Element) 
+            continue
+        logger.innerHTML = (new Date()).HHMMSS() + ' ' + arguments[i] + '<br />' + logger.innerHTML
     }
 }
 
