@@ -16,15 +16,16 @@
     <div id="wrap" style="padding: 2em;">
         AlphaSwap Testing UI for <b>Ropsten Testnet</b>
 <br><br>
-The essence of AlphaSwap : Bet anything for anything anywhere.
+The essence of AlphaSwap : Bet anything for anything anywhere. <b>This is a testing UI for testers, and not meant for normal users.</b>
 <br><br>
         <div style="line-height: 2.0;">
-For the test contract, 1 epoch = 10 minutes (from XX:X0:XX ~ XX:X9:59).
+For the test contract, <b>1 epoch = 10 minutes (from XX:X0:XX ~ XX:X9:59).</b>
 <br>For example, assume current epoch is from 08:30:00 ~ 08:39:59. In this epoch, you put your stakes on the difference of:
 <br>1. the TWAP (time-weighed average price) between [the last trade before 08:30:00] and [the last trade before 08:40:00].
 <br>2. the TWAP (time-weighed average price) between [the last trade before 08:40:00] and [the last trade before 08:50:00].
 <br>If you think 2 > 1, you are bullish. If you think 1 > 2, you are bearish. Winners take all stakes pro rata. If 1 = 2, then everyone gets their stakes back.
-<br>Note the contract reads uniswap price only when [sync] or [payoff] is called. This needs to happen ASAP at the beginning of each epoch. Traders have incentive to do it.
+<br>Note: the contract reads uniswap TWAP only when [sync] or [payoff] is called. <b>This only need to happen once at the beginning of each epoch.</b> Traders have incentive to do it.
+<br>Note: if no one has done any trade after the last epoch began, then you can not call [sync] or [payoff] because there is no change in price. <b>So do some trade.</b>
 <br><br>
 Switch Metamask to Ropsten Testnet, and:
 <ul type="round">
