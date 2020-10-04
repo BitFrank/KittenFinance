@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../index.css">
+    <style>
+        .flexbox span {
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" style="padding: 2em;">
+        AlphaSwap Testing UI for <b>Ropsten Testnet</b>
+        <br><br>
+        <div style="line-height: 2.0;">
+For the test contract, 1 epoch = 10 minutes (from XX:X0:XX ~ XX:X9:59).
+<br>For example, assume current epoch is from 08:30:00 ~ 08:39:59. In this epoch, you put your stakes on the difference of:
+<br>1. the TWAP (time-weighed average price) between [the last trade before 08:30:00] and [the last trade before 08:40:00].
+<br>2. the TWAP (time-weighed average price) between [the last trade before 08:40:00] and [the last trade before 08:50:00].
+<br>If you think 2 > 1, you are bullish. If you think 1 > 2, you are bearish. Winners take all stakes pro rata. If 1 = 2, then everyone gets their stakes back.
+<br>Note the contract reads uniswap price only when [sync] or [payoff] is called. This needs to happen ASAP at the beginning of each epoch. Traders have incentive to do it.
+<br>Switch Metamask to Ropsten Testnet, and :
+<a href="https://faucet.dimensions.network/" target="_blank">[Get testnet ETH]</a>&nbsp;&nbsp;
+<a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x07cac437f097deb59a04a570ec3073e233423135" target="_blank">[Get BetCoin - a token for testing]</a>
+<a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x0a4013b1d9a8d91280e79633cb64be8365e00529" target="_blank">[Trade TestCoin - the underlying market]</a>
+        </div>
+        <br><br>
+        <div class="flexbox" id="alphaswap_stake">
+            <button class="button" style="flex:1">Stake</button>
+
+            <span>Market</span>
+            <select class="input_market" size="2">
+                <option selected>0xbD697198F0A74638e89515E15E0450B98908e560 (TestCoin-ETH)</option>
+            </select>
+
+            <span>Opinion</span>
+            <select class="input_opinion" size="2">
+                <option>1 = bullish</option>
+                <option>0 = bearish</option>
+            </select>
+
+            <span>Token</span>
+            <select class="input_token" size="2">
+                <option selected>0x07CAC437f097deb59a04A570ec3073e233423135 (BetCoin)</option>
+            </select>
+
+            <span>Amt</span>
+            <div class="input_wrap" style="flex:1"><input placeholder="amount" class="input input_amt"
+                    style="width: 100%;"></div>
+        </div>
+        <br><br>
+        <div class="flexbox" id="alphaswap_payoff">
+            <button class="button" style="flex:1">Payoff</button>
+
+            <span>Market</span>
+            <select class="input_market" size="2">
+                <option selected>0xbD697198F0A74638e89515E15E0450B98908e560 (TestCoin-ETH)</option>
+            </select>
+
+            <span>Opinion</span>
+            <select class="input_opinion" size="2" style="size:200%">
+                <option>1 = bullish</option>
+                <option>0 = bearish</option>
+            </select>
+
+            <span>Token</span>
+            <select class="input_token" size="2">
+                <option selected>0x07CAC437f097deb59a04A570ec3073e233423135 (BetCoin)</option>
+            </select>
+
+            <span>Epoch</span>
+            <div class="input_wrap" style="flex:1"><input placeholder="epoch" class="input input_epoch"
+                    style="width: 100%;"></div>
+        </div>
+        <br><br>
+        <div class="flexbox" id="alphaswap_sync">
+            <button class="button" style="flex:1">Sync</button>
+
+            <span>Market</span>
+            <select class="input_market" size="2">
+                <option selected>0xbD697198F0A74638e89515E15E0450B98908e560 (TestCoin-ETH)</option>
+            </select>
+        </div>
+        <br><br>
+        <div class="flexbox" id="alphaswap_readMarket">
+            <button class="button" style="flex:1">Read Market Details</button>
+
+            <span>Market</span>
+            <select class="input_market" size="2">
+                <option selected>0xbD697198F0A74638e89515E15E0450B98908e560 (TestCoin-ETH)</option>
+            </select>
+
+            <span>Epoch</span>
+            <div class="input_wrap" style="flex:1"><input placeholder="epoch" class="input input_epoch"
+                    style="width: 100%;"></div>
+        </div>
+        <br><br>
+        <div class="flexbox" id="alphaswap_readStake">
+            <button class="button" style="flex:1">Read Stake Details</button>
+
+            <span>Market</span>
+            <select class="input_market" size="2">
+                <option selected>0xbD697198F0A74638e89515E15E0450B98908e560 (TestCoin-ETH)</option>
+            </select>
+
+            <span>Token</span>
+            <select class="input_token" size="2">
+                <option selected>0x07CAC437f097deb59a04A570ec3073e233423135 (BetCoin)</option>
+            </select>
+
+            <span>Epoch</span>
+            <div class="input_wrap" style="flex:1"><input placeholder="epoch" class="input input_epoch"
+                    style="width: 100%;"></div>
+        </div>
+        <br><br>
+        <div id="log"></div>
+    </div>
+    <script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../ethers-5.0.umd.min.js"></script>
+    <script type="text/javascript" src="../helper.js"></script>
+    <script type="text/javascript" src="../contract.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
