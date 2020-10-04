@@ -23,19 +23,15 @@ For the test contract, 1 epoch = 10 minutes (from XX:X0:XX ~ XX:X9:59).
 <br>2. the TWAP (time-weighed average price) between [the last trade before 08:40:00] and [the last trade before 08:50:00].
 <br>If you think 2 > 1, you are bullish. If you think 1 > 2, you are bearish. Winners take all stakes pro rata. If 1 = 2, then everyone gets their stakes back.
 <br>Note the contract reads uniswap price only when [sync] or [payoff] is called. This needs to happen ASAP at the beginning of each epoch. Traders have incentive to do it.
-<br>Switch Metamask to Ropsten Testnet, and :
-<a href="https://faucet.dimensions.network/" target="_blank">[Get Ropsten ETH]</a>&nbsp;&nbsp;
-<a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x07cac437f097deb59a04a570ec3073e233423135" target="_blank">[Get BetCoin - a token for testing]</a>
-<a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x0a4013b1d9a8d91280e79633cb64be8365e00529" target="_blank">[Trade TestCoin - the underlying market]</a>
 <br><br>
-Here is how I will trade:
+Switch Metamask to Ropsten Testnet, and:
 <ul type="round">
-    <li>Get Ropsten ETH & Get some BetCoin</li>
-    <li>[Read Market Details] to see current epoch</li>
-    <li>[Stake] some BetCoin & [Read Stake Details] to check it</li>
-    <li>Trade some TestCoin</li>
-    <li>[Sync] after XX:X0:00 & [Read Market Details] to see new epochs</li>
-    <li>Call [Payoff] after we get 2 more epochs</li>
+    <li><a href="https://faucet.dimensions.network/" target="_blank">[Get Ropsten ETH]</a> & <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x07cac437f097deb59a04a570ec3073e233423135" target="_blank">[Get BetCoin - a token for testing]</a></li>
+    <li><b>[Read Market Details]</b> to see current epoch</li>
+    <li><b>[Stake]</b> some BetCoin & <b>[Read Stake Details]</b> to check it</li>
+    <li><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x0a4013b1d9a8d91280e79633cb64be8365e00529" target="_blank">[Trade TestCoin - the underlying market]</a></li>
+    <li><b>[Sync]</b> after XX:X0:00 & <b>[Read Market Details]</b> to see new epochs</li>
+    <li>Call <b>[Payoff]</b> after we get 2 more epochs</li>
 </ul>
         </div>
         <br><br>
