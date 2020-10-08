@@ -15,13 +15,14 @@
 
 <body style="max-width: 1500px; margin: 0 auto;">
     <div id="wrapNew" style="padding: 2em;">
-        AlphaSwap Testing UI for <b>Ropsten Testnet</b>. The essence of AlphaSwap : Bet anything on anything anywhere.
+        AlphaSwap Testing UI for <b>Ropsten Testnet</b>. The essence of AlphaSwap : Speculate on anything anywhere.
         <br><br>
         <div style="line-height: 2.0;">
             For the test contract, <b>1 epoch = 10 minutes (from XX:X0:XX ~ XX:X9:59).</b>
             <br>For example, assume current epoch is from 08:30:00 ~ 08:39:59. In this epoch, you put your stakes on the difference of:
             <br>1. the TWAP (time-weighed average price) between <b>[the last trade before 08:30:00]</b> and <b>[the last trade before 08:40:00]</b>.
             <br>2. the TWAP (time-weighed average price) between <b>[the last trade before 08:40:00]</b> and <b>[the last trade before 08:50:00]</b>.
+            <br>3. the XX:X0:00 time might be delayed for a few seconds, because someone needs to call [sync] to fix the price.
             <br>If you think 2 > 1, you are bullish. If you think 1 > 2, you are bearish. Winners take all stakes pro rata. If 1 = 2, then everyone gets their stakes back.
             <br>Note: the contract reads uniswap TWAP only when [sync] or [payoff] is called. <b>This only need to happen once at the beginning of each epoch.</b> Traders have incentive to do it.
             <br>Note: there shall be at least 1 trade in each epoch. Or you cannot [sync] because there is no change in price. <b>So do some trades.</b>
