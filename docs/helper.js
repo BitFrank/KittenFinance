@@ -14,15 +14,20 @@ Date.prototype.HHMMSS = function () {
     var ss = this.getSeconds();
 
     return (dd > 9 ? '' : '0') + dd + '-' + ([
-            (hh > 9 ? '' : '0') + hh,
-            (mm > 9 ? '' : '0') + mm,
-            (ss > 9 ? '' : '0') + ss
-        ].join(':'));
-};
+        (hh > 9 ? '' : '0') + hh,
+        (mm > 9 ? '' : '0') + mm,
+        (ss > 9 ? '' : '0') + ss
+    ].join(':'));
+}
+
+function startInterval(callback, ms) {
+    callback();
+    return setInterval(callback, ms);
+}
 
 async function init_ethers() {
     const App = {}
-    _print("Connecting MetaMask (please unlock it)...")
+    _print("Connecting MetaMask (remember to unlock)")
     // document.getElementById('log').innerHTML = "Connecting MetaMask... "
 
     let isMetaMaskInstalled = true
