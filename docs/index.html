@@ -91,9 +91,18 @@
                         <br><br><a href="https://etherscan.io/address/0xffc5821c945b1e617d3e743e2575b68f4ffc1422#writeContract" target="_blank">[REBASE (call between XX:00:00 and XX:02:59 every hour)]</a>
                     </div>
                 </div>
+                <div class="line_above">
+                    <br>When you deposit kBASEv0 in pool 203, it will be automatically converted to NORM-kB, which is "the amount of kBASEv0 you will have if the total supply of kBASEv0 is 1M".
+                    And the amount of NORM-kB is smaller than the amount of kBASEv0, because currently the total supply of kBASEv0 is larger than 1M.
+                    When you unstake NORM-kB, it will be automatically converted back to kBASEv0.
+                    <br><br>
+                </div>
                 <div id="token_boxes_20X" class="flexbox line_above" style="padding-top: 1em; margin-bottom: 1em;">
                     <div class="token_box" id="token_box_dex" style="margin-top: 2.4em; text-align: center;">
-                        <a href="https://etherscan.io/address/0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank"><b>[DEX contract]</b></a><br><br>
+                        <a style="width:100%; text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">
+                            <button class="button" style="width:100%">Trade DEX on UniSwap</button>
+                        </a>
+                        <br><a href="https://etherscan.io/address/0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">[DEX contract]</a><br><br>
                     </div>
                 </div>
                 <div id="footer_help" class="line_above">
@@ -125,8 +134,7 @@
                     <a href="https://etherscan.io/address/0x0dF634aAE01eBf86C770A62Efec1102309E7db51" target="_blank">[contract]</a>
                     <br>Pool 103 : stake kBASEv0-USDC LP for kBASEv0, 8.5% in first week, reduces by 25% every week (total 34%)
                     <a href="https://etherscan.io/address/0xca3239a9aca196de1af4d0eca6d669e6ebf4ba8b" target="_blank">[contract]</a>
-                    <br>
-                    <br>About the economic model. KIF is a bit similar to YFI. It's the governance token of KittenFinance:
+                    <br><br>About the economic model. KIF is a bit similar to YFI. It's the governance token of KittenFinance:
                     <ol>
                         <li>for the DAO governing KittenSwap</li>
                         <li>dividends from KittenSwap fees</li>
@@ -154,9 +162,12 @@
                 <div style="margin-bottom: 1.5em;">
                     <div class="loader" id="main_loader"></div>
                     <div id="log"></div><br>
-                    <span id="trade_panel_price" style="width: 100%;"><a href="https://etherscan.io/token/0x177ba0cac51bfc7ea24bad39d81dcefd59d74faa" target="_blank">KIF</a> : price <b><span id="price_ref">(checking...)</span></b> ETH, liq.
+                    <span id="trade_panel_price" style="width: 100%;">
+                        <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF</a> : price <b><span id="price_ref">(checking...)</span></b> ETH, liq.
                         <span id="liq_ref">(checking...)</span></span>
-                    <br><br><a href="https://etherscan.io/token/0x124c6092c469716a661b5b0609f205050b26b50f" target="_blank">kBASEv0</a> : total supply (incl. unminted) <b><span id="kbase_total_supply">?</span></b> M, price
+                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">DEX</a> : price <b><span id="price_ref_dex_eth">(checking...)</span></b> ETH, liq.
+                        <span id="liq_ref_dex">(checking...)</span></span>
+                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">kBASEv0</a> : total supply (incl. unminted) <b><span id="kbase_total_supply">?</span></b> M, price
                     <b><span id="kbase_price_usdc">?</span></b> USDC
                 </div>
                 <table id="event_table" style="width:100%">
