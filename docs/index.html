@@ -76,8 +76,7 @@
                         <br>
                         <a href="https://www.kittenswap.org/" target="_blank">Read KittenSwap Tech Report</a>
                         <a href="http://www.AlphaDex.org/" target="_blank">Read AlphaDex Tech Report</a>
-                        <a href="alphaswap/" target="_blank" style="color:red !important"><b>=> Try AlphaDex (Mainnet) <=</b></a>
-                        <a href="test/" target="_blank">AlphaDex (Testnet)</a>
+                        <a href="alphaswap/" target="_blank" style="color:red !important"><b>=> Try AlphaDex (Mainnet) <=</b> </a> <a href="test/" target="_blank">AlphaDex (Testnet)</a>
                         <br><br>
                         <div style="margin: 0 auto;"><img src="roadmap.png" style="max-width: 100%;"></div>
                     </div>
@@ -95,6 +94,8 @@
                     <br>When you stake kBASEv0 into pool 203, it will be automatically converted to NORM-kB, which is "the amount of kBASEv0 you will have if the total supply of kBASEv0 is 1M", and hence unaffected by rebases.
                     And the amount of NORM-kB is smaller than the amount of kBASEv0, because currently the total supply of kBASEv0 is larger than 1M.
                     When you unstake NORM-kB, it will be automatically converted back to kBASEv0.
+                    <br>
+                    <br>An example: [assume kbase total supply = 3M] => [you deposit 3K kbase, and becomes 1K normkb] => [kbase rebased to 4M total supply, and normkb is unaffected] => [however if you unstake 1K normkb now, it becomes 4K kbase]. Hence your kbase is rebased correctly.
                     <br><br>
                 </div>
                 <div id="token_boxes_20X" class="flexbox line_above" style="padding-top: 1em; margin-bottom: 1em;">
@@ -165,14 +166,12 @@
                 <div style="margin-bottom: 1.5em;">
                     <div class="loader" id="main_loader"></div>
                     <span id="log" style="display: inline-block;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" style="cursor: pointer;" onclick="clearEventTable()"><b>Clear events</b></button>
-                    <br><br>
-                    <span id="trade_panel_price" style="width: 100%;">
-                        Trade <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF</a> : price <b><span id="price_ref">(checking...)</span></b> ETH, liq.
-                        <span id="liq_ref">(checking...)</span></span>
+                    <br><br>Trade <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF</a> : price <b><span id="price_ref">(checking...)</span></b> ETH, liq.
+                    <span id="liq_ref">(checking...)</span>
                     <br><br>Trade <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">DEX</a> : price <b><span id="price_ref_dex_eth">(checking...)</span></b> ETH, liq.
-                    <span id="liq_ref_dex">(checking...)</span></span>
-                    <br><br>Trade <a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">kBASEv0</a> : total supply (incl. unminted) <b><span id="kbase_total_supply">?</span></b> M, price
-                    <b><span id="kbase_price_usdc">?</span></b> USDC
+                    <span id="liq_ref_dex">(checking...)</span>
+                    <br><br>Trade <a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">kBASEv0</a> : total supply (incl. unminted) <b><span id="kbase_total_supply">?</span></b> M, price <b><span id="kbase_price_usdc">?</span></b> USDC
+                    <br>liq. = <span id="liq_ref_kbase">(checking...)</span>
                 </div>
                 <table id="event_table" style="width:100%">
                     <thead>
