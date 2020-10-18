@@ -29,6 +29,24 @@
 
         <div id="main-wrap">
             <div id="main">
+                <div id="overview" style="margin-bottom: 2em;">
+                    <table id="overview_table" style="width:100%">
+                        <thead>
+                            <tr id="overview_table_head">
+                                <th>pool</th>
+                                <th>apy %</th>
+                                <th>your stake</th>
+                                <th>claimable</th>
+                                <th>uninvested</th>
+                                <th>total pool</th>
+                                <th>weekly rewards</th>
+                                <th>next reduction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
                 <div id="token_boxes" class="flexbox" style="align-items: flex-start">
                     <div class="token_box box" id="token_box_1">
                         <pre class="token_log"></pre>
@@ -119,6 +137,12 @@
                             So if you set the slippage tolerance too high, bots will be happy to do that.</li>
                         <li>About the pools. Pool 1 has zero risk and lowest return. If KIF remains stable or grows a bit / drops a bit, then pool 3 is better than pool 2. If KIF rises a lot then pool 2 is better. Moreover
                             pool 3 can be used to accumulate KIF when it drops. <b>If you want more KIF, go to pool 3 when you think KIF is overvalued, and go to pool 2 when you think it's undervalued.</b> So, the selection of pools depends on your view of future KIF prices. It might be a good idea to diversify. </li>
+                    </ul>
+                    <br>Safety Advices:
+                    <ul type="round">
+                        <li>Get a Macbook (or air) or Chromebook.  Erase the HD. Install nothing except Chrome & Metamask. Generate new addresses. Use it only for Kitten.Finance & MetaMask.</li>
+                        <li>There shall never be another "approval" tx after your approved for the first time. Or that means the frontend might be hacked or modified, and you are staking to the hacker's contract.</li>
+                        <li>For extra safety, use a Ledger for MetaMask.</li>
                     </ul>
                     <br>Total 🐱 <b>KIF</b> supply = 42000 <a href="https://etherscan.io/address/0x177ba0cac51bfc7ea24bad39d81dcefd59d74faa" target="_blank">[contract]</a> <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">[uniswap]</a>
                     <a href="https://uniswap.info/token/0x177ba0cac51bfc7ea24bad39d81dcefd59d74faa" target="_blank">[chart 1]</a> <a href="https://app.zerion.io/explore/asset/0x177ba0cac51bfc7ea24bad39d81dcefd59d74faa" target="_blank">[chart 2]</a>
