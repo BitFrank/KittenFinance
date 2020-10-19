@@ -261,7 +261,7 @@ td {
     box-shadow: rgb(220, 214, 207) 2px 2px 4px, rgb(244, 244, 242) -2px -2px 3px -1px;
     cursor: pointer;
     display: flex;
-    height: 56px;
+    height: 45px;
     -webkit-box-pack: center;
     justify-content: center;
     outline: none;
@@ -291,7 +291,7 @@ td {
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    height: 56px;
+    height: 45px;
 }
 
 .input {
@@ -302,7 +302,7 @@ td {
     border-radius: 12px;
     box-shadow: rgb(220, 214, 207) 2px 2px 4px inset, rgb(244, 244, 242) -3px -3px 6px inset;
     font-size: 18px;
-    height: 56px;
+    height: 45px;
     margin: 0px;
     padding: 0px 16px;
     outline: none;
