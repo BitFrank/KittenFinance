@@ -85,19 +85,29 @@ pre {
 }
 
 .trade_box {
-    width: 48%;
+    width: calc(50% - 0.5em);
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .token_box {
-    width: 48%;
+    width: calc(50% - 0.5em);
+    box-sizing: border-box;
 }
 
 #token_box_3,
-#token_box_103,
+#token_box_103 {
+    margin-top: 1.5em;
+}
 #token_box_203, #token_box_204,
 #token_box_205, #token_box_206 {
-    margin-top: 1.5em;
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 1699px) {
+    #sidebar {
+        flex: 0 1 34%;
+    }
 }
 
 @media screen and (max-width: 1599px) {
@@ -124,6 +134,10 @@ pre {
 
     .livecoinwatch-widget-1 {
         transform: scale(0.8);
+    }
+
+    #sidebar {
+        flex: 0 1 35%;
     }
 }
 
@@ -152,6 +166,10 @@ pre {
 
     .livecoinwatch-widget-1 {
         transform: scale(0.8);
+    }
+
+    #sidebar {
+        flex: 0 1 36%;
     }
 }
 
