@@ -27,7 +27,7 @@ function startInterval(callback, ms) {
 
 async function init_ethers() {
     const App = {}
-    _print("Connecting MetaMask (remember to unlock)")
+    _print("Connecting MetaMask (please unlock)")
     // document.getElementById('log').innerHTML = "Connecting MetaMask... "
 
     let isMetaMaskInstalled = true
@@ -414,8 +414,14 @@ const forHumans = function (seconds) {
     else
         day = ''
     var hr = Math.floor(((seconds % 31536000) % 86400) / 3600)
+    if (hr < 10)
+        hr = '0' + hr
     var min = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60)
+    if (min < 10)
+        min = '0' + min
     var sec = Math.floor((((seconds % 31536000) % 86400) % 3600) % 60)
+    if (sec < 10)
+        sec = '0' + sec
     
     let returntext = day + ' ' + hr + ':' + min + ':' + sec
 
