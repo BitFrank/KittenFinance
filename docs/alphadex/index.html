@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../index.css">
     <style>
-        body {
+        /* body {
             background-color: #ffe;
         }
 
@@ -19,14 +19,44 @@
             box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
             border-bottom: 1px solid #e2e2e2;
             line-height: 1.5;
+        } */
+
+        /* #main {
+            border-right: 1px solid #000;
+        }
+         */
+        body {
+            background-color: #fff;
         }
 
-        #main {
-            border-right: 1px solid #000;
+        .panel {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 1em;
+            padding: 1em;
+            line-height: 1.5;
+        }
+
+        .input {
+            background-color: white;
+        }
+
+        .navbar_wrap {
+            background: #5A0;
+        }
+
+        .button {
+            background-color: #492;
+        }
+
+        .button:hover {
+            background: #0C0;
         }
 
         #sidebar {
             flex: 0 1 30%;
+            background: #eee;
         }
 
         .mybox {
@@ -66,9 +96,10 @@
 <body>
     <div id="wrap">
         <div id="header" class="navbar_wrap">
-            <div class="navbar" style="width: 40%; font-size: 110%;">
-                <p id="btn_help">[>> Help <<]</p> <p style="font-size: 20px;">α - AlphaDex - testnet</p>
-                <p><a href="https://www.kitten.finance" target="_blank">Kitten.Finance</a></p>
+            <div class="navbar">
+                <p style="font-size: 30px;"><b>Alpha</b>Dex - α</p>
+                <p id="btn_help">Help & FAQ</p>
+                <p>a <a href="https://www.kitten.finance" target="_blank">kitten.finance</a> product</p>
             </div>
         </div>
         <div id="main-wrap" style="min-height: 90vh;">
@@ -77,17 +108,17 @@
                     FAQ:
                     <ul type="round">
                         <li>There are two methods to use AlphaDex: (1) MetaMask ==[Stake]=> AlphaDex ==[Payoff]=> MetaMask. (2) Vault ==[Stake]=> AlphaDex ==[Payoff]=> Vault. The second method saves gas because the staked tokens stay in the contract (vault) until you withdraw them from the vault, however it will also be more risky if the contract has bugs (very unlikely, but still possible).</li>
-                        <li>If you stake in <b>epoch x</b>, you speculate on the <b>TWAP of epoch x+1</b> vs the <b>TWAP of epoch x</b>. (TWAP = time-weighted average price)
-                        <li>If the price rises in epoch x, then it is more likely that the TWAP of epoch x+1 > TWAP of epoch x. And vice versa. <b>So the bull and bear bets are not symmetric.</b></li>
-                        <li>If you stake in epoch x, you can call [Payoff] after epoch x+2.</li>
+                        <li>If you stake in <b>round x</b>, you speculate on the <b>TWAP of round x+1</b> vs the <b>TWAP of round x</b>. (TWAP = time-weighted average price)
+                        <li>If the price rises in round x, then it is more likely that the TWAP of round x+1 > TWAP of round x. And vice versa. <b>So the bull and bear bets are not symmetric.</b></li>
+                        <li>If you stake in round x, you can call [Payoff] after round x+2.</li>
                     </ul>
                     <br>Remember: <span style="text-decoration: underline;">DON'T STAKE TOO MUCH UNLESS THERE ARE ENOUGH STAKES ON THE OTHER SIDE</span>.<br><br>
-                    For example, assume 1 epoch = 10 minutes (always from XX:X0:XX ~ XX:X9:59). Assume current epoch is from 08:30:00 ~ 08:39:59. In this epoch, you put your stakes on the difference of:
+                    For example, assume 1 round = 10 minutes (always from XX:X0:XX ~ XX:X9:59). Assume current round is from 08:30:00 ~ 08:39:59. In this round, you put your stakes on the difference of:
                     <br>1. the TWAP (time-weighed average price) between [the last trade before 08:30:00] and [the last trade before 08:40:00].
                     <br>2. the TWAP (time-weighed average price) between [the last trade before 08:40:00] and [the last trade before 08:50:00].
                     <br>If you think 2 > 1, you are bullish. If you think 1 > 2, you are bearish. Winners take all stakes pro rata. If 1 = 2, then everyone gets their stakes back.
-                    <br>Note: the contract reads uniswap TWAP only when [Sync market] is called. <b>This only need to happen once at the beginning of each epoch.</b> Traders will call it to fix the price, if they are winning.
-                    <br>Note: there shall be at least 1 trade in each epoch. Or you cannot [Sync market] because there is no change in price. <b>So do some trades.</b>
+                    <br>Note: the contract reads uniswap TWAP only when [Sync market] is called. <b>This only need to happen once at the beginning of each round.</b> Traders will call it to fix the price, if they are winning.
+                    <br>Note: there shall be at least 1 trade in each round. Or you cannot [Sync market] because there is no change in price. <b>So do some trades.</b>
                     <br>Hint: <b>you can bet both sides</b>, or use multiple accs to do so. Good for testing.
                     <br><br>
                     <div><a href="https://ropsten.etherscan.io/address/0xE19979De103aDa7401a715595f29F5598CfE9121" target="_blank">[AlphaDex contract]</a> &nbsp; <a href="https://www.kitten.finance" target="_blank">[Kitten.Finance]</a></div>
@@ -98,18 +129,17 @@
                 </div><br>
                 <div class="panel">
                     <div class="flexbox">
-                        <div>Target market : </div>
+                        <div>Target market: </div>
                         <div><select class="input_market" size="1" style="width: 200px"></select></div>
-                        <div><button class="button" style="flex:1" id="read_more_epochs">Read more epochs</button></div>
                         <div><button class="button" style="flex:1" id="trade_uniswap">Trade on uniswap</button></div>
                         <div><button class="button" style="flex:1" id="sync_market">Sync contract with market</button></div>
                     </div><br>
                     <table id="table_trade" style="width: 100%">
                         <thead style="font-weight: 900;">
                             <tr>
-                                <td>Epoch</td>
+                                <td>Round</td>
                                 <td>t</td>
-                                <td>tUniswap</td>
+                                <!-- <td>tUniswap</td> -->
                                 <td>TWAP (you are speculating on this)</td>
                                 <!-- <td>stakeToken</td> -->
                                 <td>Bullish stakes</td>
@@ -123,23 +153,31 @@
                                 <td>?</td>
                                 <!-- <td>?</td> -->
                                 <td>?</td>
-                                <td>?</td>
+                                <!-- <td>?</td> -->
                                 <td>reading... (takes 10 ~ 60 seconds)</td>
                                 <td>reading...</td>
                                 <td>?</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table><br>
+                    <div class="mybox" style="width: 100%">
+                        <div id="div_read_more_epochs">
+                            <button class="button" style="flex:1" id="read_more_epochs">Load earlier rounds</button>
+                        </div>
+                        <div>
+                            <span>For this market: a round = <span id="market_epoch_period">?</span></span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="sidebar">
                 <div class="mybox panel">
-                    <div><span>Speculate on price movements : </span></div>
+                    <div><span>Speculate on price movements: </span></div>
                     <div class="input_wrap"><input placeholder="stake amount" class="input stake_amt" style="width: 120px"></div>
                     <div><span>Click [stake] button in the table, to stake from Vault or MetaMask.</span></div>
                 </div>
                 <div class="mybox panel">
-                    <div><span>Deposit <span id="stake_token_name">?</span> in AlphaDex Vault to save gas : </span></div>
+                    <div><span>Deposit <span id="stake_token_name">?</span> in AlphaDex Vault to save gas: </span></div>
                     <div class="input_wrap"><input placeholder="vault amount" class="input vault_amt" style="width: 120px"></div>
                     <div><button class="button" style="flex:1" id="vault_deposit">Vault deposit</button></div>
                     <div><button class="button" style="flex:1" id="vault_withdraw">Vault withdraw</button></div>
@@ -147,7 +185,6 @@
                 </div>
                 <div class="panel">
                     <div><span id="market_log" style="font-weight: 900;">initializing...</span><span id="market_log_time"></span></div>
-                    <div><span>for this market, an epoch = <span id="market_epoch_period">?</span></span></div>
                 </div>
                 <div id="log"></div>
             </div>
