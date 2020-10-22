@@ -69,12 +69,12 @@
         }
 
         .button {
-            height: 30px;
+            height: 34px;
         }
 
         .input,
         .input_wrap {
-            height: 30px;
+            height: 34px;
         }
 
         #btn_help {
@@ -89,6 +89,10 @@
         #table_trade .button {
             height: 50px;
             margin: 2px 0;
+        }
+
+        input[type='radio'] {
+            transform: scale(2);
         }
     </style>
 </head>
@@ -140,7 +144,7 @@
                                 <td>Round</td>
                                 <td>t</td>
                                 <!-- <td>tUniswap</td> -->
-                                <td>TWAP (you are speculating on this)</td>
+                                <td>TWAP (time-weighted average price)</td>
                                 <!-- <td>stakeToken</td> -->
                                 <td>Bullish stakes</td>
                                 <td>Bearish stakes</td>
@@ -170,17 +174,30 @@
                     </div>
                 </div>
             </div>
-            <div id="sidebar">
+            <div id="sidebar" style="display: flex; flex-direction: column;">
                 <div class="mybox panel">
-                    <div><span>Speculate on price movements: </span></div>
+                    <div><span>Speculate on next-round TWAP at round <span class="cur_epoch">?</span> :</span></div>
+                    <br><br>
+                    <div>
+                        <input type="radio" name="stake_use_vault" value="0" checked>&nbsp;&nbsp;Stake from MetaMask&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="stake_use_vault" value="1">&nbsp;&nbsp;Stake from Vault
+                    </div>
+                    <br><br>
+                    <div>
+                        <input type="radio" name="stake_opinion" value="1" checked>&nbsp;&nbsp;🐂 Bullish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="stake_opinion" value="0">&nbsp;&nbsp;🐻 Bearish
+                    </div>
+                    <br><br>
                     <div class="input_wrap"><input placeholder="stake amount" class="input stake_amt" style="width: 120px"></div>
-                    <div><span>Click [stake] button in the table, to stake from Vault or MetaMask.</span></div>
+                    <div><button class="button" id="add_stake">Add stake</button></div>
                 </div>
                 <div class="mybox panel">
                     <div><span>Deposit <span id="stake_token_name">?</span> in AlphaDex Vault to save gas: </span></div>
+                    <br><br>
                     <div class="input_wrap"><input placeholder="vault amount" class="input vault_amt" style="width: 120px"></div>
                     <div><button class="button" style="flex:1" id="vault_deposit">Vault deposit</button></div>
                     <div><button class="button" style="flex:1" id="vault_withdraw">Vault withdraw</button></div>
+                    <br><br>
                     <div>You have <span id="vault_amt">?</span> in Vault, <span id="wallet_amt">?</span> in MetaMask.</div>
                 </div>
                 <div class="panel">
