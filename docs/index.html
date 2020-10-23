@@ -44,18 +44,18 @@
                             <button class="button btn_claim" title="claim rewards">Claim rewards</button>
                             <button class="button btn_withdraw">Unstake</button>
                             <button class="button btn_exit">Unstake all & Claim</button>
-                            <div class="input_wrap break" style="margin-top:1em">
-                                <input placeholder="amount" style="width:68.76%" class="input token_panel_amt" value="">
-                                <button class="button btn_stake_all" disabled="true">Stake all</button>
-                            </div>
-                            <div class="token_panel_log" style="margin-top:1em; margin-bottom: -1em; height: 2em;">
-                                &nbsp;
-                            </div>
                         </div>
-                    </div>
-                    <div class="token_box" id="token_box_trade" style="margin-top: 2.4em">
+                        <div class="token_panel flexbox" style="margin-top:1em; width: 100%">
+                            <button class="button btn_stake_all" disabled="true">Stake all</button>
+                            <div class="input_wrap" style="width: 24%;">
+                                <input placeholder="amount" class="input token_panel_amt" style="width: 100%;" value="">
+                            </div>
+                            <div class="token_panel_log" style="width:49%; text-align: center;"></div>
+                        </div>
+                </div>
+                    <div class="token_box" id="token_box_trade" style="position:relative; top: 2em">
                         <div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000000" lcw-color-pr="#55cc00" lcw-color-bg="#f7f7f7" lcw-border-w="1"></div>
-                        <div class="flexbox trade_panel" style="margin-top: 1em;">
+                        <div class="flexbox trade_panel" style="margin-top: 0.5em;">
                             <div class="input_wrap" style="width: 30%;"><input placeholder="amount" class="input trade_panel_amt" value="" style="width: 100%;"></div>
                             <select id="trade_token_in" size="3">
                                 <option selected>ETH</option>
@@ -70,12 +70,13 @@
                             </select>
                             <button class="button btn_swap" disabled="true" style="flex:0.6">Swap (max 0.1% slippage)</button>
                             <pre style="width: 100%;">
-<br><span id="trade_panel_wallet">You have <span class="user_wallet_eth">?</span> ETH, <span class="user_wallet_weth">?</span> WETH, <span class="user_wallet_kif">?</span> KIF in MetaMask</span>
-<br><span style="width: 100%;"><span id="trade_panel_log"></span> <span id="swap_log" style="color:darkred"></span></span><br>
+<div style="height: 0.5em;">&nbsp;</div><span id="trade_panel_wallet">You have <span class="user_wallet_eth">?</span> ETH, <span class="user_wallet_weth">?</span> WETH, <span class="user_wallet_kif">?</span> KIF in MetaMask</span>
+<div style="height: 0.3em;">&nbsp;</div><span style="width: 100%;"><span id="trade_panel_log"></span> <span id="swap_log" style="color:darkred"></span></span><br>
 </pre>
                         </div>
                     </div>
-                </div>
+                </div><br>
+                <div class="line_above">&nbsp;</div>
                 <div id="overview" style="margin-bottom: 2em;">
                     <table id="overview_table" style="width:100%">
                         <thead>
