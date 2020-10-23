@@ -6,6 +6,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="misc/blockrain.css">
     <meta id="viewport" name="viewport" content="width=1500">
     <script>
         var clicky_site_ids = clicky_site_ids || [];
@@ -210,8 +211,11 @@
                     <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">Trade <b>kBASEv0</b></a> : price <b><span id="kbase_price_usdc">?</span></b> USDC, liq. = <span id="liq_ref_kbase">(checking...)</span>
                     <br>circulating supply <span id="kbase_supply">?</span> M, market cap $ <b><span id="kbase_mc">?</span></b> M</span>, total supply <b><span id="kbase_total_supply">?</span></b> M
                     <br><br><div class="loader" id="main_loader"></div>
-                    <span id="log" style="display: inline-block;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" style="cursor: pointer;" onclick="clearEventTable()"><b>Clear events</b></button>
+                    <button type="button" style="cursor: pointer;" onclick="clearEventTable()"><b>Clear events</b></button>
+                    &nbsp;&nbsp;<span id="log" style="display: inline-block;"></span>
+                    &nbsp;&nbsp;<button type="button" style="cursor: pointer;" onclick="toggleGame()"><b>Tetris</b></button>
                 </div>
+                <div class="game" style="width:50%; height:500px; margin:0 auto; margin-bottom: 1em;"></div>
                 <table id="event_table" style="width:100%">
                     <thead>
                         <tr id="event_table_head">
@@ -257,6 +261,10 @@
     <script type="text/javascript" src="./contract.js"></script>
     <script type="text/javascript" src="./index.js"></script>
     <script type="text/javascript" src="https://www.livecoinwatch.com/static/lcw-widget.js" async></script>
+    <script type="text/javascript" src="misc/blockrain.jquery.min.js"></script>
+    <script>
+        $('.game').blockrain({theme:'candy'});
+    </script>
 </body>
 
 </html>
