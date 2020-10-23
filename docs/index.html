@@ -201,9 +201,7 @@
             </div>
             <div id="sidebar">
                 <div class="panel" style="padding-right: 0.5em;">
-                    <div class="loader" id="main_loader"></div>
-                    <span id="log" style="display: inline-block;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" style="cursor: pointer;" onclick="clearEventTable()"><b>Clear events</b></button>
-                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">Trade <b>KIF</b></a> : price <b><span id="price_ref">(checking...)</span></b> E = $ <b><span id="kif_price_usd">?</span></b>, liq.
+                    <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">Trade <b>KIF</b></a> : price <b><span id="price_ref">(checking...)</span></b> E = $ <b><span id="kif_price_usd">?</span></b>, liq.
                     <span id="liq_ref">(checking...)</span>
                     <br>circulating supply <span id="kif_supply">?</span>, market cap $ <b><span id="kif_mc">?</span></b> M, total supply 42000
                     <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">Trade <b>DEX</b></a> : price <b><span id="price_ref_dex_eth">(checking...)</span></b> E = $ <b><span id="dex_price_usd">?</span></b>, liq.
@@ -211,6 +209,8 @@
                     <br>circulating supply <span id="dex_supply">?</span>, market cap $ <b><span id="dex_mc">?</span></b> M, total supply 420000
                     <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">Trade <b>kBASEv0</b></a> : price <b><span id="kbase_price_usdc">?</span></b> USDC, liq. = <span id="liq_ref_kbase">(checking...)</span>
                     <br>circulating supply <span id="kbase_supply">?</span> M, market cap $ <b><span id="kbase_mc">?</span></b> M</span>, total supply <b><span id="kbase_total_supply">?</span></b> M
+                    <br><br><div class="loader" id="main_loader"></div>
+                    <span id="log" style="display: inline-block;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" style="cursor: pointer;" onclick="clearEventTable()"><b>Clear events</b></button>
                 </div>
                 <table id="event_table" style="width:100%">
                     <thead>
