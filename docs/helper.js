@@ -20,6 +20,18 @@ Date.prototype.HHMMSS = function () {
     ].join(':'));
 }
 
+Date.prototype.OnlyHHMMSS = function () {
+    var hh = this.getHours();
+    var mm = this.getMinutes();
+    var ss = this.getSeconds();
+
+    return [
+        (hh > 9 ? '' : '0') + hh,
+        (mm > 9 ? '' : '0') + mm,
+        (ss > 9 ? '' : '0') + ss
+    ].join(':');
+}
+
 function startInterval(callback, ms) {
     callback();
     return setInterval(callback, ms);
