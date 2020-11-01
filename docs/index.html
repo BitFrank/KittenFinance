@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="misc/blockrain.css">
     <meta id="viewport" name="viewport" content="width=1500">
-    <script>
-        var clicky_site_ids = clicky_site_ids || [];
-        clicky_site_ids.push(101276598);
-    </script>
-    <script async src="//static.getclicky.com/js"></script>
 </head>
 
 <body>
@@ -52,7 +47,7 @@
                             </div>
                             <div class="token_panel_log" style="width:49%; text-align: center;"></div>
                         </div>
-                </div>
+                    </div>
                     <div class="token_box" id="token_box_trade" style="position:relative; top: 2em">
                         <div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000000" lcw-color-pr="#55cc00" lcw-color-bg="#f7f7f7" lcw-border-w="1"></div>
                         <div class="flexbox trade_panel" style="margin-top: 0.5em;">
@@ -108,8 +103,7 @@
                     <div class="flexbox">
                         <br>
                         <a href="https://www.kittenswap.org/" target="_blank">Read KittenSwap Tech Report</a>
-                        <a href="http://www.AlphaDex.org/" target="_blank">Read AlphaDex Tech Report</a>
-                        <a href="alphaswap/" target="_blank" style="color:red !important"><b>=> Try AlphaDex (Mainnet) <=</b> </a> <a href="alphadex/" target="_blank">AlphaDex (Testnet)</a>
+                        <a href="http://www.AlphaDex.org/" target="_blank" style="color:red !important"><b>=> Try AlphaDex (Mainnet) <=</b> </a> <a href="alphadex/" target="_blank">AlphaDex (Testnet)</a>
                         <br><br>
                         <div style="margin: 0 auto;"><img src="roadmap.png" style="max-width: 100%;"></div>
                     </div>
@@ -155,7 +149,7 @@
                     </ul>
                     <br>Safety Advices:
                     <ul type="round">
-                        <li>Get a Macbook (or air) or Chromebook.  Erase the HD. Install nothing except Chrome & Metamask. Generate new addresses. Use it only for Kitten.Finance & MetaMask.</li>
+                        <li>Get a Macbook (or air) or Chromebook. Erase the HD. Install nothing except Chrome & Metamask. Generate new addresses. Use it only for Kitten.Finance & MetaMask.</li>
                         <li>There shall never be another "approval" tx after you approved a pool for the first time. Or it means the frontend might be hacked or modified, and you are staking to the hacker's contract.</li>
                         <li>For extra safety, use a Ledger for MetaMask.</li>
                     </ul>
@@ -211,7 +205,8 @@
                     <br>circulating supply <span id="dex_supply">?</span>, market cap $ <b><span id="dex_mc">?</span></b> M, total supply 420000
                     <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">Trade <b>kBASEv0</b></a> : price <b><span id="kbase_price_usdc">?</span></b> USDC, liq. = <span id="liq_ref_kbase">(checking...)</span>
                     <br>circulating supply <span id="kbase_supply">?</span> M, market cap $ <b><span id="kbase_mc">?</span></b> M</span>, total supply <b><span id="kbase_total_supply">?</span></b> M
-                    <br><br><div class="loader" id="main_loader"></div>
+                    <br><br>
+                    <div class="loader" id="main_loader"></div>
                     <button type="button" style="cursor: pointer;" onclick="clearEventTable()"><b>Clear events</b></button>
                     &nbsp;&nbsp;<span id="log" style="display: inline-block;"></span>
                     &nbsp;&nbsp;<button type="button" style="cursor: pointer;" onclick="toggleGame()"><b>Game</b></button>
@@ -261,11 +256,20 @@
     <script type="text/javascript" src="./helper.js"></script>
     <script type="text/javascript" src="./contract.js"></script>
     <script type="text/javascript" src="./index.js"></script>
+    <script>
+        var clicky_site_ids = clicky_site_ids || [];
+        clicky_site_ids.push(101276598);
+    </script>
+    <script async src="//static.getclicky.com/js"></script>
     <script type="text/javascript" src="https://www.livecoinwatch.com/static/lcw-widget.js" async></script>
     <script type="text/javascript" src="misc/blockrain.jquery.min.js"></script>
     <!-- <script type="text/javascript" src="misc/blockrain.jquery.js"></script> -->
     <script>
-        $('.game').blockrain({theme:'candy', difficulty: 'evil', playText: 'Pro Tetris (very hard)'})
+        $('.game').blockrain({
+            theme: 'candy',
+            difficulty: 'evil',
+            playText: 'Pro Tetris (very hard)'
+        })
         $('.game').hide()
     </script>
 </body>
