@@ -1,0 +1,37 @@
+﻿(A) Note:,This spreadsheet is intended for token teams to disclose token distribution details. Instructions and an example on how distribution details can be shared is shown below.,,,,
+,,,,,
+(B) Steps:,1. Make a copy of this spreadsheet under File > Make a Copy,,,,
+,2. Replace sample data in Requirements (C) with applicable data,,,,
+,3. Share the completed spreadsheet (Google Sheets [preferred] or Excel file are accepted),,,,
+,,,,,
+(C) Requirements:,,,,,
+1. Richlist Link,https://etherscan.io/token/0x3516415161c478df10adbb8bb884cc83fbd5f11a#balances,,,,
+2. Distribution Schedule (Public),https://www.kitten.finance/,,,,
+3. Circulating Supply API (REST),32000,,total supply,420000,
+4. Token Distribution details,"For top 20 wallets AND team/development/foundation wallets, airdrop/distribution holdings, marketing funds, vesting funds or any locked up supply.",,,,
+,,,,,
+Rank,Wallet Description,Wallet Address (not link),Amount,% of Total Supply,Status
+1,Reserved,0x444f8873ac888932899371f9755432b9e14e19c6,"319,200.00",76.00%,team/development/foundation wallet
+2,pool,0xf06e97f30ead2fceea67e344f71aa882c9126f07,"25,144.57",5.99%,pool
+3,pool,0xfeeab154863a0f0095a6a3c5a07ca10d1f629d78,"18,027.48",4.29%,pool
+4,pool,"0x26ec7cfcdd57c0d27122349d8740b42e8e24bb0b	","17,789.64",4.24%,pool
+5,Uniswap DEX-ETH pair,0xb2a06a200b445abb26f16136f1fb97e925f71124,"12,659.55",3.01%,liquidity
+6,pool,0x7b724fb188295e10bcdff007305af22ec586743a,"11,962.29",2.85%,pool
+7,pool,0x8a20af65e3caef30072dbd6b48aaad10fd4a9ed7,"8,891.82",2.12%,pool
+8,pool,0x522c926f681126828db07cba012fe1108aebf051,"5,945.56",1.42%,pool
+9,,,,,
+10,,almost all DEXs are staked in the six pools.,,,
+11,,,,,
+12,,,,,
+13,,,,,
+14,,,,,
+15,,,,,
+16,,,,,
+17,,,,,
+18,,,,,
+19,,,,,
+20,,,,,
+...,,,,,
+...,,,,,
+...,,,,,
+...,,,,,
