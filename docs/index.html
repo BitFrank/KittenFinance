@@ -48,7 +48,7 @@
         table,
         th,
         td {
-            border: 1px solid #555;
+            border: 1px solid #444;
         }
     </style>
     <script>
@@ -108,7 +108,8 @@
                         </div>
                     </div>
                     <div class="token_box" id="token_box_trade" style="position:relative; top: 2em">
-                        <div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000000" lcw-color-pr="#55cc00" lcw-color-bg="#f7f7f7" lcw-border-w="1"></div>
+                        <div id="kif_chart_light"><div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000" lcw-color-pr="#55cc00" lcw-color-bg="#f7f7f7" lcw-border-w="1"></div></div>
+                        <div id="kif_chart_dark" style="display: none;"><div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#eee" lcw-color-pr="#55cc00" lcw-color-bg="#000" lcw-border-w="1"></div></div>
                         <div class="flexbox trade_panel" style="margin-top: 0.5em;">
                             <div class="input_wrap" style="width: 30%;"><input placeholder="amount" class="input trade_panel_amt" value="" style="width: 100%;"></div>
                             <select id="trade_token_in" size="3">
