@@ -8,6 +8,47 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="misc/blockrain.css">
     <meta id="viewport" name="viewport" content="width=1500">
+    <style id="dark_mode_css">
+        body {
+            background-color: #222;
+            color: #ddd;
+        }
+        .panel {
+            background-color: #111;
+            color: #ddd;
+            border-color: #333;
+        }
+        a:link, a:visited {
+            color: #ddd;
+        }
+        #sidebar {
+            background-color: #222;
+            color: #ccc;
+        }
+        .c333 {
+            color: #ccc;
+        }
+        .c555 {
+            color: #aaa;
+        }
+        .button {
+            box-shadow: none;
+            background-color: #050;
+        }
+        .navbar_wrap {
+            background-color: #050;
+            color: #ddd;
+        }
+        .input {
+            background: black;
+            box-shadow: none;
+            border: 1px solid rgb(19, 18, 18);
+            color: #ccc;
+        }
+    </style>
+    <script>
+        document.getElementById('dark_mode_css').disabled = true;
+    </script>
 </head>
 
 <body>
@@ -16,12 +57,10 @@
             <div class="navbar">
                 <p id="navbar_title"><img src="apple-touch-icon.png">
                     Kitten.finance</p>
-                <!-- <p>Theme:
-                    <a href="javascript:void(0);" onclick="color_theme('white')">White</a>
-                    <a href="javascript:void(0);" onclick="color_theme('classic')">Classic</a> 
-                    <a href="javascript:void(0);" onclick="color_theme('dark')">Dark</a>
-                </p> -->
                 <p><a href="https://www.AlphaDex.org/" target="_blank"><b>🐱 Try AlphaDex 🐱</b> </a></p>
+                <p>
+                    <a href="javascript:void(0);" onclick="color_theme_switch()">Dark / Light Theme</a>
+                </p>
                 <p style="line-height: 1.8;">
                     <span style="font-weight: bolder;">Fixed 42000 supply. <a href="https://discord.gg/pMaZswC" target="_blank">Great community.</a> Dev keys burned. No presale. No premine.</span>
                     <br> HODL 🐱 KIF to govern future projects (e.g. <a href="https://www.KittenSwap.org" target="_blank">KittenSwap</a>) and receive dividends.
@@ -31,13 +70,13 @@
 
         <div id="main-wrap">
             <div id="main">
-                <div class="flexbox panel">
+                <div class="flexbox panel" id="panel_desc">
                     <div style="width:48%">
-                        <div style="font-size: 350%; font-weight: bolder; color: #333;">Advancing DeFi.</div>
-                        <div style="font-size: 123%; margin-top: 0.7em; color: #555;">
+                        <div style="font-size: 350%; font-weight: bolder;" class="c333">Advancing DeFi.</div>
+                        <div style="font-size: 123%; margin-top: 0.7em;" class="c555">
                             Kitten.finance is building decentralized exchanges and clearing services for cryptoassets and derivatives, from options and swaps, to bonds and forwards.
                         </div>
-                        <div style="font-size: 123%; margin-top: 0.5em; color: #555;">
+                        <div style="font-size: 123%; margin-top: 0.5em;" class="c555">
                             Kitten.finance aims to make the full volatility surface and yield curve available to all smart contracts and DApps.
                         </div>
                     </div>
