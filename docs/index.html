@@ -31,6 +31,10 @@
             background-color: #222;
             color: #ccc;
         }
+        .emphasize {
+            font-weight: bold;
+            color: white;
+        }
         .c333 {
             color: #ccc;
         }
@@ -58,7 +62,7 @@
         }
     </style>
     <script>
-        document.getElementById('dark_mode_css').disabled = true;
+        // document.getElementById('dark_mode_css').disabled = true;
     </script>
 </head>
 
@@ -68,10 +72,10 @@
             <div class="navbar">
                 <p id="navbar_title"><img src="apple-touch-icon.png">
                     Kitten.finance</p>
-                <p><a href="https://www.AlphaDex.org/" target="_blank"><b>🐱 Try AlphaDex 🐱</b> </a></p>
                 <p>
-                    <a href="javascript:void(0);" onclick="color_theme_switch()">Dark / Light Theme</a>
+                    <a href="javascript:void(0);" onclick="color_theme_switch()">Dark / Light Mode</a>
                 </p>
+                <p><a href="https://www.AlphaDex.org/" target="_blank"><b>🐱 Try AlphaDex 🐱</b> </a></p>
                 <p style="line-height: 1.8;">
                     <span style="font-weight: bolder;">Fixed 42000 supply. <a href="https://discord.gg/pMaZswC" target="_blank">Great community.</a> Dev keys burned. No presale. No premine.</span>
                     <br> HODL 🐱 KIF to govern future projects (e.g. <a href="https://www.KittenSwap.org" target="_blank">KittenSwap</a>) and receive dividends.
@@ -114,8 +118,8 @@
                         </div>
                     </div>
                     <div class="token_box" id="token_box_trade" style="position:relative; top: 2em">
-                        <div id="kif_chart_light"><div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000" lcw-color-pr="#55cc00" lcw-color-bg="#f7f7f7" lcw-border-w="1"></div></div>
-                        <div id="kif_chart_dark" style="display: none;"><div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#eee" lcw-color-pr="#55cc00" lcw-color-bg="#000" lcw-border-w="1"></div></div>
+                        <div id="kif_chart_light" style="display: none;"><div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000" lcw-color-pr="#55cc00" lcw-color-bg="#f7f7f7" lcw-border-w="1"></div></div>
+                        <div id="kif_chart_dark"><div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#eee" lcw-color-pr="#55cc00" lcw-color-bg="#000" lcw-border-w="1"></div></div>
                         <div class="flexbox trade_panel" style="margin-top: 0.5em;">
                             <div class="input_wrap" style="width: 30%;"><input placeholder="amount" class="input trade_panel_amt" value="" style="width: 100%;"></div>
                             <select id="trade_token_in" size="3">
