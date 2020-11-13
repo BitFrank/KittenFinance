@@ -17,6 +17,14 @@ html {
     flex: 1;
 }
 
+.c333 {
+    color: #333;
+}
+
+.c555 {
+    color: #555;
+}
+
 #sidebar {
     flex: 0 1 32%;
     background: #eee;
@@ -362,7 +370,6 @@ td {
 }
 
 #log {
-    color: #000;
     margin: 0;
 }
 
