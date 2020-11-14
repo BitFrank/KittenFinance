@@ -231,6 +231,13 @@ pre {
     margin: 0 auto;
 }
 
+#event_table a {
+    text-decoration: none;
+}
+#event_table a:hover {
+    text-decoration: underline;
+}
+
 .navbar a {
     color: white !important;
 }
@@ -290,7 +297,13 @@ td {
 }
 td {
     border-top: solid 1px #bbb; 
-    border-bottom: solid 1px #bbb;
+}
+.table_wrap {
+    border: solid 1px #bbb;
+    border-radius: 8px;
+    /* background: #111; */
+    /* border-top-left-radius: 8px;
+    border-top-right-radius: 8px; */
 }
 
 .button {
