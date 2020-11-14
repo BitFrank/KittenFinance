@@ -284,10 +284,13 @@ p {
 table,
 th,
 td {
-    border: 1px solid #bbb;
     border-collapse: collapse;
     text-align: center;
     vertical-align: middle;
+}
+td {
+    border-top: solid 1px #bbb; 
+    border-bottom: solid 1px #bbb;
 }
 
 .button {
