@@ -13,55 +13,72 @@
             background-color: #222;
             color: #ddd;
         }
+
         #main {
             border-right: 1px solid transparent;
         }
+
         .line_above {
             border-top: 1px solid #333;
         }
+
         .panel {
             background-color: #111;
             color: #ddd;
             border-color: #333;
         }
-        a:link, a:visited {
+
+        a:link,
+        a:visited {
             color: #ddd;
         }
+
         #sidebar {
             background-color: #1a1a1a;
             color: #ccc;
         }
+
         .emphasize {
             font-weight: normal;
             color: #0d0;
         }
+
         .c333 {
             color: #ccc;
         }
+
         .c555 {
             color: #aaa;
         }
+
         .button {
             box-shadow: none;
             background-color: #040;
         }
+
         .button:hover {
             background: #090;
         }
+
         .navbar_wrap {
             background-color: #040;
             color: #ddd;
         }
+
         .input {
             background: black;
             box-shadow: none;
             border: 1px solid #333;
             color: #ddd;
         }
+
         td {
-            border-top: solid 1px #363636; 
-            border-bottom: solid 1px #363636;
-        }        
+            border-top: solid 1px #363636;
+        }
+
+        .table_wrap {
+            border: solid 1px #363636;
+        }
     </style>
     <script>
         // document.getElementById('dark_mode_css').disabled = true;
@@ -100,7 +117,7 @@
                     <div style="width:45%; margin-right: 2%; position: relative; top: 0.3em;">
                         <img src="img/kf.png" style="max-width: 100%;">
                     </div>
-                </div>                
+                </div>
                 <div id="token_boxes" class="flexbox" style="align-items: flex-start">
                     <div class="token_box panel" id="token_box_1" style="margin-bottom: 0;">
                         <pre class="token_log"></pre>
@@ -120,8 +137,12 @@
                         </div>
                     </div>
                     <div class="token_box" id="token_box_trade" style="position:relative; top: 2em">
-                        <div id="kif_chart_light" style="display: none;"><div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000" lcw-color-pr="#55cc00" lcw-color-bg="#f7f7f7" lcw-border-w="1"></div></div>
-                        <div id="kif_chart_dark"><div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#eee" lcw-color-pr="#00aa00" lcw-color-bg="#111" lcw-border-w="1"></div></div>
+                        <div id="kif_chart_light" style="display: none;">
+                            <div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000" lcw-color-pr="#55cc00" lcw-color-bg="#f7f7f7" lcw-border-w="1"></div>
+                        </div>
+                        <div id="kif_chart_dark">
+                            <div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#eee" lcw-color-pr="#00aa00" lcw-color-bg="#111" lcw-border-w="1"></div>
+                        </div>
                         <div class="flexbox trade_panel" style="margin-top: 0.5em;">
                             <div class="input_wrap" style="width: 30%;"><input placeholder="amount" class="input trade_panel_amt" value="" style="width: 100%;"></div>
                             <select id="trade_token_in" size="3">
@@ -145,22 +166,24 @@
                 </div><br>
                 <div class="line_above">&nbsp;</div>
                 <div id="overview" style="margin-bottom: 2em;">
-                    <table id="overview_table" style="width:100%">
-                        <thead>
-                            <tr id="overview_table_head">
-                                <th>pool</th>
-                                <th>apy %</th>
-                                <th>your stake</th>
-                                <th>claimable</th>
-                                <th>uninvested</th>
-                                <th>total pool</th>
-                                <th>weekly rewards</th>
-                                <th>next reduction</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                    <div class="table_wrap">
+                        <table id="overview_table" style="width:100%">
+                            <thead>
+                                <tr id="overview_table_head">
+                                    <th>pool</th>
+                                    <th>apy %</th>
+                                    <th>your stake</th>
+                                    <th>claimable</th>
+                                    <th>uninvested</th>
+                                    <th>total pool</th>
+                                    <th>weekly rewards</th>
+                                    <th>next reduction</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div>Suggestions for newcomers:
                     <ul style="line-height: 2.0;">
@@ -284,52 +307,56 @@
                     &nbsp;&nbsp;<button type="button" style="cursor: pointer;" onclick="toggleGame()"><b>Game</b></button>
                 </div>
                 <div class="panel" id="user_own_all">
-                    <table style="width:100%;">
-                        <thead>
-                            <tr>
-                                <th><button type="button" style="cursor: pointer;" onclick="toggleSecretPhrase()"><b>Whale club</b></button></th>
-                                <th>KIF</th>
-                                <th>DEX</th>
-                                <th>kBASEv0</th>
-                                <th>total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="bold">your amt</td>
-                                <td><span id="user_kif_all">?</span> (<span id="user_kif_percent">?.??</span> %)</td>
-                                <td><span id="user_dex_all">?</span> (<span id="user_dex_percent">?.??</span> %)</td>
-                                <td><span id="user_kbase_all">?</span> (<span id="user_kbase_percent">?.??</span> %)</td>
-                                <td><span id="user_kf_percent">?.??</span> % of KF</td>
-                            </tr>
-                            <tr>
-                                <td class="bold">usd value</td>
-                                <td><span id="user_kif_usd">?</span> (<span id="user_kif_usd_percent">?</span> %)</td>
-                                <td><span id="user_dex_usd">?</span> (<span id="user_dex_usd_percent">?</span> %)</td>
-                                <td><span id="user_kbase_usd">?</span> (<span id="user_kbase_usd_percent">?</span> %)</td>
-                                <td><span id="user_all_usd">?</span> (<span id="user_all_usd_to_eth">?</span> E)</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="table_wrap">
+                        <table style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th><button type="button" style="cursor: pointer;" onclick="toggleSecretPhrase()"><b>Whale club</b></button></th>
+                                    <th>KIF</th>
+                                    <th>DEX</th>
+                                    <th>kBASEv0</th>
+                                    <th>total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="bold">your amt</td>
+                                    <td><span id="user_kif_all">?</span> (<span id="user_kif_percent">?.??</span> %)</td>
+                                    <td><span id="user_dex_all">?</span> (<span id="user_dex_percent">?.??</span> %)</td>
+                                    <td><span id="user_kbase_all">?</span> (<span id="user_kbase_percent">?.??</span> %)</td>
+                                    <td><span id="user_kf_percent">?.??</span> % of KF</td>
+                                </tr>
+                                <tr>
+                                    <td class="bold">usd value</td>
+                                    <td><span id="user_kif_usd">?</span> (<span id="user_kif_usd_percent">?</span> %)</td>
+                                    <td><span id="user_dex_usd">?</span> (<span id="user_dex_usd_percent">?</span> %)</td>
+                                    <td><span id="user_kbase_usd">?</span> (<span id="user_kbase_usd_percent">?</span> %)</td>
+                                    <td><span id="user_all_usd">?</span> (<span id="user_all_usd_to_eth">?</span> E)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <div id="whaleClub" style="margin-top: 0.8em; display: none;">
                         If you own >0.5% of KF, <a href="https://t.me/kitten_finance_group" target="_blank">contact me</a> to join the secret whale club.
                     </div>
                 </div>
                 <div class="game" style="width:50%; height:500px; margin:0 auto; margin-bottom: 1em;"></div>
-                <table id="event_table" style="width:100%">
-                    <thead>
-                        <tr id="event_table_head">
-                            <th>time</th>
-                            <th>event</th>
-                            <th>amt</th>
-                            <th>user</th>
-                            <th>detail</th>
-                            <th>gas</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+                <div class="table_wrap">
+                    <table id="event_table" style="width:100%">
+                        <thead>
+                            <tr id="event_table_head">
+                                <th>time</th>
+                                <th>event</th>
+                                <th>amt</th>
+                                <th>user</th>
+                                <th>detail</th>
+                                <th>gas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
                 <br>
                 <div id="event_log" class="no_underline" style="margin-bottom: 2em;"></div>
                 <div style="margin-top: 1em">
@@ -344,7 +371,10 @@
                         <a href="https://t.me/kitten_finance_group" target="_blank">Join our Telegram</a>
                     </div>
                 </div>
-                <br><div style="background-color: #1a1a1a;"><div id="tlkio" data-channel="AlphaDex-trollbox" data-theme="theme--night" data-nickname="anonymous" style="width:100%;height:600px;"></div></div>
+                <br>
+                <div style="background-color: #1a1a1a;">
+                    <div id="tlkio" data-channel="AlphaDex-trollbox" data-theme="theme--night" data-nickname="anonymous" style="width:100%;height:600px;"></div>
+                </div>
             </div>
         </div>
         <div id="footer">
