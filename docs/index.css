@@ -53,10 +53,8 @@ html {
     line-height: 2;
 }
 
-
-
 body {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .button {
@@ -65,7 +63,7 @@ body {
 
 pre {
     margin: 0;
-    font-size: 15px;
+    font-size: 14px;
     font-family: Consolas, Menlo, Courier, monospace;
 }
 
@@ -129,7 +127,7 @@ pre {
     }
 
     pre {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .button {
@@ -163,7 +161,7 @@ pre {
     }
 
     pre {
-        font-size: 13px;
+        font-size: 12.5px;
     }
 
     .button {
@@ -197,7 +195,7 @@ pre {
     }
 
     pre {
-        font-size: 11.5px;
+        font-size: 10.5px;
     }
 
     .button {
@@ -301,6 +299,7 @@ td {
 .table_wrap {
     border: solid 1px #bbb;
     border-radius: 8px;
+    overflow: hidden;
     /* background: #111; */
     /* border-top-left-radius: 8px;
     border-top-right-radius: 8px; */
