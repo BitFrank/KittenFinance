@@ -76,11 +76,11 @@ pre {
 }
 
 #navbar_title {
-    font-size: 40px;
+    font-size: 32px;
 }
 
 #navbar_title img {
-    height: 40px;
+    height: 32px;
     position: relative;
     top: 5px;
 }
@@ -138,9 +138,6 @@ pre {
         font-size: 14px;
     }
 
-    .livecoinwatch-widget-1 {
-        transform: scale(0.8);
-    }
     #token_box_trade {
         top: 0.3em !important;
     }
@@ -172,9 +169,6 @@ pre {
         font-size: 13px;
     }
 
-    .livecoinwatch-widget-1 {
-        transform: scale(0.8);
-    }
     #token_box_trade {
         top: 0.3em !important;
     }
@@ -206,9 +200,6 @@ pre {
         font-size: 11.5px;
     }
 
-    .livecoinwatch-widget-1 {
-        transform: scale(0.8);
-    }
     #token_box_trade {
         top: 0.3em !important;
     }
@@ -372,8 +363,19 @@ td {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.flexbox_equal_height {
+    display: flex;
+    justify-content: space-between;
     align-content: center;
     flex-wrap: wrap;
+}
+
+.wfull_center {
+    text-align: center; 
+    width:100%;
 }
 
 .trade_panel button {
