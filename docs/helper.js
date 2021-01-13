@@ -372,9 +372,9 @@ const getBALEarnings = async function (addr, startWeek) {
 }
 
 const get_synth_weekly_rewards = async function (synth_contract_instance) {
-    if (await isRewardPeriodOver(synth_contract_instance)) {
-        return 0
-    }
+    // if (await isRewardPeriodOver(synth_contract_instance)) {
+    //     return 0
+    // }
 
     const rewardRate = await synth_contract_instance.rewardRate()
     return (rewardRate / 1e18) * 604800
