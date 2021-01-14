@@ -55,7 +55,17 @@
         .darkred {
             color: darkred !important;
         }
-        
+        .gray {
+            color: #888 !important;
+        }
+
+        .lightgray {
+            color: #666 !important;
+        }
+        .darkgray, .darkgray a {
+            color: #999;
+        }
+
         .panel {
             border: 0px;
             box-shadow: 0 4px 16px 0 rgba(0,0,0,.08);
@@ -192,6 +202,16 @@
         .darkred {
             color: #c22 !important;
         }
+        .gray {
+            color: #888 !important;
+        }
+
+        .lightgray {
+            color: #999 !important;
+        }
+        .darkgray, .darkgray a {
+            color: #777;
+        }
     </style>
     <script>
         // document.getElementById('dark_mode_css').disabled = true;
@@ -249,44 +269,23 @@
                         </ul>
                     </div>
                     <div class="token_box panel flexbox_equal_height" id="user_own_all" style="width: calc(55% - 0.5em);">
-                        <div class="title wfull_center" style="margin-bottom: 1.5em; font-size: 130%; letter-spacing: 0.1em;">Your Share of Kitten.finance</div>
+                        <div class="wfull_center title" style="margin-bottom: 1.2em; font-size: 135%; letter-spacing: 0.1em;">You own <span class="user_kf_percent">?.??</span>% of Kitten.finance</div>
                         <div class="radial_chart flexbox" style="width: 100%; justify-content:space-evenly">
-                            <div id="radial_kif" style="position: relative;"><span style="position: absolute; left: 0px; top: 42px; text-align: center; width: 120px;">KIF<br><span class="user_kif_percent">?.??</span>%</span></div>
-                            <div id="radial_dex" style="position: relative;"><span style="position: absolute; left: 0px; top: 42px; text-align: center; width: 120px;">DEX<br><span class="user_dex_percent">?.??</span>%</span></div>
-                            <div id="radial_kbase" style="position: relative;"><span style="position: absolute; left: 0px; top: 42px; text-align: center; width: 120px;">kBASEv0<br><span class="user_kbase_percent">?.??</span>%</span></div>
+                            <div id="radial_kif" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
+                                <span class="user_kif_all">?</span><br>KIF<br><span class="user_kif_percent">?.??</span>%</span>
+                                <div class="wfull_center">$ <span class="user_kif_usd">?</span><span class="gray"> &nbsp;(<span class="user_kif_usd_percent">?</span>%)</span></div>
+                            </div>                                
+                            <div id="radial_dex" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
+                                <span class="user_dex_all">?</span><br>DEX<br><span class="user_dex_percent">?.??</span>%</span>
+                                <div class="wfull_center">$ <span class="user_dex_usd">?</span><span class="gray"> &nbsp;(<span class="user_dex_usd_percent">?</span>%)</span></div>
+                            </div>
+                            <div id="radial_kbase" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
+                                <span class="user_kbase_all">?</span><br>kBASEv0<br><span class="user_kbase_percent">?.??</span>%</span>
+                                <div class="wfull_center">$ <span class="user_kbase_usd">?</span><span class="gray"> &nbsp;(<span class="user_kbase_usd_percent">?</span>%)</span></div>
+                            </div>
                         </div>
-                        <div class="table_wrap" style="width: 100%; margin-top: 1.5em">
-                            <table style="width:100%;">
-                                <thead>
-                                    <tr>
-                                        <th><button type="button" style="cursor: pointer;" onclick="toggleSecretPhrase()">Whale club</button></th>
-                                        <th>KIF</th>
-                                        <th>DEX</th>
-                                        <th>kBASEv0</th>
-                                        <th>total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="bold">your amt</td>
-                                        <td><span class="user_kif_all">?</span> (<span class="user_kif_percent">?.??</span>%)</td>
-                                        <td><span class="user_dex_all">?</span> (<span class="user_dex_percent">?.??</span>%)</td>
-                                        <td><span class="user_kbase_all">?</span> (<span class="user_kbase_percent">?.??</span>%)</td>
-                                        <td><span class="user_kf_percent">?.??</span>% of KF</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="bold">usd value</td>
-                                        <td><span class="user_kif_usd">?</span> (<span class="user_kif_usd_percent">?</span>%)</td>
-                                        <td><span class="user_dex_usd">?</span> (<span class="user_dex_usd_percent">?</span>%)</td>
-                                        <td><span class="user_kbase_usd">?</span> (<span class="user_kbase_usd_percent">?</span>%)</td>
-                                        <td><span class="user_all_usd">?</span> (<span class="user_all_usd_to_eth">?</span> E)</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="whaleClub" style="margin-top: 0.8em; display: none;">
-                            If you own >0.5% of total KF, <a href="https://t.me/kitten_finance_group" target="_blank">contact me</a> to join the secret whale club.
-                        </div>
+                        <div class="wfull_center" style="margin-top: 1em;"><span class="gray">Total</span> $ <span class="user_all_usd">?</span><span class="gray"> &nbsp;(<span class="user_all_usd_to_eth">?</span> ETH)</span></div>
+                        <div class="wfull_center darkgray" style="margin-top: 0.8em;">If you own > 0.5% of Kitten.finance, <a href="https://t.me/kitten_finance_group" target="_blank">contact us</a> for secret whale club.</div>
                     </div>                                      
                 </div>
                 <div id="overview" style="margin-bottom: 1em;">
@@ -338,7 +337,7 @@
                         </div>
                     </div>
                     <div class="token_box panel flexbox_equal_height" style="margin-top:1.5em; margin-bottom: 0;">
-                        <div class="wfull_center">After a reduction, do a Claim to start the emission for the next round. We just need one person to do this for the whole pool.</div>
+                        <div class="wfull_center">After a reduction, do a Claim (or Stake) to start the emission of the next round. We just need one person to do this for the whole pool.</div>
                     </div>
                 </div><br>
                 <div id="token_boxes_MORE" class="flexbox_equal_height line_above" style="padding-top: 1em; margin-bottom: 1em;">
@@ -458,7 +457,7 @@
                         <div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#eee" lcw-color-pr="#00aa00" lcw-color-bg="#111" lcw-border-w="1"></div>
                     </div>
                     <div class="flexbox trade_panel" style="margin-top: 1em;">
-                        <div class="input_wrap" style="flex:0.3"><input placeholder="amount" class="input trade_panel_amt" value="" style="width: 100%;"></div>
+                        <div class="input_wrap" style="flex:0.4"><input placeholder="amount" class="input trade_panel_amt" value="" style="width: 100%;"></div>
                         <select id="trade_token_in" size="1">
                             <option selected>ETH</option>
                             <option>WETH</option>
@@ -470,12 +469,12 @@
                             <option>WETH</option>
                             <option selected>KIF</option>
                         </select>
-                        <button class="button btn_swap" style="flex:0.25">Swap</button>
-                        <div style="width: 100%; margin-top: 1em;">
-<span id="trade_panel_wallet">You have <span class="user_wallet_eth">?</span> ETH, <span class="user_wallet_weth">?</span> WETH, <span class="user_wallet_kif">?</span> KIF in MetaMask</span>
-<br><span style="width: 100%;"><span id="trade_panel_log"></span> <span id="swap_log" style="color:darkred"></span></span>
-                        </div>
+                        <button class="button btn_swap" style="flex:0.3">Swap</button>
                     </div>
+                    <div style="width: 100%; margin-top: 1em;">
+                        <span id="trade_panel_wallet">You have <span class="user_wallet_eth">?</span> ETH, <span class="user_wallet_weth">?</span> WETH, <span class="user_wallet_kif">?</span> KIF in MetaMask</span>
+                        <br><span style="width: 100%;"><span id="trade_panel_log"></span> <span id="swap_log" style="color:darkred"></span></span>
+                    </div>                    
                 </div>
                 <div class="game" style="width:50%; height:500px; margin:0 auto; margin-bottom: 1em;"></div>
                 <div class="table_wrap">
