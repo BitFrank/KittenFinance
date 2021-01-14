@@ -17,6 +17,7 @@
             src: url("font/exo2.woff2") format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
+
         @font-face {
             font-family: 'Open Sans';
             font-style: normal;
@@ -25,6 +26,7 @@
             src: url("font/open_sans.woff2") format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
+
         @font-face {
             font-family: 'JetBrains Mono';
             font-style: normal;
@@ -34,13 +36,19 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
 
-        body, input, select, button {
+        body,
+        input,
+        select,
+        button {
             font-family: 'Open Sans', sans-serif;
         }
+
         button {
             line-height: 1.2;
         }
-        pre, .monospace {
+
+        pre,
+        .monospace {
             font-family: 'JetBrains Mono', Consolas, Menlo, Courier, monospace;
         }
 
@@ -55,6 +63,7 @@
         .darkred {
             color: darkred !important;
         }
+
         .gray {
             color: #888 !important;
         }
@@ -62,13 +71,15 @@
         .lightgray {
             color: #666 !important;
         }
-        .darkgray, .darkgray a {
+
+        .darkgray,
+        .darkgray a {
             color: #999;
         }
 
         .panel {
             border: 0px;
-            box-shadow: 0 4px 16px 0 rgba(0,0,0,.08);
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .08);
         }
 
         .loader {
@@ -99,14 +110,33 @@
             background-color: #ddd;
             border: 0;
         }
+
         button:hover {
             background: #0C0;
+            cursor: pointer;
         }
+
         button:focus {
-            outline:0
+            outline: 0
         }
-        select:focus{
-            outline:0
+
+        select:focus {
+            outline: 0
+        }
+
+        #token_control button {
+            background: inherit;
+            border-radius: 8px;
+            width: 33.333%;
+            height: 25%;
+            line-height: 1.5;
+        }
+        #token_control button:hover {
+            background: #492;
+            color: white;
+        }
+        .poolBtnBorder {
+            border: 1px solid #492;
         }
     </style>
     <style id="dark_mode_css">
@@ -120,7 +150,7 @@
             color: #ccc;
             border: 0 !important;
         }
-        
+
         #main {
             border-right: 1px solid transparent;
         }
@@ -132,7 +162,7 @@
         .panel {
             background-color: #111;
             color: #ccc;
-            box-shadow: 0 4px 16px 0 rgba(0,0,0,.2);
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .2);
         }
 
         a:link,
@@ -162,8 +192,15 @@
             background-color: #040;
             color: #ddd;
         }
+
         button:hover {
             background: #090;
+        }
+        #token_control button:hover {
+            background: #090;
+        }
+        .poolBtnBorder {
+            border: 1px solid #090;
         }
 
         .button {
@@ -202,6 +239,7 @@
         .darkred {
             color: #c22 !important;
         }
+
         .gray {
             color: #888 !important;
         }
@@ -209,7 +247,9 @@
         .lightgray {
             color: #999 !important;
         }
-        .darkgray, .darkgray a {
+
+        .darkgray,
+        .darkgray a {
             color: #777;
         }
     </style>
@@ -228,8 +268,20 @@
                 <p><a href="https://www.KittenSwap.org" target="_blank">KittenSwap</a></p>
                 <p style="padding-top:6px">
                     <a style="text-decoration: none;" href="javascript:void(0);" onclick="color_theme_switch()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun ficon"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon ficon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun ficon">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon ficon">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
                     </a>
                 </p>
                 <p style="line-height: 1.8;">
@@ -255,7 +307,7 @@
                         <img src="img/kf.png" style="max-width: 100%;">
                     </div>
                 </div>
-                
+
                 <div class="flexbox_equal_height">
                     <div class="token_box panel" style="line-height: 1.8; padding-bottom: 0; width: calc(45% - 0.5em);">
                         The pillars of Kitten.Finance are <a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a> and <a href="https://www.KittenSwap.org" target="_blank">KittenSwap</a>.
@@ -272,21 +324,21 @@
                         <div class="wfull_center title" style="margin-bottom: 1.2em; font-size: 135%; letter-spacing: 0.1em;">You own <span class="user_kf_percent">?.??</span>% of Kitten.finance</div>
                         <div class="radial_chart flexbox" style="width: 100%; justify-content:space-evenly">
                             <div id="radial_kif" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
-                                <span class="user_kif_all">?</span><br>KIF<br><span class="user_kif_percent">?.??</span>%</span>
+                                    <span class="user_kif_all">?</span><br>KIF<br><span class="user_kif_percent">?.??</span>%</span>
                                 <div class="wfull_center">$ <span class="user_kif_usd">?</span><span class="gray"> &nbsp;(<span class="user_kif_usd_percent">?</span>%)</span></div>
-                            </div>                                
+                            </div>
                             <div id="radial_dex" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
-                                <span class="user_dex_all">?</span><br>DEX<br><span class="user_dex_percent">?.??</span>%</span>
+                                    <span class="user_dex_all">?</span><br>DEX<br><span class="user_dex_percent">?.??</span>%</span>
                                 <div class="wfull_center">$ <span class="user_dex_usd">?</span><span class="gray"> &nbsp;(<span class="user_dex_usd_percent">?</span>%)</span></div>
                             </div>
                             <div id="radial_kbase" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
-                                <span class="user_kbase_all">?</span><br>kBASEv0<br><span class="user_kbase_percent">?.??</span>%</span>
+                                    <span class="user_kbase_all">?</span><br>kBASEv0<br><span class="user_kbase_percent">?.??</span>%</span>
                                 <div class="wfull_center">$ <span class="user_kbase_usd">?</span><span class="gray"> &nbsp;(<span class="user_kbase_usd_percent">?</span>%)</span></div>
                             </div>
                         </div>
                         <div class="wfull_center" style="margin-top: 1em;"><span class="gray">Total</span> $ <span class="user_all_usd">?</span><span class="gray"> &nbsp;(<span class="user_all_usd_to_eth">?</span> ETH)</span></div>
                         <div class="wfull_center darkgray" style="margin-top: 0.8em;">If you own > 0.5% of Kitten.finance, <a href="https://t.me/kitten_finance_group" target="_blank">contact us</a> for secret whale club.</div>
-                    </div>                                      
+                    </div>
                 </div>
                 <div id="overview" style="margin-bottom: 1em;">
                     <div class="table_wrap">
@@ -309,17 +361,17 @@
                     </div>
                 </div>
                 <!-- <div id="mid_help" class="line_above"> -->
-                    <!-- <div class="flexbox">
+                <!-- <div class="flexbox">
                         <br> -->
-                        <!-- <a href="https://www.kittenswap.org/" target="_blank">KittenSwap (Testnet)</a>
+                <!-- <a href="https://www.kittenswap.org/" target="_blank">KittenSwap (Testnet)</a>
                         <a href="https://www.AlphaDex.org/" target="_blank" style="color:red !important"><b>🐱 Try AlphaDex (Mainnet) 🐱</b> </a> -->
-                        <!-- <a href="alphadex/" target="_blank">AlphaDex (Testnet)</a> -->
-                        <!-- <br><br> -->
-                        <!-- <div style="margin: 0 auto;"><img src="img/roadmap.png" style="max-width: 100%;"></div> -->
-                    <!-- </div> -->
+                <!-- <a href="alphadex/" target="_blank">AlphaDex (Testnet)</a> -->
+                <!-- <br><br> -->
+                <!-- <div style="margin: 0 auto;"><img src="img/roadmap.png" style="max-width: 100%;"></div> -->
+                <!-- </div> -->
                 <!-- </div> -->
                 <div id="token_boxes" class="flexbox_equal_height">
-                    <div class="token_box panel" id="token_box_1" style="margin-bottom: 0;">
+                    <div class="token_box panel" id="token_box_1">
                         <pre class="token_log"></pre>
                         <div class="token_loader loader"></div>
                         <div class="token_panel flexbox" style="margin-top:1em;">
@@ -336,41 +388,24 @@
                             <div class="token_panel_log" style="width:49%; text-align: center;"></div>
                         </div>
                     </div>
-                    <div class="token_box panel flexbox_equal_height" style="margin-top:1.5em; margin-bottom: 0;">
-                        <div class="wfull_center">After a reduction, do a Claim (or Stake) to start the emission of the next round. We just need one person to do this for the whole pool.</div>
-                    </div>
-                </div><br>
-                <div id="token_boxes_MORE" class="flexbox_equal_height line_above" style="padding-top: 1em; margin-bottom: 1em;">
-                    <div class="token_box panel flexbox_equal_height" id="token_box_kbasev0" style="margin-top: 1.5em; text-align: center; margin-bottom: 0;">
-                        <div class="wfull_center" style="margin-bottom: 2em;">
-                            <a style="width:100%; text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">
-                            <button class="button" style="width:100%">Trade kBASEv0 on UniSwap<br>(make sure you understand rebase before investing)</button>
-                            </a>
-                        </div>
-                        <div class="wfull_center" style="margin-bottom: 2em;">
-                            <a href="https://etherscan.io/address/0xffc5821c945b1e617d3e743e2575b68f4ffc1422#writeContract" target="_blank">[REBASE (call between XX:00:00 and XX:02:59 every hour)]</a>
-                        </div>
-                        <div class="wfull_center">
-                            <a href="https://etherscan.io/address/0x124c6092c469716a661b5b0609f205050b26b50f" target="_blank">[kBASEv0 contract]</a> &nbsp;&nbsp;&nbsp; <a href="https://uniswap.info/pair/0xc39180720b4b4df561a35366da122fba006fbc17" target="_blank">[chart]</a>
-                        </div>
-                    </div>
+                    <div class="token_box panel" id="token_control">
+                        <!-- <div class="wfull_center title" style="margin-bottom: 1.2em; font-size: 135%; letter-spacing: 0.1em;">Switch Pools</div>                         -->
+                    </div>                    
                 </div>
-                <div class="line_above">
+                <div class="line_above" style="margin-top: 0.5em; padding-top: 1.5em;">
+                    <div>After a reduction, do a Claim (or Stake) to start the emission of the next round. We just need one person to do this for the whole pool.</div>
                     <br>When you stake kBASEv0 into pool 203, it will be automatically converted to NORM-kB, which is "the amount of kBASEv0 you will have if the total supply of kBASEv0 is 1M", and hence unaffected by rebases.
                     And the amount of NORM-kB is smaller than the amount of kBASEv0, because currently the total supply of kBASEv0 is larger than 1M.
                     When you unstake NORM-kB, it will be automatically converted back to kBASEv0.
                     <br>
                     <br>An example: [assume kbase total supply = 3M] => [you deposit 3K kbase, and becomes 1K normkb] => [kbase rebased to 4M total supply, and normkb is unaffected] => [however if you unstake 1K normkb now, it becomes 4K kbase]. Hence your kbase is rebased correctly.
                     <br><br>
-                </div>
-                <div id="token_boxes_20X" class="flexbox line_above" style="padding-top: 1em; margin-bottom: 1em;">
-                    <div class="token_box" id="token_box_dex" style="margin-top: 2.4em; text-align: center;">
-                        <a style="width:100%; text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">
-                            <button class="button" style="width:100%">Trade DEX on UniSwap</button>
-                        </a>
-                        <br><a href="https://etherscan.io/address/0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">[DEX contract]</a> &nbsp;&nbsp;&nbsp; <a href="https://info.uniswap.org/pair/0x0ad8fb8c6ac8fa7446fd00bd53cefa8e03fc01d3" target="_blank">[chart]</a><br><br>
-                    </div>
-                </div>
+                    <a href="https://etherscan.io/address/0xffc5821c945b1e617d3e743e2575b68f4ffc1422#writeContract" target="_blank">[kBASEv0 REBASE (can call between XX:00:00 ~ XX:02:59 every hour)]</a> &nbsp;&nbsp;              
+                    <a href="https://etherscan.io/address/0x124c6092c469716a661b5b0609f205050b26b50f" target="_blank">[kBASEv0 contract]</a> &nbsp;&nbsp;
+                    <a href="https://uniswap.info/pair/0xc39180720b4b4df561a35366da122fba006fbc17" target="_blank">[kBASEv0 chart]</a> &nbsp;&nbsp;
+                    <a href="https://etherscan.io/address/0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">[DEX contract]</a> &nbsp;&nbsp;
+                    <a href="https://info.uniswap.org/pair/0x0ad8fb8c6ac8fa7446fd00bd53cefa8e03fc01d3" target="_blank">[DEX chart]</a>
+                </div><br>
                 <div id="footer_help" class="line_above">
                     FAQ:
                     <ul type="round">
@@ -435,14 +470,14 @@
             </div>
             <div id="sidebar">
                 <div class="panel" style="padding-right: 0.5em;">
-                    <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">Trade <b>KIF</b></a> : price <b><span id="price_ref">(checking...)</span></b> E = $ <b><span id="kif_price_usd">?</span></b>, liq.
+                    <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">Trade KIF</a> : price <span id="price_ref">(checking...)</span> E = $ <span id="kif_price_usd">?</span>, liq.
                     <span id="liq_ref">(checking...)</span>
-                    <br>circulating supply <span id="kif_supply">?</span>, market cap $ <b><span id="kif_mc">?</span></b> M, total supply 42000
-                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">Trade <b>DEX</b></a> : price <b><span id="price_ref_dex_eth">(checking...)</span></b> E = $ <b><span id="dex_price_usd">?</span></b>, liq.
+                    <br>circulating supply <span id="kif_supply">?</span>, market cap $ <span id="kif_mc">?</span> M, total supply 42000
+                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">Trade DEX</a> : price <span id="price_ref_dex_eth">(checking...)</span> E = $ <span id="dex_price_usd">?</span>, liq.
                     <span id="liq_ref_dex">(checking...)</span>
-                    <br>circulating supply <span id="dex_supply">?</span>, market cap $ <b><span id="dex_mc">?</span></b> M, total supply 420000
-                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">Trade <b>kBASEv0</b></a> : price <b><span id="kbase_price_usdc">?</span></b> USDC, liq. = <span id="liq_ref_kbase">(checking...)</span>
-                    <br>circulating supply <span id="kbase_supply">?</span> M, market cap $ <b><span id="kbase_mc">?</span></b> M</span>, total supply <b><span id="kbase_total_supply">?</span></b> M
+                    <br>circulating supply <span id="dex_supply">?</span>, market cap $ <span id="dex_mc">?</span> M, total supply 420000
+                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">Trade kBASEv0</a> : price <span id="kbase_price_usdc">?</span> USDC, liq. = <span id="liq_ref_kbase">(checking...)</span>
+                    <br>circulating supply <span id="kbase_supply">?</span> M, market cap $ <span id="kbase_mc">?</span> M</span>, total supply <span id="kbase_total_supply">?</span> M
                     <br><br>
                     <div class="loader" id="main_loader"></div>
                     <button type="button" style="cursor: pointer;" onclick="clearEventTable()">Clear events</button>
@@ -474,7 +509,7 @@
                     <div style="width: 100%; margin-top: 1em;">
                         <span id="trade_panel_wallet">You have <span class="user_wallet_eth">?</span> ETH, <span class="user_wallet_weth">?</span> WETH, <span class="user_wallet_kif">?</span> KIF in MetaMask</span>
                         <br><span style="width: 100%;"><span id="trade_panel_log"></span> <span id="swap_log" style="color:darkred"></span></span>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="game" style="width:50%; height:500px; margin:0 auto; margin-bottom: 1em;"></div>
                 <div class="table_wrap">
