@@ -371,7 +371,9 @@
                 <!-- </div> -->
                 <!-- </div> -->
                 <div id="token_boxes" class="flexbox_equal_height">
-                    <div class="token_box panel" id="token_box_1">
+                    <div class="token_box panel" id="token_control" style="width: calc(45% - 0.5em);">
+                    </div>                    
+                    <div class="token_box panel" id="token_box_1" style="width: calc(55% - 0.5em);">
                         <pre class="token_log"></pre>
                         <div class="token_loader loader"></div>
                         <div class="token_panel flexbox" style="margin-top:1em;">
@@ -387,18 +389,15 @@
                             </div>
                             <div class="token_panel_log" style="width:49%; text-align: center;"></div>
                         </div>
-                    </div>
-                    <div class="token_box panel" id="token_control">
-                        <!-- <div class="wfull_center title" style="margin-bottom: 1.2em; font-size: 135%; letter-spacing: 0.1em;">Switch Pools</div>                         -->
-                    </div>                    
+                    </div>                
                 </div>
                 <div class="line_above" style="margin-top: 0.5em; padding-top: 1.5em;">
                     <div>After a reduction, do a Claim (or Stake) to start the emission of the next round. We just need one person to do this for the whole pool.</div>
-                    <br>When you stake kBASEv0 into pool 203, it will be automatically converted to NORM-kB, which is "the amount of kBASEv0 you will have if the total supply of kBASEv0 is 1M", and hence unaffected by rebases.
-                    And the amount of NORM-kB is smaller than the amount of kBASEv0, because currently the total supply of kBASEv0 is larger than 1M.
-                    When you unstake NORM-kB, it will be automatically converted back to kBASEv0.
+                    <br>When you stake kBASEv0 into pool 203, it will be automatically converted to nkB (norm-kBASEv0), which is "the amount of kBASEv0 you will have if the total supply of kBASEv0 is 1M", and hence unaffected by rebases.
+                    And the amount of nkB is different from the amount of kBASEv0, because the total supply of kBASEv0 is different from 1M.
+                    When you unstake nkB, it will be automatically converted back to kBASEv0.
                     <br>
-                    <br>An example: [assume kbase total supply = 3M] => [you deposit 3K kbase, and becomes 1K normkb] => [kbase rebased to 4M total supply, and normkb is unaffected] => [however if you unstake 1K normkb now, it becomes 4K kbase]. Hence your kbase is rebased correctly.
+                    <br>An example: [assume kB total supply = 3M] => [you deposit 3000 kB, and becomes 1000 nkB] => [kB rebased to 4M total supply, and nkB is unaffected] => [however if you unstake 1000 nkB now, it becomes 4000 kB]. Hence your kB is rebased correctly.
                     <br><br>
                     <a href="https://etherscan.io/address/0xffc5821c945b1e617d3e743e2575b68f4ffc1422#writeContract" target="_blank">[kBASEv0 REBASE (can call between XX:00:00 ~ XX:02:59 every hour)]</a> &nbsp;&nbsp;              
                     <a href="https://etherscan.io/address/0x124c6092c469716a661b5b0609f205050b26b50f" target="_blank">[kBASEv0 contract]</a> &nbsp;&nbsp;
