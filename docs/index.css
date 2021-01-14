@@ -101,15 +101,6 @@ pre {
     box-sizing: border-box;
 }
 
-#token_box_3,
-#token_box_103 {
-    margin-top: 1.5em;
-}
-#token_box_203, #token_box_204,
-#token_box_205, #token_box_206 {
-    margin-top: 1em;
-}
-
 @media screen and (max-width: 1599px) {
     #navbar_title {
         font-size: 32px;
