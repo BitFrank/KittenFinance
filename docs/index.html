@@ -127,8 +127,8 @@
         #token_control button {
             background: inherit;
             border-radius: 8px;
-            width: 33.333%;
-            height: 25%;
+            width: 100%;
+            height: 8.3333%;
             line-height: 1.5;
         }
         #token_control button:hover {
@@ -341,26 +341,6 @@
                         <div class="wfull_center darkgray" style="margin-top: 0.8em;">If you own > 0.5% of Kitten.finance, <a href="https://t.me/kitten_finance_group" target="_blank">contact us</a> for secret whale club.</div>
                     </div>
                 </div>
-                <div id="overview" style="margin-bottom: 1em;">
-                    <div class="table_wrap">
-                        <table id="overview_table" style="width:100%">
-                            <thead>
-                                <tr id="overview_table_head">
-                                    <th>pool</th>
-                                    <th>apy %</th>
-                                    <th>your stake</th>
-                                    <th>claimable</th>
-                                    <th>uninvested</th>
-                                    <th>total pool</th>
-                                    <th>weekly rewards</th>
-                                    <th>next reduction</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
                 <!-- <div id="mid_help" class="line_above"> -->
                 <!-- <div class="flexbox">
                         <br> -->
@@ -372,25 +352,47 @@
                 <!-- </div> -->
                 <!-- </div> -->
                 <div id="token_boxes" class="flexbox_equal_height">
-                    <div class="token_box panel" id="token_control" style="width: calc(45% - 0.5em);">
-                    </div>                    
-                    <div class="token_box panel" id="token_box_1" style="width: calc(55% - 0.5em);">
-                        <pre class="token_log"></pre>
-                        <div class="token_loader loader"></div>
-                        <div class="token_panel flexbox" style="margin-top:1em;">
-                            <button class="button btn_stake">Stake</button>
-                            <button class="button btn_claim" title="claim rewards">Claim rewards</button>
-                            <button class="button btn_withdraw">Unstake</button>
-                            <button class="button btn_exit">Unstake all & Claim</button>
-                        </div>
-                        <div class="token_panel flexbox" style="margin-top:1em; width: 100%">
-                            <button class="button btn_stake_all" disabled="true">Stake all</button>
-                            <div class="input_wrap" style="width: 24%;">
-                                <input placeholder="amount" class="input token_panel_amt" style="width: 100%;" value="">
+                    <div class="panel" id="token_control" style="width: calc(18% - 0.5em); box-sizing: border-box;">
+                    </div>
+                    <div class="panel" style="width: calc(82% - 0.5em); box-sizing: border-box;">
+                        <div id="token_box_1" class="token_box" style="width: 100%; margin-bottom: 1.5em;">
+                            <pre class="token_log"></pre>
+                            <div class="token_loader loader"></div>
+                            <div class="token_panel flexbox" style="margin-top:1em;">
+                                <button class="button btn_stake">Stake</button>
+                                <button class="button btn_claim" title="claim rewards">Claim rewards</button>
+                                <button class="button btn_withdraw">Unstake</button>
+                                <button class="button btn_exit">Unstake all & Claim</button>
                             </div>
-                            <div class="token_panel_log" style="width:49%; text-align: center;"></div>
+                            <div class="token_panel flexbox" style="margin-top:1em; width: 100%">
+                                <button class="button btn_stake_all" disabled="true">Stake all</button>
+                                <div class="input_wrap" style="width: 24%;">
+                                    <input placeholder="amount" class="input token_panel_amt" style="width: 100%;" value="">
+                                </div>
+                                <div class="token_panel_log" style="width:49%; text-align: center;"></div>
+                            </div>
                         </div>
-                    </div>                
+                        <div id="overview">
+                            <div class="table_wrap">
+                                <table id="overview_table" style="width:100%">
+                                    <thead>
+                                        <tr id="overview_table_head">
+                                            <th>pool</th>
+                                            <th>apy %</th>
+                                            <th>your stake</th>
+                                            <th>claimable</th>
+                                            <th>uninvested</th>
+                                            <th>total pool</th>
+                                            <th>weekly rewards</th>
+                                            <th>next reduction</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>                        
+                    </div>                    
                 </div>
                 <div class="line_above" style="margin-top: 0.5em; padding-top: 1.5em;">
                     <div>After a reduction, do a Claim (or Stake) to start the emission of the next round. We just need one person to do this for the whole pool.</div>
