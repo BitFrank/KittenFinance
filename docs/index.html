@@ -45,6 +45,7 @@
 
         button {
             line-height: 1.2;
+            font-size: inherit;
         }
 
         pre,
@@ -128,16 +129,41 @@
             background: inherit;
             border-radius: 8px;
             width: 100%;
-            height: 8.3333%;
+            flex: 1;
             line-height: 1.5;
         }
+
         #token_control button:hover {
             background: #492;
             color: white;
         }
+
         .poolBtnBorder {
             background: #492 !important;
             color: white;
+        }
+
+        .flexVert {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #token_control {
+            box-sizing: border-box;
+        }
+
+        ul {
+            margin-block-start: 0.3em;
+            margin-block-end: 0.3em;
+            padding-inline-start: 1.3em;
+        }
+
+        ol {
+            margin-block-start: 0.3em;
+            margin-block-end: 0.3em;
+            padding-inline-start: 1em;
         }
     </style>
     <style id="dark_mode_css">
@@ -197,9 +223,11 @@
         button:hover {
             background: #090;
         }
+
         #token_control button:hover {
             background: #040;
         }
+
         .poolBtnBorder {
             background: #040 !important;
         }
@@ -214,8 +242,12 @@
         }
 
         .navbar_wrap {
-            background-color: #040;
-            color: #ddd;
+            background-color: #111;
+            color: #ccc;
+        }
+
+        #navbar_title {
+            color: #2a0;
         }
 
         .input {
@@ -265,8 +297,8 @@
             <div class="navbar title">
                 <p id="navbar_title"><img src="apple-touch-icon.png">
                     Kitten.finance</p>
-                <p><a href="https://www.AlphaDex.org/" target="_blank">AlphaDex</a></p>
-                <p><a href="https://www.KittenSwap.org" target="_blank">KittenSwap</a></p>
+                <p><a href="https://www.AlphaDex.org/" target="_blank" style="font-size: 110%; padding: 10px; text-decoration: none;">AlphaDex</a></p>
+                <p><a href="https://www.KittenSwap.org" target="_blank" style="font-size: 110%; padding: 10px; text-decoration: none;">KittenSwap</a></p>
                 <p style="padding-top:6px">
                     <a style="text-decoration: none;" href="javascript:void(0);" onclick="color_theme_switch()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun ficon">
@@ -295,12 +327,12 @@
         <div id="main-wrap">
             <div id="main">
                 <div class="flexbox panel" id="panel_desc">
-                    <div style="width:48%; margin-left: 1%">
+                    <div style="width:48%; margin-left: 0.5em">
                         <div style="font-size: 375%; font-weight: 900; margin-top: -0.3em" class="c333 title">Advancing DeFi.</div>
                         <div style="font-size: 120%; margin-top: 0.6em;" class="c555">
                             Kitten.finance is building decentralized exchanges and clearing services for cryptoassets and derivatives, from options and swaps, to bonds and forwards.
                         </div>
-                        <div style="font-size: 120%; margin-top: 0.5em;" class="c555">
+                        <div style="font-size: 120%; margin-top: 0.8em;" class="c555">
                             Kitten.finance aims to provide the full volatility surface and yield curve for all smart contracts and DApps.
                         </div>
                     </div>
@@ -310,15 +342,15 @@
                 </div>
 
                 <div class="flexbox_equal_height">
-                    <div class="token_box panel" style="line-height: 1.8; padding-bottom: 0; width: calc(45% - 0.5em);">
+                    <div class="token_box panel" style="line-height: 1.8; padding-bottom: 0; width: calc(45% - 0.5em); padding-left: 1.5em;">
                         The pillars of Kitten.Finance are <a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a> and <a href="https://www.KittenSwap.org" target="_blank">KittenSwap</a>.
                         <br>Read our <a href="https://kitten-finance.medium.com/" target="_blank">Medium Essays</a> for details.
                         <br><br>Suggestions for newcomers:
                         <ul style="margin-top:0.3em">
-                            <li>Buy KIF from Uniswap. KIF is the governance token of Kitten.Finance.</li>
-                            <li>Stake KIF in pool 101 for kBASEv0 (an elastic supply token and the base ccy of KittenSwap).</li>
-                            <li>Stake kBASEv0 in pool 203 for DEX (the utility token of AlphaDex).</li>
-                            <li>Stake DEX in pool 205 for more DEX.</li>
+                            <li>Buy KIF from Uniswap. KIF is the governance token of Kitten.finance.</li>
+                            <li>Stake KIF (pool 101) for kBASEv0 (an elastic supply token and the base ccy of KittenSwap).</li>
+                            <li>Stake kBASEv0 (pool 203) for DEX (the utility token of AlphaDex).</li>
+                            <li>Stake DEX (pool 205) for more DEX.</li>
                         </ul>
                     </div>
                     <div class="token_box panel flexbox_equal_height" id="user_own_all" style="width: calc(55% - 0.5em);">
@@ -351,28 +383,43 @@
                 <!-- <div style="margin: 0 auto;"><img src="img/roadmap.png" style="max-width: 100%;"></div> -->
                 <!-- </div> -->
                 <!-- </div> -->
+                <!-- <div class="title wfull_center" style="font-size: 150%; letter-spacing: 0.2em; margin-bottom: 0.5em;">the KIF token</div> -->
                 <div id="token_boxes" class="flexbox_equal_height">
-                    <div class="panel" id="token_control" style="width: calc(18% - 0.5em); box-sizing: border-box;">
+                    <div class="panel flexVert" id="token_control" style="width: calc(17% - 0.5em);">
                     </div>
-                    <div class="panel" style="width: calc(82% - 0.5em); box-sizing: border-box;">
-                        <div id="token_box_1" class="token_box" style="width: 100%; margin-bottom: 1.5em;">
-                            <pre class="token_log"></pre>
-                            <div class="token_loader loader"></div>
-                            <div class="token_panel flexbox" style="margin-top:1em;">
-                                <button class="button btn_stake">Stake</button>
-                                <button class="button btn_claim" title="claim rewards">Claim rewards</button>
-                                <button class="button btn_withdraw">Unstake</button>
-                                <button class="button btn_exit">Unstake all & Claim</button>
-                            </div>
-                            <div class="token_panel flexbox" style="margin-top:1em; width: 100%">
-                                <button class="button btn_stake_all" disabled="true">Stake all</button>
-                                <div class="input_wrap" style="width: 24%;">
-                                    <input placeholder="amount" class="input token_panel_amt" style="width: 100%;" value="">
+                    <div style="width: calc(83% - 0.5em); box-sizing: border-box;">
+                        <div class="panel flexbox_equal_height">
+                            <div id="token_box_1" class="token_box" style="width: 55%;">
+                                <pre class="token_log"></pre>
+                                <div class="token_loader loader"></div>
+                                <div class="token_panel flexbox" style="margin-top:1.2em;">
+                                    <button class="button btn_stake">Stake</button>
+                                    <button class="button btn_claim">Claim reward</button>
+                                    <button class="button btn_withdraw">Unstake</button>
+                                    <button class="button btn_exit">Unstake all & Claim</button>
                                 </div>
-                                <div class="token_panel_log" style="width:49%; text-align: center;"></div>
+                                <div class="token_panel flexbox" style="margin-top:1em; width: 100%">
+                                    <button class="button btn_stake_all" disabled="true">Stake all</button>
+                                    <div class="input_wrap" style="width: 24%;">
+                                        <input placeholder="amount" class="input token_panel_amt" style="width: 100%;" value="">
+                                    </div>
+                                    <div class="token_panel_log" style="width:49%; text-align: center;"></div>
+                                </div>
+                            </div>
+                            <div class="flexVert" style="flex:1; margin-left: 2em; align-items: flex-start;">
+                                <div>KIF is the governance token of Kitten.finance:
+                                    <ol>
+                                        <li>for the DAO governing Kitten.finance.</li>
+                                        <li>dividends & buybacks from KittenSwap and future lending & vault projects.</li>
+                                        <li>the total supply of KIF is fixed at 42000.</li>
+                                        <li>you can stake KIF for tokens of future projects.</li>
+                                    </ol>
+                                </div>
+                                <div>kBASEv0 is an elastic supply token and the base ccy of KF. It will become a stable coin kBASEv1.</div>
+                                <div>DEX is the utility token of AlphaDex. Hold it for dividends & buybacks & privileges.</div>
                             </div>
                         </div>
-                        <div id="overview">
+                        <div id="overview" class="panel">
                             <div class="table_wrap">
                                 <table id="overview_table" style="width:100%">
                                     <thead>
@@ -383,7 +430,7 @@
                                             <th>claimable</th>
                                             <th>uninvested</th>
                                             <th>total pool</th>
-                                            <th>weekly rewards</th>
+                                            <th>weekly</th>
                                             <th>next reduction</th>
                                         </tr>
                                     </thead>
@@ -391,8 +438,8 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>                        
-                    </div>                    
+                        </div>
+                    </div>
                 </div>
                 <div class="line_above" style="margin-top: 0.5em; padding-top: 1.5em;">
                     <div>After a reduction, do a Claim (or Stake) to start the emission of the next round. We just need one person to do this for the whole pool.</div>
@@ -402,7 +449,7 @@
                     <br>
                     <br>An example: [assume kB total supply = 3M] => [you deposit 3000 kB, and becomes 1000 nkB] => [kB rebased to 4M total supply, and nkB is unaffected] => [however if you unstake 1000 nkB now, it becomes 4000 kB]. Hence your kB is rebased correctly.
                     <br><br>
-                    <a href="https://etherscan.io/address/0xffc5821c945b1e617d3e743e2575b68f4ffc1422#writeContract" target="_blank">[kBASEv0 REBASE (can call between XX:00:00 ~ XX:02:59 every hour)]</a> &nbsp;&nbsp;              
+                    <a href="https://etherscan.io/address/0xffc5821c945b1e617d3e743e2575b68f4ffc1422#writeContract" target="_blank">[kBASEv0 REBASE (can call between XX:00:00 ~ XX:02:59 every hour)]</a> &nbsp;&nbsp;
                     <a href="https://etherscan.io/address/0x124c6092c469716a661b5b0609f205050b26b50f" target="_blank">[kBASEv0 contract]</a> &nbsp;&nbsp;
                     <a href="https://uniswap.info/pair/0xc39180720b4b4df561a35366da122fba006fbc17" target="_blank">[kBASEv0 chart]</a> &nbsp;&nbsp;
                     <a href="https://etherscan.io/address/0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">[DEX contract]</a> &nbsp;&nbsp;
@@ -413,7 +460,7 @@
                     <ul type="round">
                         <li><b>Note KF is not a yield farming project.</b> The pools are for distributing <b>the governance token KIF</b>. YFI only had 1 week of farming.</li>
                         <li>You can <a href="https://metamask.io/download.html" target="_blank">download MetaMask app</a> to use KittenFinance on mobile devices. The url is <b>kitten.finance</b>.</li>
-                        <li><b>You are still earning Uniswap LP fees (0.30%) when staking your LP in KF pools.</b> Because your LP shares appreciate over time (Uniswap collect fees for you).</li>
+                        <li><b>You are still earning Uniswap LP fees (0.30%) when staking your LP in KF pools.</b> Because your LP shares appreciate over time (Uniswap collects fees for you).</li>
                         <li>The first deposit to a pool needs an "approval" tx. Wait for it to confirm, then refresh the page to stake to the pool. </li>
                         <li>You can directly trade KIF using WETH, or provide KIF+WETH liquidity on UniSwap. This actually saves gas. So there's no need to unwrap WETH. Remember to leave some ETH for paying gas.</li>
                         <li>NEVER set a high "slippage tolerance %" when trading on Uniswap, or bots will frontrun you. <b>Better use 0.2% slippage and high gas, and split large buy orders into multiple smaller orders</b>. Click the top-right button in Uniswap to set slippage. That 0.x% is the extra slippage that can occur if someone frontruns you.
@@ -445,9 +492,9 @@
                     <br>
                     <br>Total <b>DEX</b> supply = 420000. DEX is the incentive token of <a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a> (such as tx. fee buybacks).
                     <br>Pool 201~206 : emissions reduce by 10% every week. Distribution of DEX : 24% released in pools. 76% reserved for incentive / marketing / partnership / listing.
-                    <br><br>About the economic model. KIF is a bit similar to YFI. It's the governance token of KittenFinance:
+                    <br><br>About the tokenomics. KIF is a bit similar to YFI. It's the governance token of Kitten.finance:
                     <ol>
-                        <li>for the DAO governing KittenSwap</li>
+                        <li>for the DAO governing Kitten.finance</li>
                         <li>dividends from KittenSwap fees</li>
                         <li>buybacks from KittenSwap fees</li>
                         <li>governing and receiving dividends from future projs such as vault, lending, etc.</li>
@@ -456,11 +503,11 @@
                     </ol>
                     <br>
                     <div style="line-height: 1.85;">
-                        About <b>kBASE</b>. kBASE will be the base ccy of KittenSwap.
+                        About <b>kBASE</b>. kBASE will be the base ccy of Kitten.finance.
                         <ul type="round">
-                            <li>KS will have functions to support the value of kBASE (similar to buybacks). I am designing the economic model.</li>
+                            <li>KS will have functions to support the value of kBASE (which will be a stablecoin). I am designing the economic model.</li>
                             <li>Note kBASEv0 is actually a fixed supply token. If you own x% of it now, you always own x% regardless of rebases.</li>
-                            <li>Hence my suggestion is, you don't have to buy kBASEv0, meanwhile there's no need to dump it as well if you are farming it.</li>
+                            <!-- <li>Hence my suggestion is, you don't have to buy kBASEv0, meanwhile there's no need to dump it as well if you are farming it.</li> -->
                         </ul>
                         A video on kBASEv0 by one of our community members:
                     </div><br>
