@@ -147,12 +147,12 @@
         .flexVert {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             flex-direction: column;
         }
 
         #token_control {
             box-sizing: border-box;
+            align-items: center;
         }
 
         ul {
@@ -261,9 +261,14 @@
         td {
             border-top: solid 1px #363636;
         }
-
         .table_wrap {
             border: solid 1px #363636;
+        }
+        .panel td {
+            border-top: solid 1px #282828;
+        }
+        .panel .table_wrap {
+            border: solid 1px #282828;
         }
 
         .green {
@@ -334,7 +339,7 @@
                             Kitten.finance is building decentralized exchanges and clearing services for cryptoassets and derivatives, from options and swaps, to bonds and forwards.
                         </div>
                         <div style="font-size: 120%; margin-top: 0.8em;" class="c555">
-                            Kitten.finance aims to provide volatility surface and yield curve for all smart contracts and DApps.
+                            Kitten.finance aims to provide volatility surfaces and yield curves for all smart contracts and DApps.
                         </div>
                     </div>
                     <div style="width:45%; margin-right: 2%; position: relative; top: 0.3em;">
@@ -343,16 +348,19 @@
                 </div>
 
                 <div class="flexbox_equal_height">
-                    <div class="token_box panel" style="line-height: 1.8; padding-bottom: 0; width: calc(45% - 0.5em); padding-left: 1.5em;">
-                        The pillars of Kitten.finance are <a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a> & <a href="https://www.KittenSwap.org" target="_blank">KittenSwap</a>.
-                        <br>Read our <a href="https://kitten-finance.medium.com/" target="_blank">Medium Essays</a> for details.
-                        <br><br>Suggestions for newcomers:
-                        <ul style="margin-top:0.3em">
-                            <li>Buy KIF from Uniswap. KIF is the governance token of Kitten.finance.</li>
-                            <li>Stake KIF (pool 101) for kBASEv0 (an elastic supply token and the base ccy of KittenSwap).</li>
-                            <li>Stake kBASEv0 (pool 203) for DEX (the utility token of AlphaDex).</li>
-                            <li>Stake DEX (pool 205) for more DEX.</li>
-                        </ul>
+                    <div class="token_box panel flexVert" style="line-height: 1.8; width: calc(45% - 0.5em); padding-left: 1.5em;">
+                        <div>The pillars of Kitten.finance are <a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a> & <a href="https://www.KittenSwap.org" target="_blank">KittenSwap</a>.
+                            <br>Read our <a href="https://kitten-finance.medium.com/" target="_blank">Medium Essays</a> for details.
+                        </div>
+                        <div>
+                            Suggestions for newcomers:
+                            <ul style="margin-top:0.3em">
+                                <li>Buy KIF from Uniswap. KIF is the governance token of Kitten.finance.</li>
+                                <li>Stake KIF (pool 101) for kBASEv0 (an elastic supply token and the base ccy of KittenSwap).</li>
+                                <li>Stake kBASEv0 (pool 203) for DEX (the utility token of AlphaDex).</li>
+                                <li>Stake DEX (pool 205) for more DEX.</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="token_box panel flexbox_equal_height" id="user_own_all" style="width: calc(55% - 0.5em);">
                         <div class="wfull_center title" style="margin-bottom: 1.2em; font-size: 135%; letter-spacing: 0.1em;">You own <span class="user_kf_percent">?.??</span>% of Kitten.finance</div>
