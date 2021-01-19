@@ -192,6 +192,11 @@
             cursor: pointer;
             box-shadow: 0 0 16px 0 rgba(100, 255, 0, 1.0);
         }
+
+        .coin {
+            transform: scale(0.85);
+            margin-bottom: 8px;
+        }
     </style>
     <style id="dark_mode_css">
         #overview tbody tr:hover,
@@ -332,6 +337,137 @@
             color: #777;
         }
     </style>
+    <style>
+        .coin {
+            margin: auto;
+            height: 164px;
+            width: 164px;
+        }
+
+        .coin .front,
+        .coin .back {
+            position: absolute;
+            height: 150px;
+            width: 150px;
+            background: #ffbd0b;
+            border-radius: 50%;
+            border-top: 7px solid #ffd84c;
+            border-left: 7px solid #ffd84c;
+            border-right: 7px solid #d57e08;
+            border-bottom: 7px solid #d57e08;
+            transform: rotate(44deg);
+        }
+
+        .coin .front:before,
+        .coin .back:before {
+            content: "";
+            margin: 35.5px 35.5px;
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            background: #f0a608;
+            border-radius: 50%;
+            border-bottom: 5px solid #ffd84c;
+            border-right: 5px solid #ffd84c;
+            border-left: 5px solid #d57e08;
+            border-top: 5px solid #d57e08;
+            z-index: 2;
+        }
+
+        .coin .front .currency,
+        .coin .back .currency {
+            overflow: hidden;
+            position: absolute;
+            color: #ffbd0b;
+            font-size: 40px;
+            transform: rotate(-44deg);
+            line-height: 3.7;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            text-shadow: 0 3px 0 #cb7407;
+            z-index: 3;
+            border-radius: 50%;
+        }
+
+        .coin .front .currency:after,
+        .coin .back .currency:after {
+            content: "";
+            position: absolute;
+            height: 200px;
+            width: 40px;
+            margin: 20px -65px;
+            box-shadow: 50px -23px 0 -10px rgba(255, 255, 255, 0.22), 85px -10px 0 -16px rgba(255, 255, 255, 0.19);
+            transform: rotate(-50deg);
+            animation: shine 1.5s infinite ease;
+        }
+
+        @keyframes shine {
+            0% {
+                margin: 20px -65px;
+            }
+
+            50% {
+                margin: 70px -85px;
+            }
+
+            100% {
+                margin: 20px -65px;
+            }
+        }
+
+        .coin .front .shapes,
+        .coin .back .shapes {
+            transform: rotate(-44deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .coin .front .shapes div,
+        .coin .back .shapes div {
+            width: 20px;
+            height: 4px;
+            background: #d57e08;
+            border-top: 2px solid #c47207;
+            margin: 75px 7px;
+        }
+
+        .coin .front .shapes div:before,
+        .coin .back .shapes div:before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 4px;
+            background: #d57e08;
+            border-top: 2px solid #c47207;
+            margin: -10px 0;
+        }
+
+        .coin .front .shapes div:after,
+        .coin .back .shapes div:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 4px;
+            background: #d57e08;
+            border-top: 2px solid #c47207;
+            margin: 8px 0;
+        }
+
+        .coin .front .top,
+        .coin .back .top {
+            font-size: 23px;
+            color: #d67f08;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+    </style>
     <script>
         // document.getElementById('dark_mode_css').disabled = true;
     </script>
@@ -432,7 +568,7 @@
                 </div>
                 <div class="flexbox_equal_height" id="product_desc">
                     <div class="panel" style="flex:1; margin-right: 0.5em">
-                        <span class="emphasize">AlphaDex</span> is a decentralized derivative market and liquidity aggregator. It can provide advanced trading functionalities (including derivatives and leverage) for KittenSwap, Uniswap etc.
+                        <span class="emphasize">AlphaDex</span> is a decentralized derivative market and liquidity aggregator. It can provide advanced trading methods (including derivatives and leverage) for KittenSwap, Uniswap etc.
                         <div style="margin: 1.5em 0.5em;"><a href="https://www.AlphaDex.org" target="_blank"><img src="img/ADv00.png"></a></div>
                         The current AD version is v2.0 mainnet. In the coming v2.5, we will reduce gas costs for sync() to better support multiple markets.
                     </div>
@@ -443,8 +579,18 @@
                     </div>
                 </div>
                 <div class="flexbox_equal_height">
-                    <div class="panel" style="flex:1; margin-right: 1em;">
-                        <span class="emphasize">KIF</span> : governance token of Kitten.finance
+                    <div class="panel" style="flex:1; margin-right: 1em; position: relative;">
+                        <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">
+                            <div class='coin'>
+                                <div class='front jump'>
+                                    <span class='currency'>$</span>
+                                    <div class='shapes'>
+                                        <span class='top'>KIF</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        KIF : governance token of Kitten.finance
                         <ul>
                             <li>For the DAO governing Kitten.finance.</li>
                             <li>Dividends & buybacks from KittenSwap (including its lending & vault functions).</li>
@@ -454,7 +600,17 @@
                         </ul>
                     </div>
                     <div class="panel" style="flex:1; margin-right: 1em;">
-                        <span class="emphasize">DEX</span> : utility token of AlphaDex
+                        <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">
+                            <div class='coin'>
+                                <div class='front jump'>
+                                    <span class='currency'>$</span>
+                                    <div class='shapes'>
+                                        <span class='top'>DEX</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        DEX : utility token of AlphaDex
                         <ul>
                             <li>Dividends & buybacks from AlphaDex.</li>
                             <li>Privileges on AD such as fee reductions.</li>
@@ -464,7 +620,17 @@
                         </ul>
                     </div>
                     <div class="panel" style="flex:1">
-                        <span class="emphasize">kBASEv0</span> : base ccy of Kitten.finance
+                        <a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">
+                            <div class='coin'>
+                                <div class='front jump'>
+                                    <span class='currency'>$</span>
+                                    <div class='shapes'>
+                                        <span class='top'>kBASE</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        kBASEv0 : base ccy of Kitten.finance
                         <ul>
                             <li>Will be 1-1 migrated to a stable coin kBASE which can be minted on KS by locking assets as collaterals.</li>
                             <li>It is an elastic supply token which can be rebased towards $1.</li>
