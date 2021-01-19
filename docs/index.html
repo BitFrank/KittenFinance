@@ -485,7 +485,7 @@
             position: absolute;
             left: 0;
             top: 2px;
-            text-shadow: 0px 1px 0 rgba(255,255,255,0.4);
+            text-shadow: 0px 1px 0 rgba(255, 255, 255, 0.4);
         }
     </style>
     <script>
@@ -797,24 +797,30 @@
                 <div class="panel flexbox_equal_height" id="user_own_all">
                     <div class="wfull_center title" style="margin-bottom: 1.2em; font-size: 135%; letter-spacing: 0.1em;">You own <span class="user_kf_percent">?.??</span>% of Kitten.finance</div>
                     <div class="radial_chart flexbox" style="width: 100%; justify-content:space-evenly">
-                        <div id="radial_kif" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
-                                <span class="user_kif_all">?</span><br>
-                                <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF</a><br>
-                                <span class="user_kif_percent">?.??</span>%</span>
-                            <div class="wfull_center">$ <span class="user_kif_usd">?</span><span class="gray"> &nbsp;(<span class="user_kif_usd_percent">?</span>%)</span></div>
-                        </div>
-                        <div id="radial_dex" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
-                                <span class="user_dex_all">?</span><br>
-                                <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">DEX</a><br>
-                                <span class="user_dex_percent">?.??</span>%</span>
-                            <div class="wfull_center">$ <span class="user_dex_usd">?</span><span class="gray"> &nbsp;(<span class="user_dex_usd_percent">?</span>%)</span></div>
-                        </div>
-                        <div id="radial_kbase" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
-                                <span class="user_kbase_all">?</span><br>
-                                <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">kBASEv0</a><br>
-                                <span class="user_kbase_percent">?.??</span>%</span>
-                            <div class="wfull_center">$ <span class="user_kbase_usd">?</span><span class="gray"> &nbsp;(<span class="user_kbase_usd_percent">?</span>%)</span></div>
-                        </div>
+                        <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">
+                            <div id="radial_kif" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
+                                    <span class="user_kif_all">?</span><br>
+                                    KIF<br>
+                                    <span class="user_kif_percent">?.??</span>%</span>
+                                <div class="wfull_center">$ <span class="user_kif_usd">?</span><span class="gray"> &nbsp;(<span class="user_kif_usd_percent">?</span>%)</span></div>
+                            </div>
+                        </a>
+                        <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">
+                            <div id="radial_dex" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
+                                    <span class="user_dex_all">?</span><br>
+                                    DEX<br>
+                                    <span class="user_dex_percent">?.??</span>%</span>
+                                <div class="wfull_center">$ <span class="user_dex_usd">?</span><span class="gray"> &nbsp;(<span class="user_dex_usd_percent">?</span>%)</span></div>
+                            </div>
+                        </a>
+                        <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">
+                            <div id="radial_kbase" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
+                                    <span class="user_kbase_all">?</span><br>
+                                    kBASEv0<br>
+                                    <span class="user_kbase_percent">?.??</span>%</span>
+                                <div class="wfull_center">$ <span class="user_kbase_usd">?</span><span class="gray"> &nbsp;(<span class="user_kbase_usd_percent">?</span>%)</span></div>
+                            </div>
+                        </a>
                     </div>
                     <div class="wfull_center" style="margin-top: 1em;"><span class="gray">Total</span> $ <span class="user_all_usd">?</span><span class="gray"> &nbsp;(<span class="user_all_usd_to_eth">?</span> ETH)</span></div>
                     <div class="wfull_center darkgray" style="margin-top: 0.8em;">If you own > 0.5% of Kitten.finance, <a href="https://t.me/kitten_finance_group" target="_blank">contact us</a> for secret whale club.</div>
@@ -847,16 +853,22 @@
                         <br><span style="width: 100%;"><span id="trade_panel_log"></span> <span id="swap_log" style="color:darkred"></span></span>
                     </div>
                 </div>
-                <div class="panel" style="padding-right: 0.5em;">
-                    <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">Trade KIF</a> : price <span id="price_ref">(checking...)</span> E = $ <span id="kif_price_usd">?</span>, liq.
-                    <span id="liq_ref">(checking...)</span>
-                    <br>circulating supply <span id="kif_supply">?</span>, market cap $ <span id="kif_mc">?</span> M, total supply 42000
-                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">Trade DEX</a> : price <span id="price_ref_dex_eth">(checking...)</span> E = $ <span id="dex_price_usd">?</span>, liq.
-                    <span id="liq_ref_dex">(checking...)</span>
-                    <br>circulating supply <span id="dex_supply">?</span>, market cap $ <span id="dex_mc">?</span> M, total supply 420000
-                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">Trade kBASEv0</a> : price <span id="kbase_price_usdc">?</span> USDC, liq. = <span id="liq_ref_kbase">(checking...)</span>
-                    <br>circulating supply <span id="kbase_supply">?</span> M, market cap $ <span id="kbase_mc">?</span> M</span>, total supply <span id="kbase_total_supply">?</span> M
-                    <br><br>
+                <div class="panel" style="padding-right: 0.5em;" id="extra_trade_panel">
+                    <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank" style="text-decoration: none;">
+                        <div>Trade KIF : price <span id="price_ref">(checking...)</span> E = $ <span id="kif_price_usd">?</span>, liq.
+                            <span id="liq_ref">(checking...)</span>
+                            <br>circulating supply <span id="kif_supply">?</span>, market cap $ <span id="kif_mc">?</span> M, total supply 42000</div>
+                    </a>
+                    <br><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank" style="text-decoration: none;">
+                        <div>Trade DEX : price <span id="price_ref_dex_eth">(checking...)</span> E = $ <span id="dex_price_usd">?</span>, liq.
+                            <span id="liq_ref_dex">(checking...)</span>
+                            <br>circulating supply <span id="dex_supply">?</span>, market cap $ <span id="dex_mc">?</span> M, total supply 420000</div>
+                    </a>
+                    <br><a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank" style="text-decoration: none;">
+                        <div>Trade kBASEv0 : price <span id="kbase_price_usdc">?</span> USDC, liq. = <span id="liq_ref_kbase">(checking...)</span>
+                            <br>circulating supply <span id="kbase_supply">?</span> M, market cap $ <span id="kbase_mc">?</span> M</span>, total supply <span id="kbase_total_supply">?</span> M</div>
+                    </a>
+                    <br>
                     <div class="loader" id="main_loader"></div>
                     <button type="button" style="cursor: pointer;" onclick="clearEventTable()">Clear events</button>
                     &nbsp;&nbsp;<span id="log" style="display: inline-block;"></span>
@@ -882,10 +894,9 @@
                 <br>
                 <div id="event_log" class="no_underline" style="margin-bottom: 2em;"></div>
                 <div style="margin-top: 1em">
-                    <!-- <a style="width:100%; text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">
-                        <button class="button" style="width:100%;">Click here to get 🐱 KIF on UniSwap (fixed 42000
-                            supply)</button>
-                    </a> -->
+                    <a style="width:100%; text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">
+                        <button class="button" style="width:100%;">Get 🐱 KIF on UniSwap</button>
+                    </a>
                     <div style="margin: 1em 0;" class="flexbox">
                         <a href="https://t.me/kitten_finance_group" target="_blank">Join our Telegram</a>
                         <a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a>
