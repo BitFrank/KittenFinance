@@ -181,6 +181,17 @@
         .tr_highlight .gray {
             color: white;
         }
+
+        #product_desc img {
+            width: 100%;
+            box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+
+        #product_desc img:hover {
+            cursor: pointer;
+            box-shadow: 0 0 16px 0 rgba(100, 255, 0, 1.0);
+        }
     </style>
     <style id="dark_mode_css">
         #overview tbody tr:hover,
@@ -353,7 +364,7 @@
                     </a>
                 </p>
                 <p style="line-height: 1.8; text-align: right;">
-                    <span>Fixed 42000 supply. <a href="https://discord.gg/pMaZswC" target="_blank">Great community.</a> No presale. No premine.</span>
+                    <span>Fixed 42000 supply. <a href="https://t.me/kitten_finance_group" target="_blank">Great community.</a> No presale. No premine.</span>
                     <br>HODL 🐱 KIF to govern projects and receive dividends.
                 </p>
             </div>
@@ -419,49 +430,46 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="flexbox_equal_height">
-                    <div class="token_box panel flexVert" style="line-height: 1.8; width: calc(45% - 0.5em); padding-left: 1.5em;">
-                        <div>
-                            The pillars of Kitten.finance are <a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a> & <a href="https://www.KittenSwap.org" target="_blank">KittenSwap</a>.
-                        </div>
-                        <div>
-                            Read our <a href="https://kitten-finance.medium.com/" target="_blank">Medium Essays</a> for details.
-                        </div>
-                        <div>
-                            Suggestions for newcomers:
-                            <ul style="margin-top:0.3em">
-                                <li>Buy KIF from Uniswap. KIF is the governance token of Kitten.finance.</li>
-                                <li>Stake KIF (pool 101) for kBASEv0 (an elastic supply token and the base ccy of KittenSwap).</li>
-                                <li>Stake kBASEv0 (pool 203) for DEX (the utility token of AlphaDex).</li>
-                                <li>Stake DEX (pool 205) for more DEX.</li>
-                            </ul>
-                        </div>
+                <div class="flexbox_equal_height" id="product_desc">
+                    <div class="panel" style="flex:1; margin-right: 0.5em">
+                        <span class="emphasize">AlphaDex</span> is a decentralized derivative market and liquidity aggregator. It can provide advanced trading functionalities (including derivatives and leverage) for KittenSwap, Uniswap etc.
+                        <div style="margin: 1.5em 0.5em;"><a href="https://www.AlphaDex.org" target="_blank"><img src="img/ADv00.png"></a></div>
+                        The current AD version is v2.0 mainnet. In the coming v2.5, we will reduce gas costs for sync() to better support multiple markets.
                     </div>
-                    <div class="token_box panel flexbox_equal_height" id="user_own_all" style="width: calc(55% - 0.5em);">
-                        <div class="wfull_center title" style="margin-bottom: 1.2em; font-size: 135%; letter-spacing: 0.1em;">You own <span class="user_kf_percent">?.??</span>% of Kitten.finance</div>
-                        <div class="radial_chart flexbox" style="width: 100%; justify-content:space-evenly">
-                            <div id="radial_kif" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
-                                    <span class="user_kif_all">?</span><br>
-                                    <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF</a><br>
-                                    <span class="user_kif_percent">?.??</span>%</span>
-                                <div class="wfull_center">$ <span class="user_kif_usd">?</span><span class="gray"> &nbsp;(<span class="user_kif_usd_percent">?</span>%)</span></div>
-                            </div>
-                            <div id="radial_dex" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
-                                    <span class="user_dex_all">?</span><br>
-                                    <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">DEX</a><br>
-                                    <span class="user_dex_percent">?.??</span>%</span>
-                                <div class="wfull_center">$ <span class="user_dex_usd">?</span><span class="gray"> &nbsp;(<span class="user_dex_usd_percent">?</span>%)</span></div>
-                            </div>
-                            <div id="radial_kbase" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
-                                    <span class="user_kbase_all">?</span><br>
-                                    <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">kBASEv0</a><br>
-                                    <span class="user_kbase_percent">?.??</span>%</span>
-                                <div class="wfull_center">$ <span class="user_kbase_usd">?</span><span class="gray"> &nbsp;(<span class="user_kbase_usd_percent">?</span>%)</span></div>
-                            </div>
-                        </div>
-                        <div class="wfull_center" style="margin-top: 1em;"><span class="gray">Total</span> $ <span class="user_all_usd">?</span><span class="gray"> &nbsp;(<span class="user_all_usd_to_eth">?</span> ETH)</span></div>
-                        <div class="wfull_center darkgray" style="margin-top: 0.8em;">If you own > 0.5% of Kitten.finance, <a href="https://t.me/kitten_finance_group" target="_blank">contact us</a> for secret whale club.</div>
+                    <div class="panel" style="flex:1; margin-left: 0.5em">
+                        <span class="emphasize">KittenSwap</span> is our <a href="https://kitten-finance.medium.com/kittenswap-preview-2-effective-swaps-options-loans-with-limit-orders-d5e70d1883cd" target="_blank">Swap + Option + Loan all-in-one solution</a>, supporting one-sided liquidity, limit orders and stop orders, and targets to solve the IL problem and the oracle problem.
+                        <div style="margin: 1.5em 0.5em;"><a href="https://www.kittenswap.org/" target="_blank"><img src="img/KSv00.png"></a></div>
+                        The current KS version is v0.0 testnet. In the coming v0.1, we will support <a href="https://kitten-finance.medium.com/kittenswap-preview-1-bridging-amms-and-orderbooks-with-wide-limit-orders-bc1d17c06638" target="_blank">Wide Limit Orders</a> which are new concepts in DeFi.
+                    </div>
+                </div>
+                <div class="flexbox_equal_height">
+                    <div class="panel" style="flex:1; margin-right: 1em;">
+                        <span class="emphasize">KIF</span> : governance token of Kitten.finance
+                        <ul>
+                            <li>For the DAO governing Kitten.finance.</li>
+                            <li>Dividends & buybacks from KittenSwap (including its lending & vault functions).</li>
+                            <li>Stake to open new markets on KS.</li>
+                            <li>Max supply is fixed at 42000.</li>
+                            <li>Stake KIF for tokens of future projects.</li>
+                        </ul>
+                    </div>
+                    <div class="panel" style="flex:1; margin-right: 1em;">
+                        <span class="emphasize">DEX</span> : utility token of AlphaDex
+                        <ul>
+                            <li>Dividends & buybacks from AlphaDex.</li>
+                            <li>Privileges on AD such as fee reductions.</li>
+                            <li>Voting for AlphaDex changes.</li>
+                            <li>Max supply is fixed at 420000.</li>
+                            <li>Stake DEX for tokens of future projects.</li>
+                        </ul>
+                    </div>
+                    <div class="panel" style="flex:1">
+                        <span class="emphasize">kBASEv0</span> : base ccy of Kitten.finance
+                        <ul>
+                            <li>Will be 1-1 migrated to a stable coin kBASE which can be minted on KS by locking assets as collaterals.</li>
+                            <li>It is an elastic supply token which can be rebased towards $1.</li>
+                            <li>Stake kB for tokens of future projects.</li>
+                        </ul>
                     </div>
                 </div>
                 <!-- <div id="mid_help" class="line_above"> -->
@@ -497,17 +505,20 @@
                                     <div class="token_panel_log" style="width:49%; text-align: center;"></div>
                                 </div>
                             </div>
-                            <div class="flexVert" style="flex:1; margin-left: 2em; align-items: flex-start;">
-                                <div>KIF is the governance token of Kitten.finance:
-                                    <ol>
-                                        <li>for the DAO governing Kitten.finance.</li>
-                                        <li>dividends & buybacks from KittenSwap and future lending & vault projects.</li>
-                                        <li>the total supply of KIF is fixed at 42000.</li>
-                                        <li>you can stake KIF for tokens of future projects.</li>
-                                    </ol>
-                                </div>
-                                <div>kBASEv0 is an elastic supply token and the base ccy of KF. It will become a stable coin kBASEv1.</div>
-                                <div>DEX is the utility token of AlphaDex. Hold it for dividends & buybacks & privileges.</div>
+                            <div class="flexVert" style="flex:1; margin-left: 3em; align-items: flex-start; line-height: 1.8;">
+                                <div>Suggestions for newcomers:</div>
+                                <ul>
+                                    <li><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">Buy KIF from Uniswap</a>.</li>
+                                    <li>Stake KIF in pool 101 for kBASEv0.</li>
+                                    <li>Stake kBASEv0 in pool 203 for DEX.</li>
+                                    <li>Stake DEX in pool 205 for more DEX.</li>
+                                </ul>
+                                <div>Become a LP for higher yields:</div>
+                                <ul>
+                                    <li><a href="https://app.uniswap.org/#/add/ETH/0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF-LP</a></li>
+                                    <li><a href="https://app.uniswap.org/#/add/0x124c6092c469716A661b5B0609F205050b26b50f/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48" target="_blank">kBASEv0-LP</a></li>
+                                    <li><a href="https://app.uniswap.org/#/add/ETH/0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">DEX-LP</a></li>
+                                </ul>
                             </div>
                         </div>
                         <div id="overview" class="panel">
@@ -551,12 +562,12 @@
                 <div id="footer_help" class="line_above">
                     FAQ:
                     <ul type="round">
-                        <li><b>Note KF is not a yield farming project.</b> The pools are for distributing tokens for AlphaDex & KittenSwap.</li>
+                        <li>Note KF is not a yield farming project. The pools are for distributing tokens for AlphaDex & KittenSwap.</li>
                         <li>You can <a href="https://metamask.io/download.html" target="_blank">download MetaMask app</a> to use Kitten.finance on mobile devices.</li>
-                        <li><b>You are still earning Uniswap LP fees (0.30%) when staking your LP in KF pools.</b> Because your LP shares appreciate over time (Uniswap collects fees for you).</li>
+                        <li>You are still earning Uniswap LP fees (0.30%) when staking your LP in KF pools. Because your LP shares appreciate over time (Uniswap collects fees for you).</li>
                         <li>The first deposit to a pool needs an "approval" tx. Wait for it to confirm, then refresh the page to stake to the pool. </li>
                         <li>You can directly trade KIF using WETH, or provide KIF+WETH liquidity on UniSwap. This actually saves gas. So there's no need to unwrap WETH. Remember to leave some ETH for paying gas.</li>
-                        <li>NEVER set a high "slippage tolerance %" when trading on Uniswap, or bots will frontrun you. <b>Better use 0.2% slippage and high gas, and split large buy orders into multiple smaller orders</b>. Click the top-right button in Uniswap to set slippage. That 0.x% is the extra slippage that can occur if someone frontruns you.
+                        <li>NEVER set a high "slippage tolerance %" when trading on Uniswap, or bots will frontrun you. Better use 0.2% slippage and high gas, and split large buy orders into multiple smaller orders. Click the top-right button in Uniswap to set slippage. That 0.x% is the extra slippage that can occur if someone frontruns you.
                             So if you set the slippage tolerance too high, bots will be happy to do that.</li>
                         <!-- <li>About the pools. Pool 1 has zero risk and lowest return. If KIF remains stable or grows a bit / drops a bit, then pool 3 is better than pool 2. If KIF rises a lot then pool 2 is better. Moreover
                             pool 3 can be used to accumulate KIF when it drops. <b>If you want more KIF, go to pool 3 when you think KIF is overvalued, and go to pool 2 when you think it's undervalued.</b> So, the selection of pools depends on your view of future KIF prices. It might be a good idea to diversify. </li> -->
@@ -567,7 +578,7 @@
                         <li>There shall never be another "approval" tx after you approved a pool for the first time. Otherwise it means the frontend is hacked or modified, and you are staking to the hacker's contract.</li>
                         <li>For extra safety, use a Ledger for MetaMask.</li>
                     </ul>
-                    <br>Total 🐱 <b>KIF</b> supply = 42000 <a href="https://etherscan.io/address/0x177ba0cac51bfc7ea24bad39d81dcefd59d74faa" target="_blank">[contract]</a> <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">[uniswap]</a>
+                    <br>Total 🐱 KIF supply = 42000 <a href="https://etherscan.io/address/0x177ba0cac51bfc7ea24bad39d81dcefd59d74faa" target="_blank">[contract]</a> <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">[uniswap]</a>
                     <a href="https://uniswap.info/token/0x177ba0cac51bfc7ea24bad39d81dcefd59d74faa" target="_blank">[chart 1]</a> <a href="https://app.zerion.io/explore/asset/0x177ba0cac51bfc7ea24bad39d81dcefd59d74faa" target="_blank">[chart 2]</a>
                     <a href="https://www.coingecko.com/en/coins/kittenfinance" target="_blank">[coingecko]</a>
                     <br>Pool 1 : stake WETH for KIF, 4000 in first week, halving every week (total 8000) <a href="https://etherscan.io/address/0xb1236770ed9015e331c021347e005b00c8b8a01b" target="_blank">[contract]</a>
@@ -583,7 +594,7 @@
                     <br>Pool 103 : stake kBASEv0-USDC LP for kBASEv0 : 8.5% in first week, reduces by 25% every week (total 34%)
                     <a href="https://etherscan.io/address/0xca3239a9aca196de1af4d0eca6d669e6ebf4ba8b" target="_blank">[contract]</a>
                     <br>
-                    <br>Total <b>DEX</b> supply = 420000. DEX is the incentive token of <a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a> (such as tx. fee buybacks).
+                    <br>Total DEX supply = 420000. DEX is the utility token of <a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a> (such as tx. fee buybacks).
                     <br>Pool 201~206 : emissions reduce by 10% every week. Distribution of DEX : 24% released in pools. 76% reserved for incentive / marketing / partnership / listing.
                     <br><br>About the tokenomics. KIF is a bit similar to YFI. It's the governance token of Kitten.finance:
                     <ol>
@@ -596,7 +607,7 @@
                     </ol>
                     <br>
                     <div style="line-height: 1.85;">
-                        About <b>kBASE</b>. kBASE will be the base ccy of Kitten.finance.
+                        About kBASE. kBASE will be the base ccy of Kitten.finance.
                         <ul type="round">
                             <li>KS will have functions to support the value of kBASE (which will be a stablecoin). I am designing the economic model.</li>
                             <li>Note kBASEv0 is actually a fixed supply token. If you own x% of it now, you always own x% regardless of rebases.</li>
@@ -610,22 +621,32 @@
                 </div>
             </div>
             <div id="sidebar">
-                <div class="panel" style="padding-right: 0.5em;">
-                    <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">Trade KIF</a> : price <span id="price_ref">(checking...)</span> E = $ <span id="kif_price_usd">?</span>, liq.
-                    <span id="liq_ref">(checking...)</span>
-                    <br>circulating supply <span id="kif_supply">?</span>, market cap $ <span id="kif_mc">?</span> M, total supply 42000
-                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">Trade DEX</a> : price <span id="price_ref_dex_eth">(checking...)</span> E = $ <span id="dex_price_usd">?</span>, liq.
-                    <span id="liq_ref_dex">(checking...)</span>
-                    <br>circulating supply <span id="dex_supply">?</span>, market cap $ <span id="dex_mc">?</span> M, total supply 420000
-                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">Trade kBASEv0</a> : price <span id="kbase_price_usdc">?</span> USDC, liq. = <span id="liq_ref_kbase">(checking...)</span>
-                    <br>circulating supply <span id="kbase_supply">?</span> M, market cap $ <span id="kbase_mc">?</span> M</span>, total supply <span id="kbase_total_supply">?</span> M
-                    <br><br>
-                    <div class="loader" id="main_loader"></div>
-                    <button type="button" style="cursor: pointer;" onclick="clearEventTable()">Clear events</button>
-                    &nbsp;&nbsp;<span id="log" style="display: inline-block;"></span>
-                    &nbsp;&nbsp;<button type="button" style="cursor: pointer;" onclick="toggleGame()">Game</button>
+                <div class="panel flexbox_equal_height" id="user_own_all">
+                    <div class="wfull_center title" style="margin-bottom: 1.2em; font-size: 135%; letter-spacing: 0.1em;">You own <span class="user_kf_percent">?.??</span>% of Kitten.finance</div>
+                    <div class="radial_chart flexbox" style="width: 100%; justify-content:space-evenly">
+                        <div id="radial_kif" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
+                                <span class="user_kif_all">?</span><br>
+                                <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">KIF</a><br>
+                                <span class="user_kif_percent">?.??</span>%</span>
+                            <div class="wfull_center">$ <span class="user_kif_usd">?</span><span class="gray"> &nbsp;(<span class="user_kif_usd_percent">?</span>%)</span></div>
+                        </div>
+                        <div id="radial_dex" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
+                                <span class="user_dex_all">?</span><br>
+                                <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">DEX</a><br>
+                                <span class="user_dex_percent">?.??</span>%</span>
+                            <div class="wfull_center">$ <span class="user_dex_usd">?</span><span class="gray"> &nbsp;(<span class="user_dex_usd_percent">?</span>%)</span></div>
+                        </div>
+                        <div id="radial_kbase" style="position: relative;"><span style="position: absolute; left: 0px; top: 31px; text-align: center; width: 120px;">
+                                <span class="user_kbase_all">?</span><br>
+                                <a style="text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">kBASEv0</a><br>
+                                <span class="user_kbase_percent">?.??</span>%</span>
+                            <div class="wfull_center">$ <span class="user_kbase_usd">?</span><span class="gray"> &nbsp;(<span class="user_kbase_usd_percent">?</span>%)</span></div>
+                        </div>
+                    </div>
+                    <div class="wfull_center" style="margin-top: 1em;"><span class="gray">Total</span> $ <span class="user_all_usd">?</span><span class="gray"> &nbsp;(<span class="user_all_usd_to_eth">?</span> ETH)</span></div>
+                    <div class="wfull_center darkgray" style="margin-top: 0.8em;">If you own > 0.5% of Kitten.finance, <a href="https://t.me/kitten_finance_group" target="_blank">contact us</a> for secret whale club.</div>
                 </div>
-                <div class="panel" id="token_box_trade">
+                <div class="panel" id="token_box_trade" style="padding-top: 0;">
                     <div id="kif_chart_light" style="display: none;">
                         <div class="livecoinwatch-widget-1" lcw-coin="KIF" lcw-base="USD" lcw-secondary="ETH" lcw-period="d" lcw-color-tx="#000" lcw-color-pr="#55cc00" lcw-color-bg="#fefefe" lcw-border-w="1"></div>
                     </div>
@@ -652,6 +673,21 @@
                         <br><span style="width: 100%;"><span id="trade_panel_log"></span> <span id="swap_log" style="color:darkred"></span></span>
                     </div>
                 </div>
+                <div class="panel" style="padding-right: 0.5em;">
+                    <a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">Trade KIF</a> : price <span id="price_ref">(checking...)</span> E = $ <span id="kif_price_usd">?</span>, liq.
+                    <span id="liq_ref">(checking...)</span>
+                    <br>circulating supply <span id="kif_supply">?</span>, market cap $ <span id="kif_mc">?</span> M, total supply 42000
+                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x3516415161c478df10adbb8bb884cc83fbd5f11a" target="_blank">Trade DEX</a> : price <span id="price_ref_dex_eth">(checking...)</span> E = $ <span id="dex_price_usd">?</span>, liq.
+                    <span id="liq_ref_dex">(checking...)</span>
+                    <br>circulating supply <span id="dex_supply">?</span>, market cap $ <span id="dex_mc">?</span> M, total supply 420000
+                    <br><br><a href="https://app.uniswap.org/#/swap?inputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&outputCurrency=0x124c6092c469716A661b5B0609F205050b26b50f" target="_blank">Trade kBASEv0</a> : price <span id="kbase_price_usdc">?</span> USDC, liq. = <span id="liq_ref_kbase">(checking...)</span>
+                    <br>circulating supply <span id="kbase_supply">?</span> M, market cap $ <span id="kbase_mc">?</span> M</span>, total supply <span id="kbase_total_supply">?</span> M
+                    <br><br>
+                    <div class="loader" id="main_loader"></div>
+                    <button type="button" style="cursor: pointer;" onclick="clearEventTable()">Clear events</button>
+                    &nbsp;&nbsp;<span id="log" style="display: inline-block;"></span>
+                    &nbsp;&nbsp;<button type="button" style="cursor: pointer;" onclick="toggleGame()">Game</button>
+                </div>
                 <div class="game" style="width:50%; height:500px; margin:0 auto; margin-bottom: 1em;"></div>
                 <div class="table_wrap">
                     <table id="event_table" style="width:100%">
@@ -672,15 +708,15 @@
                 <br>
                 <div id="event_log" class="no_underline" style="margin-bottom: 2em;"></div>
                 <div style="margin-top: 1em">
-                    <a style="width:100%; text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">
+                    <!-- <a style="width:100%; text-decoration: none;" href="https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x177BA0cac51bFC7eA24BAd39d81dcEFd59d74fAa" target="_blank">
                         <button class="button" style="width:100%;">Click here to get 🐱 KIF on UniSwap (fixed 42000
                             supply)</button>
-                    </a>
+                    </a> -->
                     <div style="margin: 1em 0;" class="flexbox">
-                        <a href="https://discord.gg/pMaZswC" target="_blank">Join our Discord</a>
+                        <a href="https://t.me/kitten_finance_group" target="_blank">Join our Telegram</a>
                         <a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a>
                         <a href="https://www.kittenswap.org/" target="_blank">KittenSwap</a>
-                        <a href="https://t.me/kitten_finance_group" target="_blank">Join our Telegram</a>
+                        <a href="https://discord.gg/pMaZswC" target="_blank">Join our Discord</a>
                     </div>
                 </div>
                 <br>
@@ -692,7 +728,9 @@
         <div id="footer">
             <div class="navbar_wrap">
                 <div class="navbar no_underline bottom_bar">
-                    <a href="https://discord.gg/pMaZswC" target="_blank">Discord (we have a great community 🐱)</a> <a href="https://t.me/kitten_finance_group" target="_blank">Telegram</a> <a href="https://twitter.com/KittenFinance" target="_blank">Twitter</a>
+                    <a href="https://discord.gg/pMaZswC" target="_blank">Discord</a>
+                    <a href="https://t.me/kitten_finance_group" target="_blank">Telegram (we have a great community 🐱)</a>
+                    <a href="https://twitter.com/KittenFinance" target="_blank">Twitter</a>
                     <a href="https://kitten-finance.medium.com/" target="_blank">Medium Essays</a>
                 </div>
             </div>
