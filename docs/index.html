@@ -182,13 +182,14 @@
             color: white;
         }
 
-        #product_desc img {
+        .product_desc img {
             width: 100%;
             box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
             border-radius: 8px;
+            border: 1px solid #222;
         }
 
-        #product_desc img:hover {
+        .product_desc img:hover {
             cursor: pointer;
             box-shadow: 0 0 16px 0 rgba(100, 255, 0, 1.0);
         }
@@ -340,6 +341,12 @@
 
         .coin {
             filter: brightness(95%);
+        }
+
+        .liquid {
+            background-image: linear-gradient(180deg, #2af598 10%, #40defd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
     <style>
@@ -590,24 +597,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="flexbox_equal_height" id="product_desc">
+                <!-- <span class="emphasize"><a href="https://www.kittenswap.org/lending/" target="_blank">KittenSwap</a></span> is our <a href="https://kitten-finance.medium.com/kittenswap-preview-2-effective-swaps-options-loans-with-limit-orders-d5e70d1883cd" target="_blank">Swap + Option + Loan all-in-one solution</a>, supporting one-sided liquidity, limit orders and stop orders, and targets to solve the IL problem and the oracle problem. -->
+                <div class="flexbox_equal_height product_desc">
+                    <div class="panel" style="flex:1; margin-right: 0.5em">
+                        <a href="https://www.kittenswap.org/" target="_blank" style="text-decoration: none;">
+                            <div class="wfull_center title" style="font-size: 135%; margin-bottom: 0.7em;">KittenSwap - <span class="liquid">LIQUID</span></div>
+                        </a>
+                        <a href="https://www.kittenswap.org/" target="_blank">LIQUID</a> has deep virtual liquidity, and it is our first example of IKO - Initial KittenSwap Offering.
+                        <div style="margin: 1.5em 0.5em 1em 0.5em;"><a href="https://www.kittenswap.org/" target="_blank"><img src="img/KS-LIQUID.jpg"></a></div>
+                    </div>
+                    <div class="panel" style="flex:1; margin-left: 0.5em">
+                        <a href="https://www.kittenswap.org/lending/" target="_blank" style="text-decoration: none;">
+                            <div class="wfull_center title" style="font-size: 135%; margin-bottom: 0.7em;">KittenSwap - Lending for any token</div>
+                        </a>
+                        In <a href="https://www.kittenswap.org/lending/" target="_blank">KittenSwap lending</a>, you can borrow ETH using any ERC20. Feel free to create lending vaults for your favorite token.
+                        <div style="margin: 1.5em 0.5em 1em 0.5em;"><a href="https://www.kittenswap.org/lending/" target="_blank"><img src="img/KS-Lending.jpg"></a></div>
+                    </div>
+                </div>
+                <div class="flexbox_equal_height product_desc">
                     <div class="panel" style="flex:1; margin-right: 0.5em">
                         <a href="https://www.AlphaDex.org" target="_blank" style="text-decoration: none;">
                             <div class="wfull_center title" style="font-size: 135%; margin-bottom: 0.7em;">AlphaDex - Enhancing all swaps</div>
                         </a>
-                        <span class="emphasize"><a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a></span> is a decentralized derivative market and liquidity aggregator. It can provide advanced trading methods (including derivatives and leverage) for KittenSwap, Uniswap etc.
-                        <div style="margin: 1.5em 0.5em 1em 0.5em;"><a href="https://www.AlphaDex.org" target="_blank"><img src="img/ADv00.png"></a></div>
-                        The current AD version is <a href="https://www.AlphaDex.org" target="_blank">v2.0 mainnet</a>. In the coming v2.5, we will reduce gas costs for sync() to better support multiple markets.
+                        <span class="emphasize"><a href="https://www.AlphaDex.org" target="_blank">AlphaDex</a></span> is a derivative market and liquidity aggregator, providing advanced trading methods for KittenSwap, Uniswap etc.
+                        <div style="margin: 1.5em 0.5em 1em 0.5em;"><a href="https://www.AlphaDex.org" target="_blank"><img src="img/ADv00.jpg"></a></div>
+                        <!-- The current AD version is <a href="https://www.AlphaDex.org" target="_blank">v2.0 mainnet</a>. In the coming v2.5, we will reduce gas costs for sync() to better support multiple markets. -->
                     </div>
                     <div class="panel" style="flex:1; margin-left: 0.5em">
-                        <a href="https://www.kittenswap.org/" target="_blank" style="text-decoration: none;">
-                            <div class="wfull_center title" style="font-size: 135%; margin-bottom: 0.7em;">KittenSwap - Our all-in-one swap</div>
+                        <a href="https://www.kittenswap.org/app/" target="_blank" style="text-decoration: none;">
+                            <div class="wfull_center title" style="font-size: 135%; margin-bottom: 0.7em;">KittenSwap - Wide Limit Order</div>
                         </a>
-                        <span class="emphasize"><a href="https://www.kittenswap.org/" target="_blank">KittenSwap</a></span> is our <a href="https://kitten-finance.medium.com/kittenswap-preview-2-effective-swaps-options-loans-with-limit-orders-d5e70d1883cd" target="_blank">Swap + Option + Loan all-in-one solution</a>, supporting one-sided liquidity, limit orders and stop orders, and targets to solve the IL problem and the oracle problem.
-                        <div style="margin: 1.5em 0.5em 1em 0.5em;"><a href="https://www.kittenswap.org/" target="_blank"><img src="img/KSv00.png"></a></div>
-                        The current KS includes <a href="https://www.kittenswap.org/" target="_blank">$LIQUID</a> with <a href="https://kitten-finance.medium.com/kittenswap-preview-3-free-amm-liquidity-without-lp-a-new-way-of-distributing-tokens-and-amo-786d752b90eb" target="_blank">deep virtual liquidity</a>, and <a href="https://www.kittenswap.org/app/" target="_blank">v0.1 mainnet</a> with <a href="https://kitten-finance.medium.com/kittenswap-preview-1-bridging-amms-and-orderbooks-with-wide-limit-orders-bc1d17c06638" target="_blank">Wide Limit Order</a>, which are all new concepts in DeFi.
+                        <a href="https://www.kittenswap.org/app/" target="_blank">Wide Limit Order</a> can cover a price range and automatically change its price. Uniswap v3 has similar designs after our release.
+                        <div style="margin: 1.5em 0.5em 1em 0.5em;"><a href="https://www.kittenswap.org/app/" target="_blank"><img src="img/KS-WLO.jpg"></a></div>
                     </div>
-                </div>
+                </div>                
                 <div class="flexbox_equal_height">
                     <div class="panel" style="flex:1; margin-right: 1em;">
                         <div class="wfull_center title" style="font-size: 120%;">Base currency of Kitten.finance</div>
