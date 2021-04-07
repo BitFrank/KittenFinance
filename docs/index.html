@@ -346,6 +346,11 @@
         .coin {
             filter: brightness(95%);
         }
+    </style>
+    <style>
+        .coin:hover {
+            animation: spin 1.5s infinite;
+        }
 
         .liquid {
             background-image: linear-gradient(180deg, #2af598 10%, #40defd 100%);
@@ -356,11 +361,6 @@
         .nextgen {
             width: 100%;
             margin: 10em 0 15em 0;
-        }
-    </style>
-    <style>
-        .coin:hover {
-            animation: spin 1.5s infinite;
         }
 
         @keyframes spin {
