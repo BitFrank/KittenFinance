@@ -271,6 +271,10 @@
             }
         }
 
+        .jsPanel-modal-backdrop {
+            animation-duration: 250ms;
+        }
+
         /****************************************************************************************/
 
         .table {
@@ -421,6 +425,110 @@
             color: #eee;
             background-color: #050;
         }
+
+        .bv_ul_mobile {
+            height: auto !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+        }
+
+        .bv_ul_bg {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+
+        /****************************************************************************************/
+
+        .order_main .order_line input {
+            padding: 1.5em 0.5em 0.5em 0.5em;
+            font-size: 180%;
+            width: 100%;
+            letter-spacing: 0.1em;
+            border: 1px solid #333;
+        }
+
+        .order_main .token_info {
+            position: absolute;
+            top: 0.7em;
+            left: 1em;
+            width: calc(100% - 2em);
+        }
+
+        .order_log .bv_mainselect {
+            display: inline-block;
+            width: 7em;
+        }
+
+        .order_main .order_input .bv_mainselect,
+        .order_main .order_output .bv_mainselect        
+        {
+            position: absolute;
+            right: 0.2rem;
+            top: 2.3rem;
+            width: 10em;
+            /* z-index: 7; */
+        }
+
+        .order_main .order_input .bv_atual,
+        .order_main .order_output .bv_atual,
+        .order_log .bv_atual {
+            border: 0px !important;
+        }
+
+        .order_main .token_in_amt {
+            /* background-color: #111 !important; */
+        }
+
+        .order_main .token_out_amt {
+            /* background-color: #222 !important; */
+        }
+
+        .order_main .token_info,
+        .order_main .order_log,
+        .order_main .order_info {
+            color: #999;
+        }
+
+        .order_main .btn_trade {
+            font-size: 120%;
+            padding: 0.6em 1em;
+        }
+
+        .order_main .button:disabled {
+            background: #333;
+            color: #999;
+        }
+
+        .order_main .button:disabled:hover {
+            background: #333;
+            color: #999;
+        }
+
+        .order_main .btn_token_change {
+            position: relative;
+            top: 3px;
+            text-align: center;
+            padding: 1em 3em 1em 1em;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .order_main .btn_token_change:hover svg {
+            stroke: #0f0;
+        }
+
+        .order_main .token_have_in_amt {
+            cursor: pointer;
+        }
+
+        .order_main .order_log {
+            position: absolute;
+            right: 0;
+        }
+
+        .order_main .order_info {
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -444,6 +552,7 @@
     <script src="lib/jspanel.hint.min.js"></script>
     <script src="lib/jspanel.hint.min.js"></script>
     <script src="lib/bvselect.min.js"></script>
+    <!-- <script src="lib-BAK/bvselect.js"></script> -->
     <script src="contract.js"></script>
     <script src="i18n.js"></script>
     <script>
