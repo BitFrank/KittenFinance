@@ -38,10 +38,6 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
 
-        *:focus {
-            outline: none !important;
-        }
-
         html {
             background:
                 radial-gradient(black 15%, transparent 16%) 0 0,
@@ -61,86 +57,8 @@
             -ms-text-size-adjust: none;
         }
 
-        button,
-        input,
-        select {
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        a:link {
-            color: inherit;
-        }
-
-        a:visited {
-            color: inherit;
-        }
-
-        a:hover {
-            cursor: pointer;
-            color: #0c0;
-        }
-
-        a.button {
-            display: inline-block;
-            margin-top: 0.5em;
-            padding: 0.35em 0.7em;
-            box-sizing: border-box;
-            text-decoration: none;
-            text-align: center;
-            transition: all 0.2s;
-            cursor: pointer;
-
-            border: 1px solid #333;
-            border-radius: 8px;
-        }
-
-        input {
-            padding: 0.35em 0.8em;
-            border: 1px solid #333;
-            color: inherit;
-            background: inherit;
-            border-radius: 8px;
-            box-sizing: border-box;
-        }
-
-        a.button:hover {
-            color: #eee;
-            background-color: #070;
-        }
-
-        @media (max-width: 1920px) {
-            html {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 1500px) {
-            html {
-                font-size: 15px;
-            }
-        }
-
-        @media (max-width: 1350px) {
-            html {
-                font-size: 13.5px;
-            }
-        }
-
-        @media (max-width: 900px) {
-            html {
-                font-size: 13px;
-            }
-        }
-
-        @media (max-width: 500px) {
-            html {
-                font-size: 12px;
-            }
-        }
-
-        #panel:before {
-            content: "";
-            position: absolute;
+        #page_bg_img {
+            position: fixed;
             width: 100%;
             height: 100%;
             z-index: -1;
@@ -168,7 +86,29 @@
             position: relative;
         }
 
+        @media (max-width: 1920px) {
+            html {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 1500px) {
+            html {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 1350px) {
+            html {
+                font-size: 13.5px;
+            }
+        }
+
         @media (max-width: 900px) {
+            html {
+                font-size: 13px;
+            }
+
             #panel {
                 position: relative;
                 margin: 8px;
@@ -183,6 +123,10 @@
         }
 
         @media (max-width: 500px) {
+            html {
+                font-size: 12px;
+            }
+
             #panel {
                 position: relative;
                 margin: 4px;
@@ -196,8 +140,83 @@
             }
         }
 
-        .a_img_effect img:hover {
-            filter: drop-shadow(0px 0px 12px rgba(100, 255, 0, 1.0));
+        /****************************************************************************************/
+
+        *:focus {
+            outline: none !important;
+        }
+
+        button,
+        input,
+        select {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        a:link {
+            color: inherit;
+        }
+
+        a:visited {
+            color: inherit;
+        }
+
+        a:hover {
+            cursor: pointer;
+            color: #0c0;
+        }
+
+        input {
+            padding: 0.35em 0.8em;
+            border: 1px solid #333;
+            color: inherit;
+            background: #000;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        input:disabled {
+            background: inherit;
+        }
+
+        button {
+            display: inline-block;
+            margin-top: 0.5em;
+            padding: 0.35em 0.7em;
+            box-sizing: border-box;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s;
+            cursor: pointer;
+
+            border: 1px solid #222;
+
+            background-color: #040;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            color: #fff;
+            background-color: #070;
+        }
+
+        button.selected {
+            color: #0c0;
+        }
+
+        button.selected:hover {
+            color: inherit;
+        }
+
+        button:disabled {
+            background: #333;
+            color: #999;
+        }
+
+        button:disabled:hover {
+            cursor: default;
+            background: #333;
+            color: #999;
         }
 
         /****************************************************************************************/
@@ -311,13 +330,8 @@
             color: #eee;
         }
 
-        a.button.selected {
-            border: 1px solid #0c0;
-            color: #0c0;
-        }
-
-        a.button.selected:hover {
-            color: inherit;
+        .a_img_effect img:hover {
+            filter: drop-shadow(0px 0px 12px rgba(100, 255, 0, 1.0));
         }
 
         .token_icon_wrap_x {
@@ -458,12 +472,15 @@
             width: 7em;
         }
 
+        .order_main .order_input .bv_atual {
+            background: #000;
+        }
+
         .order_main .order_input .bv_mainselect,
-        .order_main .order_output .bv_mainselect        
-        {
+        .order_main .order_output .bv_mainselect {
             position: absolute;
             right: 0.2rem;
-            top: 2.3rem;
+            bottom: 0.5rem;
             width: 10em;
             /* z-index: 7; */
         }
@@ -491,16 +508,6 @@
         .order_main .btn_trade {
             font-size: 120%;
             padding: 0.6em 1em;
-        }
-
-        .order_main .button:disabled {
-            background: #333;
-            color: #999;
-        }
-
-        .order_main .button:disabled:hover {
-            background: #333;
-            color: #999;
         }
 
         .order_main .btn_token_change {
@@ -534,6 +541,7 @@
 
 <body>
     <div id="isOldBrowser" style="color: #fff; font-size: 300%; padding: 10% 1em; line-height: 1.5; display: none;">Welcome to Kitten.Finance.<br>You are using an old browser. Please upgrade to latest Chrome or Firefox with Metamask.</div>
+    <div id="page_bg_img"> </div>
     <div id="panel" style="max-height: 999999px;"></div>
     <script src="lib/ethers-5.0.umd.min.js"></script>
     <script type="text/javascript" src="lib/jquery-3.5.1.min.js"></script>
