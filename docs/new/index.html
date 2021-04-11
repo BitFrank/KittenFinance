@@ -241,14 +241,14 @@
             opacity: 1 !important;
         }
 
-        .jsPanel-standard .jsPanel-title {
-            margin-left: 0 !important;
-        }
-
         .jsPanel .jsPanel-content {
             border-top: 0px !important;
             padding: 8px;
             overflow-y: hidden;
+        }
+
+        .jsPanel-standard .jsPanel-title {
+            margin-left: 0 !important;
         }
 
         .jsPanel-headerlogo img {
@@ -295,7 +295,56 @@
         }
 
         .jsPanel-modal-backdrop {
-            animation-duration: 250ms;
+            animation-duration: 100ms;
+        }
+
+        .k-panel-icon {
+            width: 6rem !important;
+            height: calc(3rem + 48px) !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            border: 0px;
+            opacity: 1.0 !important;
+        }
+
+        .k-panel-icon .jsPanel-headerbar {
+            flex-direction: column;
+            height: calc(3rem + 48px) !important;
+        }
+
+        .k-panel-icon .jsPanel-headerlogo {
+            text-align: center;
+            width: 100%;
+        }
+
+        .k-panel-icon .jsPanel-headerlogo img {
+            margin: 0 auto !important;
+            height: 3rem;
+            filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 1.0));
+        }
+
+        .k-panel-icon .jsPanel-headerlogo img:hover {
+            filter: drop-shadow(0px 0px 12px rgba(0, 1, 0, 1.0)) !important;
+        }
+
+        .k-panel-icon .jsPanel-titlebar {
+            text-align: center;
+            padding-top: 0.3em;
+            align-items: flex-start;
+            width: 100%;
+            line-height: 1.2 !important;
+        }
+
+        .k-panel-icon .jsPanel-title {
+            margin: 0 auto !important;
+            white-space: normal;
+            word-break: break-all;
+            font-variant: normal;
+            text-shadow: 0px 0px 3px rgba(0, 0, 0, 1.0);
+        }
+
+        .k-panel-icon .jsPanel-content {
+            display: none;
         }
 
         /****************************************************************************************/
@@ -391,7 +440,7 @@
 
         .k-tabs .k-tab-nav>div {
             border-color: #333 #333 #333;
-        }        
+        }
 
         .k-tabs .k-tab-nav>div:hover {
             border-color: #666 #666 #111;
@@ -445,10 +494,10 @@
         .darkred {
             color: #c22;
         }
-        
+
         .red {
             color: #f22;
-        }        
+        }
 
         .gray {
             color: #888;
