@@ -270,6 +270,10 @@
             padding: 0 0.2em 0 0.5em !important;
         }
 
+        .jsPanel-hint {
+            z-index: 999999 !important;
+        }
+
         @keyframes modalBackdropFadeIn {
             from {
                 opacity: 0
@@ -362,15 +366,57 @@
             top: 2px;
         }
 
-        .k_title {
+        .k-tabs .k-tab-nav {
+            width: calc(100% + 16px);
+            margin-left: -8px;
+            padding-left: 8px;
+            border-bottom: 1px solid #333;
+        }
+
+        .k-tabs .k-tab-nav>div {
+            display: inline-block;
+            margin-bottom: -1px;
+            padding: 8px 8px;
+            border: 1px solid transparent;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+        }
+
+        @media (max-width: 500px) {
+            .k-tabs .k-tab-nav>div {
+                padding: 8px 4px;
+                font-size: 90%;
+            }
+        }
+
+        .k-tabs .k-tab-nav>div {
+            border-color: #333 #333 #333;
+        }        
+
+        .k-tabs .k-tab-nav>div:hover {
+            border-color: #666 #666 #111;
+            color: #fff;
+        }
+
+        .k-tabs .k-tab-nav>div.active,
+        .k-tabs .k-tab-nav>div.active:hover,
+        .k-tabs .k-tab-nav>div.active:focus {
+            cursor: default;
+            background: #070;
+            color: #fff;
+            border-color: #070 #070 #070;
+        }
+
+        .k-title {
             text-align: center;
             font-size: 120%;
             font-weight: bolder;
+            letter-spacing: 0.05em;
         }
 
-        .k_panel {
+        .k-tab-panel {
             line-height: 1.5;
-            margin: 0 1em 1em 1em;
+            margin: 0 0.4em 0em 0.4em;
             display: none;
         }
 
@@ -399,6 +445,10 @@
         .darkred {
             color: #c22;
         }
+        
+        .red {
+            color: #f22;
+        }        
 
         .gray {
             color: #888;
