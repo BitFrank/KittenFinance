@@ -138,6 +138,10 @@
                 height: calc(100% - 4px);
                 min-height: calc(100% - 4px);
             }
+
+            #panel_tail {
+                display: block !important;
+            }
         }
 
         /****************************************************************************************/
@@ -643,6 +647,10 @@
     <div id="isOldBrowser" style="color: #fff; font-size: 300%; padding: 10% 1em; line-height: 1.5; display: none;">Welcome to Kitten.Finance.<br>You are using an old browser. Please upgrade to latest Chrome or Firefox with Metamask.</div>
     <div id="page_bg_img"> </div>
     <div id="panel" style="max-height: 999999px;"></div>
+    <div id="panel_tail" style="position: absolute; margin-top: 12rem; padding-bottom: 12rem; width: 100%; display: none; color: #ccc; text-align: center;">
+        - Click the titlebar of a panel to shrink / restore -
+        <br><br>By Kitten.Finance
+    </div>
     <script src="lib/ethers-5.0.umd.min.js"></script>
     <script type="text/javascript" src="lib/jquery-3.5.1.min.js"></script>
     <script type='text/javascript'>
