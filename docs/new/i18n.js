@@ -11,14 +11,12 @@ let I18N = {
     },
     //============== welcome panel ==============
     "welcome_kf": {
-        en: `Welcome to KittenFinance NextGen.
-    <br><br>This is a unified UI for you to manage all assets, and to use all 
+        en: `Welcome to KittenFinance NextGen - a unified UI for 
     KittenFinance functions: swap, lending, option, vaults and more.
-    <br><br>Click the titlebar of a panel to shrink / restore.<br>Drag titlebar to move (if you are using a computer).`,
-        zh: `欢迎来到 KittenFinance 新版。
-    <br><br>这里是统一的界面，让你可以管理所有资产，使用所有
+    <br><br>Click the titlebar of a panel to shrink / restore.<br>Drag titlebar to move (for computers).`,
+        zh: `欢迎来到 KittenFinance 新版 - 统一的界面，让你使用
     KittenFinance 功能：交易，借贷，期权，挖矿，等等。
-    <br><br>点击面板的标题栏，可以缩小 / 还原。<br>拖动标题栏，可以移动（如果你使用电脑）。`
+    <br><br>点击面板的标题，缩小 / 还原。<br>拖动标题，移动（在电脑操作）。`
     },
     'account': {
         zh: `账户`,
