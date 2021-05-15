@@ -11,12 +11,10 @@ let I18N = {
     },
     //============== welcome panel ==============
     "welcome_kf": {
-        en: `Welcome to KittenFinance NextGen - a unified UI for 
-    KittenFinance functions: swap, lending, option, vaults and more.
+        en: `Welcome to KittenFinance - a DeFi ecosystem with lending, swap, option, vaults and more.
     <br><br>Click the titlebar of a panel to shrink / restore.<br>Drag titlebar to move (for computers).`,
-        zh: `欢迎来到 KittenFinance 新版 - 统一的界面，让你使用
-    KittenFinance 功能：交易，借贷，期权，挖矿，等等。
-    <br><br>点击面板的标题，缩小 / 还原。<br>拖动标题，移动（在电脑操作）。`
+        zh: `欢迎来到 KittenFinance 猫猫金融。我们的 DeFi 生态系统包括：借贷，交易，期权，挖矿等等。
+    <br><br>点击面板标题，缩小 / 还原。<br>拖动面板标题，移动（在电脑操作）。`
     },
     'account': {
         zh: `账户`,
