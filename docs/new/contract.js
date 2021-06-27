@@ -1,7 +1,7 @@
 "use strict";
-
+ 
 let CONTRACT = {}
-
+ 
 CONTRACT.LENDINGv1 = {
     addr: '0xCaC6f6711206215D9761F7B82936f2083964dfF5',
     version: 1,
