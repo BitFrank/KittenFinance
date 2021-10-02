@@ -144,6 +144,18 @@
             }
         }
 
+        ul {
+            margin-block-start: 0.3em;
+            margin-block-end: 0.3em;
+            padding-inline-start: 1.3em;
+        }
+
+        ol {
+            margin-block-start: 0.3em;
+            margin-block-end: 0.3em;
+            padding-inline-start: 1em;
+        }
+
         /****************************************************************************************/
 
         *:focus {
@@ -471,8 +483,11 @@
 
         .k-tab-panel {
             line-height: 1.5;
-            margin: 0 0.4em 0em 0.4em;
             display: none;
+        }
+
+        .jsPanel-modal .k-tab-panel {
+            margin: 0 0.4em 0em 0.4em;
         }
 
         .flexbox {
@@ -555,6 +570,10 @@
 
         .bv_ul_bg {
             background-color: rgba(0, 0, 0, 0.85);
+        }
+
+        .bv_down {
+            margin-top: 3px;
         }
 
         /****************************************************************************************/
@@ -650,6 +669,67 @@
 
         .hide {
             display: none;
+        }
+
+        /****************************************************************************************/
+
+        .kitten_nft {
+            width: calc(9.99% - 2px);
+            text-align: center;
+            position: relative;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin-bottom: 1em;
+            cursor: pointer;
+            background: #111;
+            color: #aaa;
+            /* -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); */
+        }
+
+        @media (max-width: 500px) {
+            .kitten_nft {
+                width: calc(16.6% - 2px);
+            }
+        }
+
+        .kitten_nft::after {
+            content: "";
+            border-radius: 4px;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            /* -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); */
+        }
+
+        .kitten_nft:hover {
+            border: 1px solid white;
+            -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+            z-index: 2;
+            color: #ccc;
+        }
+
+        .kitten_nft:hover::after {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .kitten_nft .id {
+            text-align: left;
+            margin-left: 5px;
+            margin-bottom: -10px;
+        }
+
+        .kitten_nft .svg {
+            width: 60%;
+            margin-left: 20%;
         }
     </style>
 </head>
